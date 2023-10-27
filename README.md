@@ -1,2 +1,2 @@
 # Technogaze
-Repository for CSC 190 - Infrastructure Development for Bay Develops
+Repository for CSC 190 (Senior Project)- Infrastructure Development for Bay Develops
