@@ -1,0 +1,309 @@
+.baydevelopslogo-icon {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 524px;
+  flex-shrink: 0;
+}
+.body,
+.title {
+  position: relative;
+}
+.title {
+  letter-spacing: 0.2px;
+  line-height: 125%;
+}
+.body {
+  font-size: var(--body-medium-bold-size);
+  line-height: 160%;
+  color: var(--greyscale-50);
+  opacity: 0.7;
+}
+.network-infrastrucutre-text {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.cover,
+.nis-text {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.nis-text {
+  align-self: stretch;
+  align-items: flex-start;
+  justify-content: center;
+}
+.cover {
+  background-color: var(--color-gray-100);
+  width: 708px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 122px 92px;
+  box-sizing: border-box;
+  gap: 48px;
+}
+.body1 {
+  position: relative;
+  font-size: var(--body-medium-bold-size);
+  line-height: 160%;
+  color: var(--greyscale-500);
+}
+.sign-in-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+  position: undefined;
+  height: 64px;
+  align-self: start;
+}
+.mail-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.email {
+  align-self: stretch;
+  border-radius: var(--br-xs);
+  border: 1px solid var(--greyscale-200);
+  box-sizing: border-box;
+  height: 56px;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) var(--padding-base);
+  gap: var(--gap-xs);
+}
+.email,
+.lock-parent,
+.password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.lock-parent {
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.password {
+  align-self: stretch;
+  border-radius: var(--br-xs);
+  border: 1px solid var(--greyscale-200);
+  box-sizing: border-box;
+  height: 56px;
+  justify-content: space-between;
+  padding: var(--padding-5xs) var(--padding-base);
+}
+.input-boxes,
+.input-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.input-boxes {
+  width: 404px;
+  align-items: flex-start;
+  gap: var(--gap-base);
+  font-size: var(--body-large-semibold-size);
+  color: var(--greyscale-400);
+}
+.input-field {
+  align-self: stretch;
+  height: 224px;
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--gap-13xl);
+}
+.checkboxfalse {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 4px;
+  border: 1px solid var(--greyscale-200);
+  box-sizing: border-box;
+}
+.forgot-password,
+.remember-me1 {
+  position: relative;
+  line-height: 160%;
+}
+.remember-me1 {
+  letter-spacing: 0.2px;
+  font-weight: 500;
+}
+.forgot-password {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary-600-base);
+  text-align: right;
+}
+.remforgot-field,
+.remforgot-links {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.remforgot-links {
+  width: 403px;
+  height: 24px;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 145px;
+}
+.remforgot-field {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
+}
+.button {
+  position: relative;
+  letter-spacing: 0.2px;
+  line-height: 140%;
+}
+.buttonlargeprimary {
+  align-self: stretch;
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-100);
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  font-size: var(--body-large-semibold-size);
+  color: var(--additional-white);
+}
+.line {
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--greyscale-200);
+  box-sizing: border-box;
+  height: 1px;
+}
+.or-sign-in {
+  position: relative;
+  line-height: 160%;
+}
+.or-field {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  text-align: center;
+  font-size: var(--body-small-regular-size);
+  color: var(--greyscale-500);
+}
+.google-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.google {
+  position: relative;
+  letter-spacing: 0.2px;
+  line-height: 150%;
+  font-weight: 600;
+}
+.buttonsocialgoogle,
+.social {
+  display: flex;
+  flex-direction: row;
+}
+.buttonsocialgoogle {
+  flex: 1;
+  border-radius: var(--br-xs);
+  background-color: var(--additional-white);
+  border: 1px solid var(--greyscale-200);
+  box-sizing: border-box;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-xs);
+}
+.social {
+  width: 403px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+}
+.gooface-field {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--body-large-semibold-size);
+}
+.span {
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  font-family: var(--body-large-semibold);
+}
+.sign-up {
+  color: var(--primary-600-base);
+}
+.dont-have-an-container {
+  position: relative;
+  line-height: 160%;
+  text-align: center;
+}
+.sign-in-field {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  font-size: var(--body-medium-bold-size);
+}
+.content,
+.login {
+  height: 880px;
+  display: flex;
+}
+.content {
+  background-color: var(--additional-white);
+  width: 732px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 204px 164px 151px;
+  box-sizing: border-box;
+  gap: var(--gap-base);
+  text-align: left;
+  color: var(--greyscale-900);
+}
+.login {
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--heading-h3-size);
+  color: var(--additional-white);
+  font-family: var(--body-large-semibold);
+}
