@@ -1,5 +1,5 @@
 
-  # Bay Develops Login Page
+  # Bay Develops Top Nav Bar
 
   Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">nodejs</a></code>
 
