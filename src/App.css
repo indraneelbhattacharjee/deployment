@@ -1,0 +1,80 @@
+/* App.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: './About_Us.jpg';
+    overflow-x: auto;
+    min-width: 200px;
+  }
+  
+  .container {
+    height: 61rem;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow-x: auto;
+  }
+  
+  .header {
+    margin: auto;
+    text-align: center;
+    font-size: 4rem;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    overflow-x: auto;
+    color: white;
+    padding-top: 10rem;
+    padding-right: 50rem;
+    padding-bottom: 2rem;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 35rem;
+    overflow-x: auto;
+  }
+  
+  .form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    color: white;
+    overflow-x: auto;
+  }
+  
+  .input {
+    width: 35rem;
+    margin-bottom: 1rem;
+  }
+  
+  .input.py-7 {
+    padding-top: 7rem;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow-x: auto;
+  }
+  
+  .button {
+    background-color: #FA6360;
+    color: white;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    min-width: 10rem;
+    overflow-x:auto;
+    white-space: nowrap;
+  }
+  
