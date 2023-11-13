@@ -1,4 +1,8 @@
 import React from "react";
+import { BsTwitter } from 'react-icons/bs';
+import { BsInstagram } from 'react-icons/bs';
+import { BsYoutube } from 'react-icons/bs';
+import { BsFacebook } from 'react-icons/bs';
 
 export const Header = (props) => {
   return (
@@ -15,11 +19,9 @@ export const Header = (props) => {
                 Export Network Solutions Tailored for Startup Success.
             </div>
             <div class="btn_div">
-
                 <div> <button class="started_btn">Get Started</button></div>
                 <div><button class="learn_btn">Learn More</button></div>
             </div>
-
         </div>
 
     </div>
@@ -31,10 +33,12 @@ export const Header = (props) => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti rerum unde tempori
                 </div>
                 <div class="icons">
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-square-youtube"></i>
+                  <BsTwitter/> 
+                  <BsInstagram/>
+                  <BsFacebook/>
+                  <BsYoutube/>
+
+                
                 </div>
             </div>
 

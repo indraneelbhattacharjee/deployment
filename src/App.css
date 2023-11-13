@@ -10,7 +10,8 @@ body{
 }
 .main_div{
   display:  flex;
-  height: 100vh;
+  height: 100vh-50px
+  ;
 
   
 }
