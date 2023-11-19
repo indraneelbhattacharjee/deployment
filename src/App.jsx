@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from "react";
-//import { Navigation } from "./components/navigation";
-import { Header } from "./components/header";
-import JsonData from "./data/data.json";
+
+import { ContactUs } from "./components/ContactUs";
+import { Landing } from "./components/landing";
+import { Login } from "./components/Login";
+import { Register } from "./components/Register";
+import { TopNav } from "./components/TopNavbar";
+import { SideNavDark } from "./components/sideNavDark";
+
+
+
 import SmoothScroll from "smooth-scroll";
-import "./App.css";
+import "./index.css";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -11,14 +17,11 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 const App = () => {
-  const [landingPageData, setLandingPageData] = useState({});
-  useEffect(() => {
-    setLandingPageData(JsonData);
-  }, []);
-
+  
   return (
     <div>
-      <Header data={landingPageData.Header} />
+      <ContactUs/>
+
     </div>
   );
 };
