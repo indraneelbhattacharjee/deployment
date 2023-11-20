@@ -11,4 +11,6 @@ Possibe commands you'll need after cloning the repo.
 
 To run using yarn:
 
+First time only:    ```yarn```
+
 ```yarn start ```
