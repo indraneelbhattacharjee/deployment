@@ -9,3 +9,6 @@ Possibe commands you'll need after cloning the repo.
 
 ```npm update react-icons```
 
+To run using yarn:
+
+```yarn start ```
