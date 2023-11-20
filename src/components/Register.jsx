@@ -175,7 +175,7 @@ export const Register = (props) => {
               <span>Don’t have an account?</span>
               <span className="tracking-[0.2px] font-medium font-body-small-regular">{` `}</span>
             </span>
-            <b className="text-primary-600-base">Sign Up</b>
+            <b className="text-primary-600-base">Sign In</b>
           </a>
         </div>
       </div>

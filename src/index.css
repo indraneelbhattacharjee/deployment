@@ -29,7 +29,7 @@ body{
 }
 .main_div{
   display:  flex;
-  height: 100vh-50px
+  height: 100vh;
   ;
 
   
@@ -76,8 +76,8 @@ margin-left: 2rem;
 }
 .started_btn{
   background-color: #FF4642;
-  padding: 19px;
-
+  padding: 10px;
+  font-size: 20px;
   height: 10vh;
   width: 12vw;
   border-radius: 100px;
@@ -87,12 +87,12 @@ margin-left: 2rem;
   
 }
 .started_btn:hover{
-  background-color: transparent;
-  color: red;
+  background-color: #ff514e;
   border: 0px;
 }
 .learn_btn{
   background-color: #FE100C;
+  font-size: 20px;
   padding: 19px;
   height: 10vh;
   width: 12vw;
@@ -102,11 +102,11 @@ margin-left: 2rem;
   border:3px solid   #FE100C ;
 }
 .learn_btn:hover{
-  background-color: transparent;
-  color: red;
+  background-color: #ff2723;
   border: 0px;
 }
-.fotter{
+
+.footer{
   /* margin-top: 10px; */
  background-color: #FF1510; 
  width: 100%;
@@ -115,7 +115,7 @@ margin-left: 2rem;
  
  
 }
-.fotter_main_div{
+.footer_main_div{
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -224,6 +224,7 @@ margin-left: 2rem;
 
 .headerText{
   position: relative;
+
 }
 
 .textOnImage{
