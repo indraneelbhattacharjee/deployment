@@ -9,7 +9,7 @@ export const Landing = (props) => {
     <header id="header">
       <div class="main_div">
         <div class="image_div">
-            <img class="div_image" src="*/img/Landing.png" alt=""></img>
+            <img class="div_image" src="./img/Landing.png" alt=""></img>
         </div>
         <div class="second_flex">
             <div class="main_text">
@@ -25,8 +25,8 @@ export const Landing = (props) => {
         </div>
 
     </div>
-    <div class="fotter">
-        <div class="fotter_main_div">
+    <div class="footer">
+        <div class="footer_main_div">
             <div class="flex_item1">
          <font> Bay</font>Developers 
                 <div class="text_div">

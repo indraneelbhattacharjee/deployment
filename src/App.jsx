@@ -5,7 +5,7 @@ import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
-
+import { About } from "./components/About";
 
 
 import SmoothScroll from "smooth-scroll";
@@ -20,8 +20,8 @@ const App = () => {
   
   return (
     <div>
-      <ContactUs/>
-
+      <TopNav/>
+      <About/>
     </div>
   );
 };

@@ -10,7 +10,7 @@ import {
   Button,
 } from "@mui/material";
 
-export const Login = () => {
+export const Login = (props) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPasswordClick = () => {
     setShowPassword(!showPassword);

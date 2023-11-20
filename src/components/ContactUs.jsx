@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import backgroundImage from './baydevelopslogo.svg';
+import backgroundImage from './About Us.jpg';
 
 export const ContactUs = (props) => {
   return (
