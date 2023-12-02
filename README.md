@@ -1,10 +1,10 @@
 # Technogaze
 
-#### Background
+## Background
 
 Team Technogaze was formed by the students of California State University - Sacramento to develop infrastructure solutions for Bay Develops and to complete their Senior Project requirements. This team is led by Indraneel Bhattacharjee and consists 7 more team members who are engineers, developers and UI/UX Designers.
 
-#### Team information
+## Team information
 
 1. Indraneel Bhattacharjee
 2. Dip Patel
@@ -16,7 +16,7 @@ Team Technogaze was formed by the students of California State University - Sacr
 
 Repository for CSC 190 - Infrastructure Development for Bay Develops
 
-#### Install
+## Install
 To rebuild the project, run the following commands in order:
 * Make sure `node` is in your path.
 * `git clone https://github.com/RUKRAZ/Technogaze.git` - latest version on github
@@ -24,16 +24,16 @@ To rebuild the project, run the following commands in order:
 * `npm install --save react react-dom @types/react @types/react-dom` -install dependencies
 * `npm update react-icons` - install icons for socil media platforms
 
-#### Configuration
+## Configuration
 To run using yarn, input following commands in order:
 *`yarn`
 *`yarn start `
 
-#### Usage
+## Usage
 
 Once the webpage is running, point your browser to http://localhost:3000 to access the web interface.
 
-#### API
+## API
 
 StripeAPI: For payment.
 
@@ -41,14 +41,14 @@ Auth0: For user authentication.
 
 OpenAI: For custom chatbot. 
 
-#### Testing
+## Testing
 
-#### Deployment
+## Deployment
 
-#### Developer Instructions
+## Developer Instructions
 
-#### Key Milestones
+## Key Milestones
 
-####UI/UX
+## UI/UX
 
 
