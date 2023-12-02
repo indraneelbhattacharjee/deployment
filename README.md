@@ -51,6 +51,19 @@ OpenAI: For custom chatbot.
 
 ## UI/UX
 Logo: 
+
 ![Bay Develops Logo](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/baydevelopslogo-1-1%402x.png)
 
+### Web Pages
 
+![Main Pages](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/Technogaze%20Mock-Up.jpg)
+
+![Dashboard](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/User%20Dashboard.jpg)
+
+![Contact Us](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/Contact%20Us.png)
+
+![Services](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/ServicesPage.jpg)
+
+### ERD 
+
+![ERD](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/erd.JPG)
