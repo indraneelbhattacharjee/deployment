@@ -36,7 +36,9 @@ Once the webpage is running, point your browser to http://localhost:3000 to acce
 #### API
 
 StripeAPI: For payment.
+
 Auth0: For user authentication.
+
 OpenAI: For custom chatbot. 
 
 #### Testing
