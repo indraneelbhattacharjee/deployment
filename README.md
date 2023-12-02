@@ -1,7 +1,11 @@
 # Technogaze
 Repository for CSC 190 - Infrastructure Development for Bay Develops
 
-Possibe commands you'll need after cloning the repo.
+Background:
+
+Team Technogaze was formed by the students of California State University - Sacramento to develop infrastructure solutions for Bay Develops as a requirement for their Senior Project.
+
+Possible commands you'll need after cloning the repo.
 
 ```npm install --global yarn```
 
