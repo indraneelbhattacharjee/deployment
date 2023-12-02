@@ -50,5 +50,7 @@ OpenAI: For custom chatbot.
 ## Key Milestones
 
 ## UI/UX
+Logo: 
+![Bay Develops Logo](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/baydevelopslogo-1-1%402x.png)
 
 
