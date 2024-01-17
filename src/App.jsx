@@ -6,7 +6,7 @@ import { Register } from "./components/Register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import { About } from "./components/About";
-
+import {ServicesPage} from "./components/ServicesPage";
 
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
@@ -20,8 +20,7 @@ const App = () => {
   
   return (
     <div>
-      <TopNav/>
-      <About/>
+      <ServicesPage/>
     </div>
   );
 };
