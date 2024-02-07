@@ -1,6 +1,7 @@
 import './App.css';
 import img3 from './images/webDev.jpg';
 import logo from './images/bayDevelopsLogo(black).png';
+import {Button} from "@mui/material";
 
 function WebDevServicePage() {
   return (
@@ -73,6 +74,15 @@ function WebDevServicePage() {
             <div>If you are looking for a reliable and experienced web development company, contact us today.
                We will be happy to discuss your needs and help you create a website that will help you achieve
                 your business objectives.</div>
+
+            <Button
+              className="self-stretch"
+              color="error"
+              name="Purchse Service"
+              size="large"
+              variant="contained">
+              Purchase Service
+            </Button>
         </div>
         <div>
             <img src={img3} alt="webDevImg" />
