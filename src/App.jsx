@@ -7,6 +7,10 @@ import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import { About } from "./components/About";
 import {ServicesPage} from "./components/ServicesPage";
+import { Resetpassword } from "./components/resetpassword";
+//import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
+//import { WebDevServicePage } from "./components/WebDevServicePage";
+
 
 import SmoothScroll from "smooth-scroll";
 import "./index.css";

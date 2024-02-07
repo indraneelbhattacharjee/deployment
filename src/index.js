@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+let inputValue = document.getElementById('inp') 
 ReactDOM.render(
   <React.StrictMode>
     <App />

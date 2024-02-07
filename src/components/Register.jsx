@@ -20,7 +20,7 @@ export const Register = (props) => {
         <img
           className="self-stretch relative max-w-full overflow-hidden h-[524px] shrink-0"
           alt="oops"
-          src="/img/baydevelopslogo.svg"
+          src="./img/baydevelopslogo.svg"
         />
         <div className="self-stretch overflow-hidden flex flex-col items-start justify-center">
           <div className="self-stretch flex flex-col items-center justify-start gap-[12px]">
