@@ -1,6 +1,7 @@
 import './App.css';
 import img2 from './images/softwareDev.jpg';
 import logo from './images/bayDevelopsLogo(black).png';
+import {Button} from "@mui/material";
 
 function SoftwareDevServicePage() {
   return (
@@ -79,6 +80,15 @@ function SoftwareDevServicePage() {
             <div>If you are looking for a reliable and experienced software development company, contact us today. 
               We will be happy to discuss your needs and help you create a software solution that will help you 
               achieve your business objectives.</div>
+
+            <Button
+              className="self-stretch"
+              color="error"
+              name="Purchse Service"
+              size="large"
+              variant="contained">
+              Purchase Service
+            </Button>
         </div>
         <div>
             <img src={img2} alt="softwareDevImg" />
