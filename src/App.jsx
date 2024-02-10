@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { ContactUs } from "./components/ContactUs";
 import { Landing } from "./components/landing";
@@ -21,11 +22,20 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 const App = () => {
-  
   return (
-    <div>
-      <ServicesPage/>
-    </div>
+    <Router>
+      <TopNav />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/reset-password" element={<Resetpassword />} />
+        {/* Add other routes as needed */}
+      </Routes>
+    </Router>
   );
 };
 
