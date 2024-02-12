@@ -4,12 +4,39 @@ export const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState(''); // State for error messages
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    // Implement your registration logic here
-    // Make sure to validate that password and confirmPassword match
-    console.log('Registration attempted with:', email, password, confirmPassword);
+    setError(''); // Clear any existing error messages
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return; // Stop the registration process
+    }
+
+    try {
+      const response = await fetch('http://localhost:8080/post_register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password, 
+        }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Registration successful:', data);
+        // Redirect to login page or dashboard after registration
+      } else {
+        setError(data.message || 'Registration failed. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred during registration. Please try again later.');
+    }
   };
 
   return (
@@ -17,7 +44,7 @@ export const Register = () => {
       {/* Logo Section */}
       <div className="flex w-1/2 bg-gray-100 justify-center items-center">
         <div className="text-center">
-          <img src="/img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
+          <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
           <h1 className="m-0 relative font-bold mt-4 justify-end">Network Infrastructure Solutions</h1>
           <p className="text-white mt-4">Everything you need in an one dashboard.</p>
         </div>

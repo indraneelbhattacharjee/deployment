@@ -1,21 +1,41 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // State to store error messages
+  const navigate = useNavigate(); // Hook for navigation
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Implement your login logic here
-    console.log('Login attempted with:', email, password);
+    try {
+      const response = await fetch('http://localhost:8080/post_login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Login successful:', data);
+        navigate('/services'); // Redirect to the dashboard page
+      } else {
+        setErrorMessage(data.message || 'Login failed. Please try again.'); // Set error message from response
+      }
+      } catch (error) {
+        setErrorMessage('An error occurred. Please try again later.'); // Set generic error message for network errors
+     }
   };
+
 
   return (
     <div className="flex flex-row h-screen bg-gray-100">
       {/* Logo Section */}
       <div className="flex w-1/2 bg-gray-100 justify-center items-center">
         <div className="text-center">
-          <img src="/img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
+          <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
           <h1 className="m-0 relative font-bold mt-4 justify-end">Network Infrastructure Solutions</h1>
           <p className="text-white mt-4">Everything you need in an one dashboard.</p>
         </div>
