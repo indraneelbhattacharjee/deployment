@@ -7,7 +7,7 @@ import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import { About } from "./components/About";
 import { Resetpassword } from "./components/resetpassword";
-
+import {EMS} from "./components/ems.tsx";
 
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
@@ -21,8 +21,7 @@ const App = () => {
   
   return (
     <div>
-      <TopNav/>
-      <About/>
+      <EMS/>
     </div>
   );
 };
