@@ -9,9 +9,7 @@ import { SideNavDark } from "./components/sideNavDark";
 import { About } from "./components/About";
 import {ServicesPage} from "./components/ServicesPage";
 import { Resetpassword } from "./components/resetpassword";
-//import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
-//import { WebDevServicePage } from "./components/WebDevServicePage";
-
+import {EMS} from "./components/ems.tsx";
 
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
@@ -25,20 +23,9 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 const App = () => {
   return (
-    <Router>
-      <TopNav />
-      <Routes>
-        
-        <Route path="/" element={<Landing />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/reset-password" element={<Resetpassword />} />
-        {/* Add other routes as needed */}
-      </Routes>
-    </Router>
+    <div>
+      <EMS/>
+    </div>
   );
 };
 

@@ -14,6 +14,21 @@ Team Technogaze was formed by the students of California State University - Sacr
 6. Tanner Colbert
 7. Kevinpreet Singh
 
+
+## Background
+
+Team Technogaze was formed by the students of California State University - Sacramento to develop infrastructure solutions for Bay Develops and to complete their Senior Project requirements. This team is led by Indraneel Bhattacharjee and consists 7 more team members who are engineers, developers and UI/UX Designers.
+
+## Team information
+
+1. Indraneel Bhattacharjee
+2. Dip Patel
+3. Sanjot Chandi
+4. Saniya Patel
+5. Cathy Khong
+6. Tanner Colbert
+7. Kevinpreet Singh
+
 Repository for CSC 190 - Infrastructure Development for Bay Develops
 
 ## Install

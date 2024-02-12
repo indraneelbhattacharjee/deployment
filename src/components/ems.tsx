@@ -11,7 +11,7 @@ import {
   chartBoxRevenue,
   chartBoxUser,
 } from "./emsFiles/data.ts";
-import "./ems.scss";
+import "./emsFiles/ems.scss";
 import React from 'react';
 export const EMS = (props) => {
   return (
