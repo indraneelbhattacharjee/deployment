@@ -58,12 +58,8 @@ export const TopNav = () => {
               sx={{ width: 240 }} // Adjusted width for better visibility
               variant="outlined"
             >
-              <Select
-                color="primary"
-                name="Dropdown"
-                value={page}
-                onChange={handleSelectChange}
-              >
+              <InputLabel color="primary" />
+              <Select color="primary" name="Dropdown">
                 <MenuItem value="Home">Home</MenuItem>
                 <MenuItem value="Sign Up">Sign Up</MenuItem>
                 <MenuItem value="Services">Services</MenuItem>
@@ -77,6 +73,7 @@ export const TopNav = () => {
         <Button
           sx={{ width: 198 }}
           color="error"
+          name="Login"
           variant="contained"
           component={Link}
           to="/login"
@@ -86,6 +83,5 @@ export const TopNav = () => {
       </div>
     </div>
   );
-};
-
+  };
 export default TopNav;
