@@ -1,4 +1,6 @@
-body,
+body{
+  margin: 0;
+}
 html {
   font-family: "Open Sans", sans-serif;
   text-rendering: optimizeLegibility !important;
@@ -604,3 +606,4 @@ label {
     margin: 50px 0;
   }
 }
+

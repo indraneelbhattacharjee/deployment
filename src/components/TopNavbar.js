@@ -10,39 +10,34 @@ import {
 } from "@mui/material";
 
 export const TopNav = () => {
-  
+  const navigate = useNavigate();
+  const [page, setPage] = useState('');
 
-    const navigate = useNavigate();
-    const [page, setPage] = useState('');
-
-    const handleSelectChange = (event) => {
-      const destination = event.target.value;
-      setPage(destination);
-
-
-
-      switch(destination) {
-        case "Home":
-          navigate('/');
-          break;
-        case "Sign Up":
-          navigate('/register');
-          break;
-        case "Services":
-          navigate('/services');
-          break;
-        case "About us":
-          navigate('/about');
-          break;
-        case "Contace Us":
-          navigate("/contact");
-          break;
-        default:
-          break;
-      }
-    }
+  const handleSelectChange = (event) => {
+    const destination = event.target.value;
+    setPage(destination); // Set the selected page state
     
-  
+    // Navigate based on the selection
+    switch (destination) {
+      case "Home":
+        navigate('/');
+        break;
+      case "Sign Up":
+        navigate('/register');
+        break;
+      case "Services":
+        navigate('/services');
+        break;
+      case "About Us":
+        navigate('/about');
+        break;
+      case "Contact Us":
+        navigate('/contact');
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <div className="relative bg-black w-full overflow-hidden flex flex-col items-center justify-center text-left text-base text-white font-abeezee">
@@ -63,12 +58,8 @@ export const TopNav = () => {
               sx={{ width: 240 }} // Adjusted width for better visibility
               variant="outlined"
             >
-              <Select
-                color="primary"
-                name="Dropdown"
-                value={page}
-                onChange={handleSelectChange}
-              >
+              <InputLabel color="primary" />
+              <Select color="primary" name="Dropdown">
                 <MenuItem value="Home">Home</MenuItem>
                 <MenuItem value="Sign Up">Sign Up</MenuItem>
                 <MenuItem value="Services">Services</MenuItem>
@@ -82,6 +73,7 @@ export const TopNav = () => {
         <Button
           sx={{ width: 198 }}
           color="error"
+          name="Login"
           variant="contained"
           component={Link}
           to="/login"
