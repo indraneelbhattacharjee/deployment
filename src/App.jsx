@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { ContactUs } from "./components/ContactUs";
 import { Landing } from "./components/landing";
@@ -37,9 +36,6 @@ const App = () => {
         {/* Add other routes as needed */}
       </Routes>
     </Router>
-    <div>
-      <EMS/>
-    </div>
   );
 };
 
