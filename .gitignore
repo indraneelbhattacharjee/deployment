@@ -48,3 +48,4 @@ Generated\ Files/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+node_modules
