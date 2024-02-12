@@ -1,6 +1,5 @@
 // ContactUs.js
 
-import React from 'react';
 
 import backgroundImage from './About Us.jpg';
 
