@@ -1,0 +1,24 @@
+#descriptionContact{
+    font-size: 20px;
+    margin-left: 200px;
+    margin-right: 250px;
+    margin-top: 50px;
+  }
+  
+  #sendContact{
+    float: right;
+  }
+  
+  .headerTextContact{
+    position: relative;
+  }
+  
+  .textOnImageContact{
+    position: absolute;
+    color: white;
+    font-family: 'myanmar-khyay-regular', sans-serif;
+    font-size: 5rem;
+    margin-top: 190px;
+    margin-left: 160px;
+    text-underline-offset: 20px;
+  }
