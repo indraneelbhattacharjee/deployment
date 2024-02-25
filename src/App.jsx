@@ -10,7 +10,7 @@ import { About } from "./components/About";
 import {ServicesPage} from "./components/ServicesPage";
 import { Resetpassword } from "./components/resetpassword";
 import {EMS} from "./components/ems.tsx";
-
+import { CreditCardForm } from "./components/paymentPage";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 
@@ -33,7 +33,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/reset-password" element={<Resetpassword />} />
-        {/* Add other routes as needed */}
+        
+        {/* Add other routes as needed     <Route path ="/paymentPage" element={<CreditCardForm/>}/> */}
       </Routes>
     </Router>
   );
