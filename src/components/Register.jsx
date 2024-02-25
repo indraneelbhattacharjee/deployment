@@ -1,182 +1,105 @@
 import { useState } from "react";
-import {
-  TextField,
-  InputAdornment,
-  Icon,
-  IconButton,
-  Checkbox,
-  FormControlLabel,
-  Button,
-} from "@mui/material";
 
-export const Register = (props) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const handleShowPasswordClick = () => {
-    setShowPassword(!showPassword);
+export const Register = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState(''); // State for error messages
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    setError(''); // Clear any existing error messages
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return; // Stop the registration process
+    }
+
+    try {
+      const response = await fetch('http://localhost:8080/post_register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password, 
+        }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Registration successful:', data);
+        // Redirect to login page or dashboard after registration
+      } else {
+        setError(data.message || 'Registration failed. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred during registration. Please try again later.');
+    }
   };
+
   return (
-    <div className="relative w-full flex flex-row items-center justify-between text-center text-5xl text-additional-white font-body-small-regular">
-      <div className="bg-black w-[708px] overflow-hidden shrink-0 flex flex-col items-center justify-start py-[122px] px-[92px] box-border gap-[48px]">
-        <img
-          className="self-stretch relative max-w-full overflow-hidden h-[524px] shrink-0"
-          alt="oops"
-          src="./img/baydevelopslogo.svg"
-        />
-        <div className="self-stretch overflow-hidden flex flex-col items-start justify-center">
-          <div className="self-stretch flex flex-col items-center justify-start gap-[12px]">
-            <h2 className="m-0 relative text-inherit tracking-[0.2px] leading-[125%] font-bold font-inherit">
-              Network Infrastructure Solutions
-            </h2>
-            <div className="relative text-sm leading-[160%] text-greyscale-50 opacity-[0.7]">
-              Everything you need in an one dashboard.
-            </div>
-          </div>
+    <div className="flex flex-row h-screen bg-gray-100">
+      {/* Logo Section */}
+      <div className="flex w-1/2 bg-gray-100 justify-center items-center">
+        <div className="text-center">
+          <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
+          <h1 className="m-0 relative font-bold mt-4 justify-end">Network Infrastructure Solutions</h1>
+          <p className="text-white mt-4">Everything you need in an one dashboard.</p>
         </div>
       </div>
-      <div className="bg-additional-white w-[732px] h-[880px] overflow-hidden shrink-0 flex flex-col items-start justify-end pt-[204px] px-[164px] pb-[151px] box-border gap-[16px] text-left text-greyscale-900">
-        <div className="self-stretch h-56 overflow-hidden shrink-0 flex flex-col items-center justify-start gap-[32px]">
-          <div className="w-[404px] overflow-hidden flex flex-col items-start justify-center">
-            <div className="flex flex-col items-start justify-start gap-[12px]">
-              <h2 className="m-0 relative text-inherit tracking-[0.2px] leading-[125%] font-bold font-inherit">
-                Create your account.
-              </h2>
-              <div className="relative text-sm leading-[160%] text-greyscale-500">
-                Welcome! please enter your detail
-              </div>
+
+      {/* Registration Form Section */}
+      <div className="flex w-1/2 justify-center items-center bg-white p-12">
+        <div className="max-w-fit w-full">
+          <h2 className="text-3xl font-bold mb-2">Create your Account</h2>
+          <form className="mt-8 space-y-6" onSubmit={handleRegister}>
+            <div>
+              <label htmlFor="email" className="sr-only">Email address</label>
+              <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                required 
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-t-md"
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-          </div>
-          <div className="w-[404px] flex flex-col items-start justify-start gap-[16px]">
-            <TextField
-              className="[border:none] bg-[transparent] self-stretch"
-              color="error"
-              name="Email"
-              label="Email"
-              size="large"
-              required={true}
-              variant="outlined"
-              type="email"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Icon>mail_sharp</Icon>
-                  </InputAdornment>
-                ),
-              }}
-            />
-
-
-
-
-
-
-            <TextField
-              className="[border:none] bg-[transparent] self-stretch"
-              color="error"
-              name="Password"
-              label="Password"
-              size="large"
-              required={true}
-              variant="outlined"
-              type={showPassword ? "text" : "password"}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Icon>mail_sharp</Icon>
-                  </InputAdornment>
-                ),
-              }}
-            />
-
-
-
-
-
-
-
-
-
-
-
-            <TextField
-              className="[border:none] bg-[transparent] self-stretch"
-              color="error"
-              name="Confirm Password"
-              label=" Confirm Password"
-              size="large"
-              required={true}
-              variant="outlined"
-              type={showPassword ? "text" : "password"}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Icon>lock_sharp</Icon>
-                  </InputAdornment>
-                ),
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      onClick={handleShowPasswordClick}
-                      aria-label="toggle password visibility"
-                    >
-                      <Icon>
-                        {showPassword ? "visibility_off" : "visibility"}
-                      </Icon>
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </div>
-        </div>
-        <div className="self-stretch overflow-hidden flex flex-col items-center justify-start gap-[32px] text-center text-sm">
-          <div className="self-stretch overflow-hidden flex flex-col items-center justify-center text-left">
-            <div className="w-[403px] h-6 overflow-hidden shrink-0 flex flex-row items-center justify-start gap-[145px]">
-              <div className="flex flex-row items-center justify-start gap-[12px]">
-                <FormControlLabel
-                  className="relative"
-                  label=""
-                  control={<Checkbox color="error" defaultChecked />}
-                />
-                <div className="relative tracking-[0.2px] leading-[160%] font-medium">
-                  Remember me
-                </div>
-              </div>
-              <a className="[text-decoration:none] relative leading-[160%] font-bold text-primary-600-base text-right">
-                Forgot Password?
-              </a>
+            <div>
+              <label htmlFor="password" className="sr-only">Password</label>
+              <input 
+                id="password" 
+                name="password" 
+                type="password" 
+                required 
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
-          </div>
-          <Button
-            className="self-stretch"
-            color="error"
-            name="Sign In"
-            size="large"
-            variant="contained"
-          >
-            Register
-          </Button>
-          <div className="self-stretch flex flex-row items-center justify-start gap-[16px] text-xs text-greyscale-500">
-            <div className="flex-1 relative box-border h-px border-t-[1px] border-solid border-greyscale-200" />
-            <div className="relative leading-[160%]">Or sign in with</div>
-            <div className="flex-1 relative box-border h-px border-t-[1px] border-solid border-greyscale-200" />
-          </div>
-          <div className="self-stretch overflow-hidden flex flex-col items-center justify-center">
-            <div className="w-[403px] flex flex-row items-start justify-start gap-[16px]">
-              <Button className="flex-1" color="error" variant="contained">
-                Google
-              </Button>
-              <Button className="flex-1" color="error" variant="contained">
-                Facebook
-              </Button>
+            <div>
+              <label htmlFor="confirm-password" className="sr-only">Confirm Password</label>
+              <input 
+                id="confirm-password" 
+                name="confirm-password" 
+                type="password" 
+                required 
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
             </div>
-          </div>
-          <a className="[text-decoration:none] relative leading-[160%] text-[inherit]">
-            <span>
-              <span>Don’t have an account?</span>
-              <span className="tracking-[0.2px] font-medium font-body-small-regular">{` `}</span>
-            </span>
-            <b className="text-primary-600-base">Sign In</b>
-          </a>
+            <div>
+              <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Register
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
