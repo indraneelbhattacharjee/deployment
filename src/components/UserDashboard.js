@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './UserDashboard.css';
 import {
   ChakraProvider,
   Box,
