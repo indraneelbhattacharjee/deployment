@@ -85,7 +85,6 @@
 
 export default CreditCardForm;*/
 
-
 import React, { useState, useEffect } from 'react';
 import mastercardLogo from '../paymentpage/Mastercard_logo.jpg';
 import visaLogo from '../paymentpage/visa.webp';
@@ -123,43 +122,72 @@ export const CreditCardForm = () => {
   };
 
   return (
-    <div className="credit-card-form-container" style={{ position: 'absolute', top: '20%', left: '10%', width: '80%', maxWidth: '400px' }}>
-      <div className="payment-method-logos">
-        <img src={mastercardLogo} alt="Mastercard" />
-        <img src={visaLogo} alt="Visa" />
-        <img src={americanLogo} alt="American Express" />
-        <img src={discoverLogo} alt="Discover" />
+    <div className="main-content" style={{ padding: '60px 0', background: '#f7f7f7', minHeight: '100vh' }}> {/* Adjust the top padding to push the content below your navbar */}
+      <div className="credit-card-form-container" style={{ maxWidth: '500px', margin: '0 auto', background: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)' }}>
+        <div className="payment-method-logos" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+          {/* Adjust your image paths as necessary */}
+          <img src={mastercardLogo} alt="Mastercard" style={{ maxWidth: '50px' }} />
+          <img src={visaLogo} alt="Visa" style={{ maxWidth: '50px' }} />
+          <img src={americanLogo} alt="American Express" style={{ maxWidth: '50px' }} />
+          <img src={discoverLogo} alt="Discover" style={{ maxWidth: '50px' }} />
+        </div>
+        
+        <form onSubmit={handleSubmit} className="credit-card-form" style={{ color: '#333', background: '#EEE', padding: '30px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+  <div className="form-section" style={{ marginBottom: '20px' }}>
+    <label htmlFor="name" style={{ display: 'block', marginBottom: '5px' }}>Name on Card</label>
+    <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} style={{ width: '100%', padding: '10px', marginBottom: '10px' }} />
+  </div>
+
+  <div className="form-section" style={{ marginBottom: '20px' }}>
+    <label htmlFor="cardNumber" style={{ display: 'block', marginBottom: '5px' }}>Card Number</label>
+    <input type="text" id="cardNumber" name="cardNumber" value={formData.cardNumber} onChange={handleInputChange} style={{ width: '100%', padding: '10px' }} />
+  </div>
+
+  <div className="form-section" style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
+    <div style={{ width: '48%' }}>
+      <label htmlFor="month" style={{ display: 'block', marginBottom: '5px' }}>Card Expiration Month</label>
+      <select id="month" name="month" value={formData.month} onChange={handleInputChange} style={{ width: '100%', padding: '10px' }}>
+        {/* Populate with month options */}
+      </select>
+    </div>
+    <div style={{ width: '48%' }}>
+      <label htmlFor="year" style={{ display: 'block', marginBottom: '5px' }}>Year</label>
+      <select id="year" name="year" value={formData.year} onChange={handleInputChange} style={{ width: '100%', padding: '10px' }}>
+        {/* Populate with year options */}
+      </select>
+    </div>
+  </div>
+
+  <div className="form-section" style={{ marginBottom: '20px' }}>
+    <label htmlFor="code" style={{ display: 'block', marginBottom: '5px' }}>Card Security Code</label>
+    <input type="text" id="code" name="code" value={formData.code} onChange={handleInputChange} style={{ width: '100%', padding: '10px' }} />
+  </div>
+
+  {/* Add billing address fields */}
+  <div className="form-section" style={{ marginBottom: '20px' }}>
+    {/* ... */}
+  </div>
+  
+  {/* Contact Information Section */}
+  <div className="form-section" style={{ marginBottom: '20px' }}>
+    <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>Email</label>
+    <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} style={{ width: '100%', padding: '10px' }} />
+  </div>
+
+  {/* Submit button */}
+  <div className="form-section" style={{ marginTop: '20px' }}>
+    <button type="submit" className="submit-btn" style={{ width: '100%', padding: '15px 0', background: 'red', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+      Pay
+    </button>
+  </div>
+</form>
       </div>
-      <form onSubmit={handleSubmit} className="credit-card-form">
-        <div className="form-section">
-          <label htmlFor="name">Name on Card</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
-        </div>
-        <div className="form-section">
-          <label htmlFor="cardNumber">Card Number</label>
-          <input type="text" id="cardNumber" name="cardNumber" value={formData.cardNumber} onChange={handleInputChange} />
-        </div>
-        <div className="form-section">
-          <label htmlFor="month">Card Expiration Month</label>
-          <select id="month" name="month" value={formData.month} onChange={handleInputChange}>
-            {/* Month options here */}
-          </select>
-          <label htmlFor="year">Year</label>
-          <select id="year" name="year" value={formData.year} onChange={handleInputChange}>
-            {/* Year options here */}
-          </select>
-        </div>
-        <div className="form-section">
-          <label htmlFor="code">Card Security Code</label>
-          <input type="text" id="code" name="code" value={formData.code} onChange={handleInputChange} />
-        </div>
-        {/* ... The rest of your form fields ... */}
-        <div className="form-section">
-          <button type="submit" className="submit-btn">Pay</button>
-        </div>
-      </form>
     </div>
   );
 };
 
 export default CreditCardForm;
+
+
+
+

@@ -81,13 +81,23 @@ import React from "react";
 export const ServicesPage = () => {
   return (
     <div className="flex flex-row">
-      <div className="w-1/2 h-screen bg-black text-white flex flex-col justify-center items-center">
-        <img className="h-[10vh] object-cover mb-4" alt="" src="img/baydevelopslogo-1-1@2x.png" />
+      
+        
+
+
+
+
+      <div className="flex w-1/2 bg-gray-100 justify-center items-center">
         <div className="text-center">
-          <b className="text-5xl font-heading-h6 mb-4">Network Infrastructure Solutions</b>
-          <div className="text-sm opacity-70">Everything you need in one dashboard.</div>
+          <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
+          <h1 className="m-0 relative font-bold mt-4 justify-end text-white mt-4">Network Infrastructure Solutions</h1>
+          <p className="text-white mt-4">Everything you need in an one dashboard!</p>
         </div>
+
+
+        
       </div>
+      
 
       <div className="w-1/2 h-screen bg-additional-black flex flex-wrap justify-around items-start pt-8">
         <div className="w-[40%] mb-8 bg-black text-center text-xl text-white font-poppins p-6">

@@ -33,8 +33,9 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/reset-password" element={<Resetpassword />} />
+        <Route path ="/paymentPage" element={<CreditCardForm/>}/>
         
-        {/* Add other routes as needed     <Route path ="/paymentPage" element={<CreditCardForm/>}/> */}
+        {/* Add other routes as needed      */}
       </Routes>
     </Router>
   );
