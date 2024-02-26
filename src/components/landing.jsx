@@ -1,8 +1,6 @@
 import React from "react";
-import { BsTwitter } from 'react-icons/bs';
-import { BsInstagram } from 'react-icons/bs';
-import { BsYoutube } from 'react-icons/bs';
-import { BsFacebook } from 'react-icons/bs';
+import { Button } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 export const Landing = (props) => {
   return (
@@ -13,14 +11,36 @@ export const Landing = (props) => {
         </div>
         <div class="second_flex">
             <div class="main_text">
-                Secure and Stremline
+                Secure and Streamline
             </div>
             <div class="child_text">
                 Export Network Solutions Tailored for Startup Success.
             </div>
             <div class="btn_div">
-                <div> <button class="started_btn">Get Started</button></div>
-                <div><button class="learn_btn">Learn More</button></div>
+                <div> 
+                <Button
+                    sx={{ width: 204, height: 72, mx: 2, fontSize: 20 }}
+                    color="error"
+                    name="Get Started"
+                    variant="contained"
+                    component={Link}
+                    to="/login"
+                >
+                    Get Started
+                </Button>
+                </div>
+                <div>
+                <Button
+                    sx={{ width: 204, height: 72, mx: 2, fontSize: 20 }}
+                    color="error"
+                    name="Learn More"
+                    variant="contained"
+                    component={Link}
+                    to="/about"
+                >
+                    Learn More
+                </Button>
+                </div>
             </div>
         </div>
 
@@ -28,32 +48,24 @@ export const Landing = (props) => {
     <div class="footer">
         <div class="footer_main_div">
             <div class="flex_item1">
-         <font> Bay</font>Developers 
+         <font> Bay</font>Develops 
                 <div class="text_div">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti rerum unde tempori
-                </div>
-                <div class="icons">
-                  <BsTwitter/> 
-                  <BsInstagram/>
-                  <BsFacebook/>
-                  <BsYoutube/>
-
-                
+                    Netwrok Infrastructure Solutions. Everything you need in one dashboard.
                 </div>
             </div>
 
             <div class="flex_item2">
                 Quick Links
                 <div class="links_text">
-                    <span>About Us</span>
-                    <span>Service </span>
-                    <span>Pricing </span>
+                    <Link to="/about" className="[text-decoration:none] relative leading-[24px] text-[inherit]">About Us</Link>
+                    <Link to="/services" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Service</Link>
+                    <Link to="/services" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Pricing</Link>
                 </div>
             </div>
             <div class="flex_item3">
                 Contact Us
                 <div class="links_text"><span>
-                        hello@website.com
+                        info@baydevelops.com
                     </span>
                     <span>123 Main Street, Sacramento CA</span>
 
