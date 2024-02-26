@@ -11,7 +11,7 @@ import {
   Spacer,
 } from '@chakra-ui/react';
 
-function App() {
+export const UserDash = () => {
   return (
     <ChakraProvider>
         <div class="row">
@@ -99,4 +99,4 @@ function App() {
   );
 }
 
-export default App;
+export default UserDash;
