@@ -10,7 +10,7 @@ import { Register } from "./components/Register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import {ServicesPage} from "./components/ServicesPage";
-import { Resetpassword } from "./components/resetpassword";
+import { ResetPassword } from "./components/resetpassword";
 import {EMS} from "./components/ems.tsx";
 import {ProfilePage} from "./components/ProfilePage";
 import {UserDash} from "./components/UserDashboard";
@@ -36,9 +36,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/reset-password" element={<Resetpassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/user-dashboard" element={<UserDash />} />
+        <Route path="/ems" element={<EMS />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
