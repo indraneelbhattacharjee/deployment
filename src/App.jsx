@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import { About } from "./components/About";
+//import { About } from "./components/AppDevServicePage.js";
+
 import { ContactUs } from "./components/ContactUs";
 import { Landing } from "./components/landing";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
-import { About } from "./components/About";
 import {ServicesPage} from "./components/ServicesPage";
 import { Resetpassword } from "./components/resetpassword";
 import {EMS} from "./components/ems.tsx";
-
+//import {App} from "./components/UserDashboard.js";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 
@@ -24,11 +26,9 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 const App = () => {
   return (
     <Router>
-      <TopNav />
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<ContactUs />} />
+        <Route path="/services" element={<EMS />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<ContactUs />} />

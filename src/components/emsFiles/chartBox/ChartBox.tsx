@@ -1,6 +1,12 @@
+//backend stuff
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import { Link } from "react-router-dom";
 import "./chartBox.scss";
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
+
+
 
 type Props = {
   color: string;
@@ -12,7 +18,20 @@ type Props = {
   chartData: object[];
 };
 
-const ChartBox = (props: Props) => {
+const ChartBox = (props:Props) => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    // Fetch users from the backend when the component mounts
+    axios.get('/api/users')
+      .then(response => {
+        setUsers(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching users:', error);
+      });
+  }, []); // Empty dependency array ensures the effect runs only once
+
   return (
     <div className="chartBox">
       <div className="boxInfo">
@@ -20,7 +39,11 @@ const ChartBox = (props: Props) => {
           <img src={props.icon} alt="" />
           <span>{props.title}</span>
         </div>
-        <h1>{props.number}</h1>
+        <h1>{users.map(user => (
+          <li key={user}>
+            {user} - {user}
+          </li>
+        ))}</h1>
         <Link to="/" style={{ color: props.color }}>
           View all
         </Link>
