@@ -1,7 +1,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const Login = () => {
+const Login = (props:Props) => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    // Fetch users from the backend when the component mounts
+    axios.get('/api/users')
+      .then(response => {
+        setUsers(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching users:', error);
+      });
+  }, []); // Empty dependency array ensures the effect runs only once
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(''); // State to store error messages

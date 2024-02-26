@@ -49,7 +49,4 @@ Generated\ Files/
 TestResult.xml
 nunit-*.xml
 node_modules/*
-
-# Flask
-venv
-__pycache__
+Backend/node_modules/*
