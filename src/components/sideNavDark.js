@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const SideNavDark = () => {
   return (
     <div className="relative bg-gray-100 w-full h-[900px] overflow-hidden mix-blend-normal text-left text-sm text-greyscale-500 font-body-medium-medium">
@@ -15,7 +17,7 @@ export const SideNavDark = () => {
               alt=""
               src="/img/sideNav/layoutgrid1.svg"
             />
-            <b className="relative leading-[160%]">Overview</b>
+            <Link to="/user-dashboard" className="relative leading-[160%]">Overview</Link>
           </a>
           <a className="[text-decoration:none] rounded-xl w-[218px] h-12 flex flex-row items-center justify-start py-0 px-4 box-border gap-[16px] text-[inherit]">
             <img
@@ -23,24 +25,9 @@ export const SideNavDark = () => {
               alt=""
               src="/img/sideNav/analyticsline1.svg"
             />
-            <div className="relative tracking-[0.2px] leading-[160%] font-medium">
+            <Link to="/user-dashboard" className="relative tracking-[0.2px] leading-[160%] font-medium">
               Analytics
-            </div>
-          </a>
-          <a className="[text-decoration:none] rounded-xl w-[218px] h-12 flex flex-row items-center justify-between py-0 px-4 box-border text-[inherit]">
-            <div className="flex flex-row items-center justify-start gap-[16px]">
-              <img
-                className="relative w-[22px] h-[22px] overflow-hidden shrink-0"
-                alt=""
-                src="/img/sideNav/shoppingcartdiscount1.svg"
-              />
-              <div className="relative tracking-[0.2px] leading-[160%] font-medium">
-                Orders
-              </div>
-            </div>
-            <div className="rounded-981xl bg-salmon w-[22px] h-[22px] flex flex-col items-center justify-center p-2 box-border text-center text-xs text-additional-white">
-              <div className="relative leading-[160%]">10</div>
-            </div>
+            </Link>
           </a>
           <a className="[text-decoration:none] rounded-xl w-[218px] h-12 flex flex-row items-center justify-start py-0 px-4 box-border gap-[16px] text-[inherit]">
             <img
@@ -48,9 +35,9 @@ export const SideNavDark = () => {
               alt=""
               src="/img/sideNav/briefcase1.svg"
             />
-            <div className="relative tracking-[0.2px] leading-[160%] font-medium">
+            <Link to="/services" className="relative tracking-[0.2px] leading-[160%] font-medium">
               Products
-            </div>
+            </Link>
           </a>
           <a className="[text-decoration:none] rounded-xl w-[218px] h-12 flex flex-row items-center justify-start py-0 px-4 box-border gap-[16px] text-[inherit]">
             <img
@@ -58,9 +45,9 @@ export const SideNavDark = () => {
               alt=""
               src="/img/sideNav/user1.svg"
             />
-            <div className="relative tracking-[0.2px] leading-[160%] font-medium">
+            <Link to="/about" className="relative tracking-[0.2px] leading-[160%] font-medium">
               About Us
-            </div>
+            </Link>
           </a>
         </div>
         <a className="[text-decoration:none] absolute top-[764px] left-[16px] rounded-xl bg-gray-100 w-[218px] h-12 flex flex-row items-center justify-start py-0 px-4 box-border gap-[16px] text-[inherit]">
@@ -69,9 +56,9 @@ export const SideNavDark = () => {
             alt=""
             src="/img/sideNav/settings1.svg"
           />
-          <div className="relative tracking-[0.2px] leading-[160%] font-medium">
+          <Link to="/profile" className="relative tracking-[0.2px] leading-[160%] font-medium">
             Settings
-          </div>
+          </Link>
         </a>
         <a className="[text-decoration:none] absolute top-[820px] left-[16px] rounded-xl bg-gray-100 w-[218px] h-12 flex flex-row items-center justify-start py-0 px-4 box-border gap-[16px] text-[inherit]">
           <img
@@ -79,9 +66,9 @@ export const SideNavDark = () => {
             alt=""
             src="/img/sideNav/logout1.svg"
           />
-          <div className="relative tracking-[0.2px] leading-[160%] font-medium">
+          <Link to="/login" className="relative tracking-[0.2px] leading-[160%] font-medium">
             Log Out
-          </div>
+          </Link>
         </a>
         <div className="absolute top-[87.5px] left-[-0.5px] box-border w-[251px] h-px border-t-[1px] border-solid border-additional-white" />
       </div>
