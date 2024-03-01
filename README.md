@@ -13,7 +13,7 @@ Team Technogaze was formed by the students of California State University - Sacr
 5. Cathy Khong
 6. Tanner Colbert
 7. Kevinpreet Singh
-
+8. Julian Martinez
 
 ## Background
 

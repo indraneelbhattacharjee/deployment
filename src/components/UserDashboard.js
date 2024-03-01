@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './UserDashboard.css';
 import {
   ChakraProvider,
   Box,
@@ -11,8 +11,7 @@ import {
   Spacer,
 } from '@chakra-ui/react';
 
-
-function App() {
+export const UserDash = () => {
   return (
     <ChakraProvider>
         <div class="row">
@@ -100,4 +99,4 @@ function App() {
   );
 }
 
-export default App;
+export default UserDash;

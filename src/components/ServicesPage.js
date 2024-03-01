@@ -1,106 +1,141 @@
+/*
+import { Button } from "@mui/material";
+import React from "react";
+
+
+
+export const ServicesPage = () => {
+  return (
+    <div className="flex flex-row">
+      <div className="w-3/4 h-screen bg-black text-5xl text-additional-white font-heading-h6">
+        <div className="h-[15vh] bg-[linear-gradient(180deg,_rgba(250,_99,_96,_0.10),_rgba(255,_255,_255,_0))] rounded-[50%]" />
+        <div className="h-[30vh] bg-[linear-gradient(180deg,_rgba(250,_99,_96,_0.15),_rgba(255,_255,_255,_0))] rounded-[50%]" />
+        <div className="h-[40vh] flex flex-col items-center justify-start gap-12">
+          <b className="tracking-[0.2px] leading-[180%]">Network Infrastructure Solutions</b>
+          <div className="text-sm leading-[160%] text-greyscale-50 opacity-[0.7]">Everything you need in one dashboard.</div>
+        </div>
+        <img className="h-[10vh] object-cover" alt="" src="img/baydevelopslogo-1-1@2x.png" />
+      </div>
+
+
+
+      <div className="w-1/2 h-screen bg-additional-black flex flex-wrap justify-end items-center gap-2">
+        <div className="w-[50%] h-[50%] bg-additional-black text-center text-xl text-black font-poppins">
+          <div className="font-semibold inline-block">
+            <p className="m-0">Web</p>
+            <p className="m-0">Development</p>
+            <img className="w-[262px] h-[286px] object-cover" alt="" src="img/web-development-1@2x.png" />
+            <Button sx={{ width: 150 }} color="error" name="View Service" size="medium" variant="contained">View Service</Button>
+          </div>
+        </div>
+
+        <div className="w-[50%] h-[50%] bg-additional-black text-center text-xl text-black font-poppins">
+          <div className="font-semibold inline-block">
+            
+            <img className="w-[262px] h-[286px] object-cover" alt="" src="img/software-development-1@2x.png" />
+            <Button sx={{ width: 150 }} color="error" name="View Service" size="medium" variant="contained">View Service</Button>
+          </div>
+          <div className="font-semibold inline-block">
+          <p className="m-0">Application</p>
+          <p className="m-0">Development</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div className="w-1/2 h-screen bg-additional-black flex flex-wrap justify-center items-center gap-2">
+        <div className="w-[50%] h-[50%] bg-additional-black text-center text-xl text-black font-poppins">
+          <div className="font-semibold inline-block">
+            <p className="m-0">Software</p>
+            <p className="m-0">Development</p>
+            <img className="w-[262px] h-[286px] object-cover" alt="" src="img/application-development-1@2x.png" />
+            <Button sx={{ width: 150 }} color="error" name="View Service" size="medium" variant="contained">View Service</Button>
+          </div>
+        </div>
+
+
+
+        <div className="w-[50%] h-[50%] bg-additional-black text-center text-xl text-black font-poppins">
+          
+            
+            <img className="w-[262px] h-[286px] object-cover" alt="" src="img/uiux-development-1@2x.png" />
+            <Button sx={{ width: 150, marginLeft: '50px' }} color="error" name="View Service" size="medium" variant="contained">View Service</Button>
+            <div className="font-semibold inline-block">
+          <p className="m-0">UI/UX</p>
+          <p className="m-0">Development</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ServicesPage;
+
+*/
+
 import { Button } from "@mui/material";
 import React from "react";
 
 export const ServicesPage = () => {
   return (
-    <div>
+    <div className="flex flex-row">
       
-      <div className="relative top-[0px] left-[50px] bg-black w-[50vw] h-[100vh] text-5xl text-additional-white font-heading-h6">
-        <div className="relative top-[15vh] left-[5vw] rounded-[50%] [background:linear-gradient(180deg,_rgba(250,_99,_96,_0.10),_rgba(255,_255,_255,_0))] w-[40vw] h-[40vw]" />
-        <div className="relative top-[-47.5vh] left-[10vw] rounded-[50%] [background:linear-gradient(180deg,_rgba(250,_99,_96,_0.15),_rgba(255,_255,_255,_0))] w-[30vw] h-[30vw]" />
-        <div className="relative top-[80vh] left-[10vw] flex flex-col items-center justify-start gap-[12px]">
-          <b className="relative top-[-120vh] left-[-10vw] tracking-[0.2px] leading-[125%]">
-            Network Infrastructure Solutions
-          </b>
-          <div className="relative top-[-120vh] left-[-10vw] text-sm leading-[160%] text-greyscale-50 opacity-[0.7]">
-            Everything you need in one dashboard.
-          </div>
-        </div>
-        <img
-          className="relative top-[-90vh] left-[5.5vw] object-cover"
-          alt=""
-          src="img/baydevelopslogo-1-1@2x.png"/>
-      </div>
-      <div className="absolute bg-additional-black w-[50vw] h-[50vh] top-[0] left-[50vw] text-center text-xl text-black font-poppins">
-        <div className="relative top-[0vh] left-[-3vw] font-semibold inline-block">
-          <p className="m-0">Web</p>
-          <p className="m-0">Development</p>
-          <img
-          className="relative top-[0px] left-[0px] w-[262px] h-[286px] object-cover"
-          alt=""
-          src="img/web-development-1@2x.png"
-        />
-        <Button
-          sx={{ width: 150 }}
-          color="error"
-          name="View Service"
-          size="medium"
-          variant="contained"
-        >
-          View Service
-        </Button>
-        </div>
-        <div className="absolute top-[0px] left-[49vh] font-semibold inline-block w-[424px] h-[125px]">
-          <p className="m-0">Software</p>
-          <p className="m-0">Development</p>
-          <img
-          className="relative top-[0px] left-[0px] w-[262px] h-[286px] object-cover"
-          alt=""
-          src="img/software-development-1@2x.png"
-        />
-        <Button
-          className="relative top-[110] left-[-210px]"
-          sx={{ width: 150 }}
-          color="error"
-          name="View Service"
-          size="medium"
-          variant="contained"
-        >
-          View Service
-        </Button>
-        </div>
-        <div className="relative bg-additional-black w-[50vw] h-[50vh] top-[15] left-[-3vw] text-center text-xl text-black font-poppins">
-          <img
-          className="relative top-[0px] left-[0px] w-[262px] h-[286px] object-cover"
-          alt=""
-          src="img/application-development-1@2x.png"
-        />
-        <Button
-          className="relative top-[110px] left-[-200px]"
-          sx={{ width: 150 }}
-          color="error"
-          name="View Service"
-          size="medium"
-          variant="contained"
-        >
-          View Service
-        </Button>
-        <p className="m-0">Application</p>
-        <p className="m-0">Development</p>
-        </div>
-        <div className="absolute top-[50vh] left-[49vh] font-semibold inline-block w-[424px] h-[125px]">
-          <img
-          className="relative top-[0px] left-[0px] w-[262px] h-[286px] object-cover"
-          alt=""
-          src="img/uiux-development-1@2x.png"
-          />
-          <Button
-            className="relative top-[110] left-[-210px]"
-            sx={{ width: 150 }}
-            color="error"
-            name="View Service"
-            size="medium"
-            variant="contained"
-          >
-            View Service
-          </Button>
-          <p className="m-0">UI/UX</p>
-          <p className="m-0">Development</p>
-        </div>
         
 
+
+
+
+      <div className="flex w-1/2 bg-gray-100 justify-center items-center">
+        <div className="text-center">
+          <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
+          <h1 className="m-0 relative font-bold mt-4 justify-end text-white mt-4">Network Infrastructure Solutions</h1>
+          <p className="text-white mt-4">Everything you need in an one dashboard!</p>
+        </div>
+
+
+        
       </div>
-    
+      
+
+      <div className="w-1/2 h-screen bg-additional-black flex flex-wrap justify-around items-start pt-8">
+        <div className="w-[40%] mb-8 bg-black text-center text-xl text-white font-poppins p-6">
+          <img className="w-full h-40 object-cover mb-4" alt="" src="img/web-development-1@2x.png" />
+          <div className="font-semibold mb-4">
+            <p className="m-0">Web</p>
+            <p className="m-0">Development</p>
+          </div>
+          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+        </div>
+
+        <div className="w-[40%] mb-8 bg-black text-center text-xl text-white font-poppins p-6">
+          <img className="w-full h-40 object-cover mb-4" alt="" src="img/software-development-1@2x.png" />
+          <div className="font-semibold mb-4">
+            <p className="m-0">Software</p>
+            <p className="m-0">Development</p>
+          </div>
+          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+        </div>
+
+        <div className="w-[40%] bg-black text-center text-xl text-white font-poppins p-6">
+          <img className="w-full h-40 object-cover mb-4" alt="" src="img/application-development-1@2x.png" />
+          <div className="font-semibold mb-4">
+            <p className="m-0">Application</p>
+            <p className="m-0">Development</p>
+          </div>
+          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+        </div>
+
+        <div className="w-[40%] bg-black text-center text-xl text-white font-poppins p-6">
+          <img className="w-full h-40 object-cover mb-4" alt="" src="img/uiux-development-1@2x.png" />
+          <div className="font-semibold mb-4">
+            <p className="m-0">UI/UX</p>
+            <p className="m-0">Development</p>
+          </div>
+          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+        </div>
+      </div>
     </div>
   );
 };
