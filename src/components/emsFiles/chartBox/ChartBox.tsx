@@ -39,11 +39,12 @@ const ChartBox = (props:Props) => {
           <img src={props.icon} alt="" />
           <span>{props.title}</span>
         </div>
-        <h1>{users.map(user => (
-          <li key={user}>
-            {user} - {user}
-          </li>
-        ))}</h1>
+        <h1>
+        {setUsers.map(dashboard => (
+          <li key={dashboard.id}>{dashboard.todo}</li>
+        ))}
+
+        </h1>
         <Link to="/" style={{ color: props.color }}>
           View all
         </Link>

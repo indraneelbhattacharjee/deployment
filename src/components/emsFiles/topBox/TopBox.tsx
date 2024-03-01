@@ -76,11 +76,13 @@ const TopBox = () => {
       >
         Delete Task
       </Button>
+      {/**
       <div className="list">
       {todos.map(todo => (
           <li key={todo.id}>{todo.todo}</li>
         ))}
       </div>
+        */}
     </div>
   )
 }
