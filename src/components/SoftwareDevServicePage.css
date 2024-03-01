@@ -1,0 +1,17 @@
+.servicepage {
+    display: flex;
+    align-items: center;
+    font-family: 'myanmar-khyay-regular', sans-serif;
+    margin-left: 70px;
+    font-size: 1rem;
+  }
+  
+  .text{
+    margin-right: 50px;
+  }
+  
+  .servicepageLogo{
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+  }
