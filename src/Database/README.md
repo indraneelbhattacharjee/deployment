@@ -28,5 +28,9 @@ How to see tables?
 \dt
 
 
+A visual reference is in src/Database/terminalconnect.png
+
+
+
 The technogaze instance is created only for the Technogaze development team to test the project and will be later changed
 by the respected authorities / product owners / Bay Develops.
