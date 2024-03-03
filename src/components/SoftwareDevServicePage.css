@@ -1,17 +1,23 @@
 .servicepage {
     display: flex;
     align-items: center;
-    font-family: 'myanmar-khyay-regular', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-left: 70px;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
-  
+
   .text{
     margin-right: 50px;
   }
-  
+
+  li {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+
   .servicepageLogo{
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
   }

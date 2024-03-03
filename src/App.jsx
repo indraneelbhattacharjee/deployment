@@ -17,8 +17,8 @@ import {ProfilePage} from "./components/ProfilePage";
 import {UserDash} from "./components/UserDashboard";
 import { CreditCardForm } from "./components/paymentPage";
 import {AppDevServicePage} from "./components/AppDevServicePage";
-//import {SoftwareDevServicePage} from "./components/SoftwareDevServicePage";
-//import {WebDevServicePage} from "./components/WebDevServicePage";
+import {SoftwareDevServicePage} from "./components/SoftwareDevServicePage";
+import {WebDevServicePage} from "./components/WebDevServicePage";
 import {UIUXDevServicePage} from "./components/UIUXDevServicePage";
 //import {App} from "./components/UserDashboard.js";
 import SmoothScroll from "smooth-scroll";
@@ -40,6 +40,8 @@ const App = () => {
       <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/software-services" element={<SoftwareDevServicePage/>} />
+        <Route path="/webDev-services" element={<WebDevServicePage/>} />
         <Route path="/uiux-services" element={<UIUXDevServicePage/>} />
         <Route path="/appDev-services" element={<AppDevServicePage/>} />
         <Route path="/register" element={<Register />} />
