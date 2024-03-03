@@ -2,6 +2,7 @@ import './App.css';
 import img2 from './images/softwareDev.jpg';
 import logo from './images/bayDevelopsLogo(black).png';
 import {Button} from "@mui/material";
+import { Link } from 'react-router-dom';
 
 function SoftwareDevServicePage() {
   return (
@@ -86,7 +87,10 @@ function SoftwareDevServicePage() {
               color="error"
               name="Purchse Service"
               size="large"
-              variant="contained">
+              variant="contained"
+              component={Link}
+              to="/paymentPage"
+            >
               Purchase Service
             </Button>
         </div>

@@ -31,6 +31,16 @@ export const SideNavDark = () => {
           </a>
           <a className="[text-decoration:none] rounded-xl w-[218px] h-12 flex flex-row items-center justify-start py-0 px-4 box-border gap-[16px] text-[inherit]">
             <img
+              className="relative w-6 h-6 overflow-hidden shrink-0"
+              alt=""
+              src="/img/sideNav/shoppingcartdiscount1.svg"
+            />
+            <Link to="/contact" className="relative tracking-[0.2px] leading-[160%] font-medium">
+              Contact Us
+            </Link>
+          </a>
+          <a className="[text-decoration:none] rounded-xl w-[218px] h-12 flex flex-row items-center justify-start py-0 px-4 box-border gap-[16px] text-[inherit]">
+            <img
               className="relative w-[22px] h-[22px] overflow-hidden shrink-0"
               alt=""
               src="/img/sideNav/briefcase1.svg"
