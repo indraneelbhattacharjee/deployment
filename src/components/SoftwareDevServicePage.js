@@ -1,6 +1,6 @@
-import './App.css';
-import img2 from './images/softwareDev.jpg';
-import logo from './images/bayDevelopsLogo(black).png';
+import './SoftwareDevServicePage.css';
+import img2 from './softwareDev.jpg';
+import logo from './bayDevelopsLogo(black).png';
 import {Button} from "@mui/material";
 import { Link } from 'react-router-dom';
 

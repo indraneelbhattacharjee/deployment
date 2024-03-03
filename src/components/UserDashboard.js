@@ -11,6 +11,21 @@ import {
   Spacer,
 } from '@chakra-ui/react';
 
+
+import BigChartBox from "./emsFiles/bigChartBox/BigChartBox.tsx";
+import ChartBox from "./emsFiles/chartBox/ChartBox.tsx";
+import TopBox from "./emsFiles/topBox/TopBox.tsx";
+import SideNavDark from "./sideNavDark.js"
+import {
+  barChartBoxRevenue,
+  barChartBoxVisit,
+  chartBoxConversion,
+  chartBoxProduct,
+  chartBoxRevenue,
+  chartBoxUser,
+} from "./emsFiles/data.ts";
+import "./emsFiles/ems.scss";
+
 export const UserDash = () => {
   return (
     <ChakraProvider>
@@ -54,9 +69,7 @@ export const UserDash = () => {
                     <Box bg={'lightgray'}  h={350} w={1190} boxShadow='md'>
                     <Heading bg='black' color={'white'} w={160} mb={10} mr={10000} position="relative"  right='0' bottom='0'>Analytics</Heading>
                     <Flex align="center" justify="center">
-                    <Card>
-                        <Heading >Graph of Daily Transactions</Heading>
-                    </Card>
+                    <ChartBox {...chartBoxUser} />
                     </Flex>
                     </Box>
                 </Container>
@@ -85,9 +98,6 @@ export const UserDash = () => {
                 <Box bg={'lightgray'}  h={503} w={300}boxShadow='md'>
                 <Heading bg='black' color={'white'} w={115} mb={10} mr={10000} position="relative"  right='0' bottom='0' fontSize={'lg'}>To-DO</Heading>
                 <Flex align="center" justify="center">
-                <Card>
-                    <Heading>To-DO List</Heading>
-                </Card>
                 <Spacer />
                 </Flex>
                 </Box>
