@@ -70,6 +70,11 @@ export const ResetPassword = () => {
                 Set New Password
               </button>
             </div>
+            <div className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
+                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Didn't receive an email? Resend
+                </a>
+              </div>
           </form>
         </div>
       </div>

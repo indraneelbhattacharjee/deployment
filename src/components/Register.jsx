@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 export const Register = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -55,6 +57,19 @@ export const Register = () => {
         <div className="max-w-fit w-full">
           <h2 className="text-3xl font-bold mb-2">Create your Account</h2>
           <form className="mt-8 space-y-6" onSubmit={handleRegister}>
+          <div>
+              <label htmlFor="username" className="sr-only">Username</label>
+              <input 
+                id="username" 
+                name="username" 
+                type="username" 
+                required 
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-t-md"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
             <div>
               <label htmlFor="email" className="sr-only">Email address</label>
               <input 
@@ -99,6 +114,11 @@ export const Register = () => {
                 Register
               </button>
             </div>
+            <div className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
+                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                <Link to="/login" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Already Have an Account? Log In</Link>
+                </a>
+              </div>
           </form>
         </div>
       </div>
