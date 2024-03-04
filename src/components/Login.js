@@ -1,4 +1,3 @@
-/*
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -42,11 +41,10 @@ const Login = (props:Props) => {
         setErrorMessage('An error occurred. Please try again later.'); // Set generic error message for network errors
      }
   };
-  */
- /*
+
   return (
     <div className="flex flex-row h-screen bg-gray-100">
-      {/* Logo Section */ /*}
+      {/* Logo Section */}
       <div className="flex w-1/2 bg-gray-100 justify-center items-center">
         <div className="text-center">
           <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
@@ -55,7 +53,7 @@ const Login = (props:Props) => {
         </div>
       </div>
 
-      {/* Login Form Section */ /*}
+      {/* Login Form Section */}
       <div className="flex w-1/2 justify-center items-center bg-white p-12">
         <div className="max-w-fit w-full">
           <h2 className="text-3xl font-bold mb-2">Sign In to your Account</h2>
