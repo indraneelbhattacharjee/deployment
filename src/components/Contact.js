@@ -3,7 +3,7 @@ import img1 from './About Us.jpg'
 import {Button} from "@mui/material";
 import React from "react";
 
-function Contact() {
+export const Contact = (props) =>  {
   return (
     <>
     <div className='headerTextContact'>
