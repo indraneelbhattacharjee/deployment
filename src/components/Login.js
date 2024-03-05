@@ -1,20 +1,11 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const Login = (props:Props) => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    // Fetch users from the backend when the component mounts
-    axios.get('/api/users')
-      .then(response => {
-        setUsers(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching users:', error);
-      });
-  }, []); // Empty dependency array ensures the effect runs only once
+export const Login = () => {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(''); // State to store error messages
@@ -23,23 +14,18 @@ const Login = (props:Props) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8080/post_login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
+      const response = await axios.post('http://localhost:8080/post_login', {
+        email,
+        password,
       });
-      const data = await response.json();
-      if (response.ok) {
-        console.log('Login successful:', data);
-        navigate('/services'); // Redirect to the dashboard page
-      } else {
-        setErrorMessage(data.message || 'Login failed. Please try again.'); // Set error message from response
+      // Assuming the backend sends a success status code for correct credentials
+      if (response.status === 200) {
+        console.log('Login successful:', response.data);
+        navigate('/services'); // Change '/dashboard' to your success page
       }
-      } catch (error) {
-        setErrorMessage('An error occurred. Please try again later.'); // Set generic error message for network errors
-     }
+    } catch (error) {
+      console.error('Login failed:', error.response || error);
+    }
   };
 
   return (
@@ -92,8 +78,8 @@ const Login = (props:Props) => {
                 </label>
               </div>
               <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                <Link to="/verify-email" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Forgot your password?</Link>
+                <a href="/reset-password" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Forgot your password?
                 </a>
               </div>
             </div>
@@ -103,6 +89,9 @@ const Login = (props:Props) => {
               </button>
             </div>
           </form>
+          <Link to="/register" className="mt-4 inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+          New user? Register here
+        </Link>
         </div>
       </div>
     </div>
