@@ -20,11 +20,8 @@ import SmoothScroll from "smooth-scroll";
 import "./index.css";
 import { UIUXDevServicePage } from "./components/UIUXDevServicePage"
 import { WebDevServicePage } from "./components/WebDevServicePage";
-{/* 
 import { AppDevServicePage } from "./components/AppDevServicePage"
 import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
-
-*/}
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
@@ -43,12 +40,12 @@ const App = () => {
         <Route path="/services" element={<ServicesPage />} />
         <Route path ="/uiux-services" element={<UIUXDevServicePage />} />     
         <Route path="/webDev-services" element={<WebDevServicePage />} /> 
-      {/* 
+      
         <Route path="/software-services" element={<SoftwareDevServicePage />} />  
         
         
         <Route path="/appDev-services" element ={<UIUXDevServicePage />} />
-      */}
+      
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<ContactUs />} />
