@@ -1,5 +1,5 @@
 import './Contact.css';
-import img1 from './About Us.jpg'
+import img1 from './about-us.jpg';
 import {Button} from "@mui/material";
 import React from "react";
 

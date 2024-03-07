@@ -2,6 +2,7 @@
 // This code provides the main elements to the verify email page
 
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import {
   TextField,
   InputAdornment,
@@ -28,14 +29,14 @@ const Content = () => {
           Verify your Email
         </h3>
         <h6 className="m-0 self-stretch relative text-sm leading-[160%] font-normal font-body-medium-regular text-greyscale-500 text-center">
-          Thank you, check your email for instructions to reset your password
+          Enter the email address associated with your account and we will send you a code to reset your password.
         </h6>
       </div>
       <TextField
         className="[border:none] bg-[transparent] self-stretch h-14 font-body-medium-regular text-base text-lightslategray"
-        placeholder="Reset Code"
+        placeholder="Enter your Email"
         variant="outlined"
-        type="number"
+        type="email"
         InputProps={{
           startAdornment: (
             <img width="24px" height="24px" src="./img/mailicon.svg" />
@@ -51,48 +52,6 @@ const Content = () => {
           "& .MuiInputBase-input": { paddingLeft: "12px", color: "#94a3b8" },
         }}
       />
-      <TextField
-        className="[border:none] bg-[transparent] self-stretch h-14 font-body-medium-regular text-base text-lightslategray"
-        color="primary"
-        label="New Password"
-        fullWidth={true}
-        variant="outlined"
-        type={showPassword ? "text" : "password"}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                onClick={handleShowPasswordClick}
-                aria-label="toggle password visibility"
-              >
-                <Icon>{showPassword ? "visibility_off" : "visibility"}</Icon>
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-        sx={{ "& .MuiInputBase-root": { height: "56px" } }}
-      />
-      <TextField
-        className="[border:none] bg-[transparent] self-stretch h-14 font-body-medium-regular text-base text-lightslategray"
-        color="primary"
-        label="Confirm Password"
-        fullWidth={true}
-        variant="outlined"
-        type={showPassword ? "text" : "password"}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                onClick={handleShowPasswordClick}
-                aria-label="toggle password visibility"
-              >
-                <Icon>{showPassword ? "visibility_off" : "visibility"}</Icon>
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-        sx={{ "& .MuiInputBase-root": { height: "56px" } }}
-      />
       <Button
         className="self-stretch h-14"
         disableElevation={true}
@@ -107,13 +66,16 @@ const Content = () => {
           height: 56,
         }}
       >
-        Reset Password
+        Continue
       </Button>
       <a className="[text-decoration:none] relative text-sm leading-[160%] text-center">
+        <Link to="/login" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Back to Sign In</Link>
+      </a>
+      <a className="[text-decoration:none] relative text-sm leading-[160%] text-center">
         <span className="font-body-medium-regular text-greyscale-900">
-          Didn’t receive an email?
+          Don't have an account?
         </span>
-        <b className="font-body-medium-regular text-royalblue"> Resend</b>
+        <Link to="/register" className="[text-decoration:none] relative leading-[24px] text-[inherit]"> Sign Up</Link>
       </a>
     </form>
   );

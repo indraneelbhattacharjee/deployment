@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { About } from "./components/About";
 //import { About } from "./components/AppDevServicePage.js";
-import { ContactUs } from "./components/ContactUs.jsx";
+import { Contact } from "./components/Contact.js";
 import { Landing } from "./components/landing";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
@@ -44,11 +44,11 @@ const App = () => {
         <Route path="/software-services" element={<SoftwareDevServicePage />} />  
         
         
-        <Route path="/appDev-services" element ={<UIUXDevServicePage />} />
+        <Route path="/appDev-services" element ={<AppDevServicePage />} />
       
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path ="/paymentPage" element={<CreditCardForm/>}/>
         <Route path="/verify-email" element={<VerifyEmailPage />} />
