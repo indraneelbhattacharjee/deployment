@@ -1,13 +1,9 @@
-
-//import { Chat } from "./components/Chat";
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { About } from "./components/About";
 //import { About } from "./components/AppDevServicePage.js";
 import { ContactUs } from "./components/ContactUs.jsx";
 import { Landing } from "./components/landing";
-import { Login } from "./components/Login";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { TopNav } from "./components/TopNavbar";

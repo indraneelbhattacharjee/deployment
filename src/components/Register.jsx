@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
 import { useNavigate, Link } from 'react-router-dom';
 
 export const Register = () => {
-  const [username, setUsername] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -130,12 +128,6 @@ export const Register = () => {
               <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Register
               </button>
-            </div>
-            <div className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                <Link to="/login" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Already Have an Account? Log In</Link>
-                </a>
-              </div>
             </div>
             <div className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
