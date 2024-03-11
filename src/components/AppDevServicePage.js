@@ -1,6 +1,7 @@
-import img6 from "./img/appDev.jpg";
-import logo from "./img/bayDevelopsLogo(black).png";
+import './AppDevServicePage.css';
 import { Button } from "@mui/material";
+import { Link } from 'react-router-dom';
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
 export const AppDevServicePage = () => {
     return (
@@ -8,7 +9,7 @@ export const AppDevServicePage = () => {
         <div class="servicepage">
             <div class="text">
                 <div class="servicepageLogo">
-                    <img src={logo} alt="logoImg" width="400" height="auto" />
+                    <img class="logo_image" src="./img/bayDevelopsLogo(black).png" alt="logoImg" width="auto" height="100"></img>
                 </div>
 
                     <b>About Our Application Development Services</b>
@@ -20,11 +21,7 @@ export const AppDevServicePage = () => {
                         and designing your application architecture to developing, testing, and deploying your application.
                         We understand that every business is different, so we take a personalized approach to every application development project. We start by working with
                         you to understand your unique needs and goals. Then, we develop a custom plan to create an application solution that will help you achieve your
-                        business objectives.</div>
-
-                    <p></p>
-
-                    <div>We understand that every business is different, so we take a personalized approach to every 
+                        business objectives. We understand that every business is different, so we take a personalized approach to every 
                         software development project. We start by working with you to understand your unique needs and 
                         goals. Then, we develop a custom plan to create a software solution that will help you achieve 
                         your business objectives.</div>
@@ -49,6 +46,8 @@ export const AppDevServicePage = () => {
 
                     <b>We also offer a variety of additional services, such as:</b> 
 
+                    <p></p>
+
                     <ul>
                         <li>Software maintenance and support</li>
                         <li>Software integration</li>
@@ -67,6 +66,8 @@ export const AppDevServicePage = () => {
                     <p></p>
 
                     <div>Here are just a few reasons why you should choose Bay Develops for your application development needs:</div>
+
+                    <p></p>
 
                     <ul>
                         <li>We have a team of experienced and skilled developers who are passionate about their work.</li>
@@ -109,19 +110,21 @@ export const AppDevServicePage = () => {
                         changes.</div>
 
                     <Button
+                        sx={{ width: 300, height: 25, mt: 2, ml: 9, mb: 2, fontSize: 10 }}
                         className="self-stretch"
                         color="error"
                         name="Purchase Service"
                         size="large"
                         variant="contained"
+                        component={Link}
+                        to="/paymentPage"
                     >
                         Purchase Service
                     </Button>
 
             </div>
-    
             <div>
-                <img src={img6} alt="applicationDevImg" />
+                <img class="app_image" src="./img/appDev.jpg" alt="appImg"></img>
             </div>
         </div>
         </>

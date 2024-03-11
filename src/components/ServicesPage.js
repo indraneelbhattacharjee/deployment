@@ -77,6 +77,7 @@ export default ServicesPage;
 
 import { Button } from "@mui/material";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export const ServicesPage = () => {
   return (
@@ -106,7 +107,8 @@ export const ServicesPage = () => {
             <p className="m-0">Web</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/webDev-services">View Service</Button>
+          <b>$99.99</b>
         </div>
 
         <div className="w-[40%] mb-8 bg-black text-center text-xl text-white font-poppins p-6">
@@ -115,7 +117,8 @@ export const ServicesPage = () => {
             <p className="m-0">Software</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/software-services">View Service</Button>
+          <b>$99.99</b>
         </div>
 
         <div className="w-[40%] bg-black text-center text-xl text-white font-poppins p-6">
@@ -124,7 +127,8 @@ export const ServicesPage = () => {
             <p className="m-0">Application</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/appDev-services">View Service</Button>
+          <b>$99.99</b>
         </div>
 
         <div className="w-[40%] bg-black text-center text-xl text-white font-poppins p-6">
@@ -133,7 +137,8 @@ export const ServicesPage = () => {
             <p className="m-0">UI/UX</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%' }} color="error" variant="contained">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/uiux-services">View Service</Button>
+          <b>$99.99</b>
         </div>
       </div>
     </div>

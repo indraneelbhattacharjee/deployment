@@ -1,7 +1,7 @@
 // ContactUs.js
 
 
-import backgroundImage from './About Us.jpg';
+import backgroundImage from './about-us.jpg';
 
 export const ContactUs = (props) => {
   return (
