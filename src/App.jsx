@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { About } from "./components/About";
-//import { About } from "./components/AppDevServicePage.js";
+//import { About } from "./components/About";
+import { About } from "./components/AppDevServicePage.js";
 
 import { ContactUs } from "./components/ContactUs";
 import { Landing } from "./components/landing";
@@ -12,13 +12,11 @@ import { SideNavDark } from "./components/sideNavDark";
 import {ServicesPage} from "./components/ServicesPage";
 import { Resetpassword } from "./components/resetpassword";
 import {EMS} from "./components/ems.tsx";
-<<<<<<< HEAD
-import { CreditCardForm } from "./components/paymentPage";
-=======
-//import {App} from "./components/UserDashboard.js";
->>>>>>> e21961dcd181dcf3d4757be1cadc7a0d72403a60
+import {App} from "./components/UserDashboard.js";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
+import { Chat } from "./components/Chat";
+
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
