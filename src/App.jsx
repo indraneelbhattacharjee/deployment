@@ -18,6 +18,8 @@ import { CreditCardForm } from "./components/paymentPage";
 //import {App} from "./components/UserDashboard.js";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
+import './sidenav.css';
+
 import { UIUXDevServicePage } from "./components/UIUXDevServicePage"
 import { WebDevServicePage } from "./components/WebDevServicePage";
 import { AppDevServicePage } from "./components/AppDevServicePage"
@@ -55,6 +57,7 @@ const App = () => {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/user-dashboard" element={<UserDash />} />
         <Route path="/ems" element={<EMS />} />
+        <Route path="/sidenav" element={<SideNavDark />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
