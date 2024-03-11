@@ -8,6 +8,7 @@ import { About } from "./components/About";
 import { ContactUs } from "./components/ContactUs.jsx";
 import { Landing } from "./components/landing";
 import { Login } from "./components/Login";
+import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
