@@ -4,7 +4,7 @@ import '../sidenav.css';//need to be connected properly
 import { faHome, faChartBar, faEnvelope, faBoxOpen, faInfoCircle, faCog, faBeer, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export function SideNavDark() {
-  const logoSrc = `${process.env.PUBLIC_URL}/logo.png`;
+  const logoSrc = `${process.env.PUBLIC_URL}/img/sideNav/logo.png`;
   return (
   <div className='flex_container' >
     <div className='sideb'>

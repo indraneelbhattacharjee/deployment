@@ -18,7 +18,6 @@ import { CreditCardForm } from "./components/paymentPage";
 //import {App} from "./components/UserDashboard.js";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-import './sidenav.css';
 
 import { UIUXDevServicePage } from "./components/UIUXDevServicePage"
 import { WebDevServicePage } from "./components/WebDevServicePage";
@@ -34,7 +33,7 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 const App = () => {
   return (
     <Router>
-      <TopNav />
+      <SideNavDark />
     
       <Routes>
       <Route path="/" element={<Landing />} />
