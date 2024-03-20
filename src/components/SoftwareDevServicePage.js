@@ -1,15 +1,15 @@
 import './SoftwareDevServicePage.css';
-import img2 from './softwareDev.jpg';
-import logo from './bayDevelopsLogo(black).png';
 import {Button} from "@mui/material";
+import { Link } from 'react-router-dom';
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
-function SoftwareDevServicePage() {
+export const SoftwareDevServicePage = () => {
   return (
     <>
     <div class="servicepage">
         <div class="text">
           <div class="servicepageLogo">
-            <img src={logo} alt="logoImg" width="400" height="auto" />
+            <img class="logo_image" src="./img/bayDevelopsLogo(black).png" alt="logoImg" width="auto" height="100"></img>
           </div>
 
             <b>About Our Software Development Services</b>
@@ -49,6 +49,8 @@ function SoftwareDevServicePage() {
 
             <b>We also offer a variety of additional services, such as:</b> 
 
+            <p></p>
+
             <ul>
               <li>Software maintenance and support</li>
               <li>Software integration</li>
@@ -69,6 +71,8 @@ function SoftwareDevServicePage() {
 
             <div>Here are just a few reasons why you should choose Bay Develops for your software development needs:</div>
 
+            <p></p>
+
             <ul>
               <li>We have a team of experienced and skilled developers who are passionate about their work.</li>
               <li>We offer a wide range of software development services to meet the needs of businesses of all sizes.</li>
@@ -82,16 +86,20 @@ function SoftwareDevServicePage() {
               achieve your business objectives.</div>
 
             <Button
+              sx={{ width: 300, height: 25, mt: 2, ml: 9, mb: 2, fontSize: 10 }}
               className="self-stretch"
               color="error"
               name="Purchse Service"
               size="large"
-              variant="contained">
+              variant="contained"
+              component={Link}
+              to="/paymentPage"
+            >
               Purchase Service
             </Button>
         </div>
         <div>
-            <img src={img2} alt="softwareDevImg" />
+          <img class="soft_dev" src="./img/softwareDev.jpg" alt="softDev"></img>
         </div>
     </div>
     </>

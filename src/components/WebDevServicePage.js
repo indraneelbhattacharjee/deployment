@@ -1,15 +1,15 @@
 import './WebDevServicePage.css';
-import img3 from './webDev.jpg';
-import logo from './bayDevelopsLogo(black).png';
 import {Button} from "@mui/material";
+import { Link } from 'react-router-dom';
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
-function WebDevServicePage() {
+export const WebDevServicePage = () => {
   return (
     <>
     <div class="servicepage">
         <div class="text">
           <div class="servicepageLogo">
-            <img src={logo} alt="logoImg" width="400" height="auto" />
+            <img class="logo_image" src="./img/bayDevelopsLogo(black).png" alt="logoImg" width="auto" height="100"></img>
           </div>
 
             <b>About Our Web Development Services</b>
@@ -32,6 +32,8 @@ function WebDevServicePage() {
 
             <b>We offer a wide range of web development services, including:</b>
 
+            <p></p>
+
             <ul>
               <li>Website design and development</li>
               <li>Web application development</li>
@@ -42,6 +44,8 @@ function WebDevServicePage() {
             </ul>
 
             <b>We also offer a variety of additional services, such as:</b>
+
+            <p></p>
 
             <ul>
               <li>Search engine optimization (SEO)</li>
@@ -63,6 +67,8 @@ function WebDevServicePage() {
 
             <div>Here are just a few reasons why you should choose Bay Develops for your web development needs:</div>
 
+            <p></p>
+
             <ul>
               <li> We have a team of experienced and skilled developers who are passionate about their work.</li>
               <li>We offer a wide range of web development services to meet the needs of businesses of all sizes.</li>
@@ -75,17 +81,21 @@ function WebDevServicePage() {
                We will be happy to discuss your needs and help you create a website that will help you achieve
                 your business objectives.</div>
 
-            <Button
-              className="self-stretch"
-              color="error"
-              name="Purchse Service"
-              size="large"
-              variant="contained">
-              Purchase Service
-            </Button>
+              <Button
+                sx={{ width: 300, height: 25, mt: 2, ml: 9, mb: 2, fontSize: 10 }}
+                className="self-stretch"
+                color="error"
+                name="Purchse Service"
+                size="large"
+                variant="contained"
+                component={Link}
+                to="/paymentPage"
+              >
+                Purchase Service
+              </Button>
         </div>
         <div>
-            <img src={img3} alt="webDevImg" />
+          <img class="web_dev" src="./img/webDev.jpg" alt="webDev"></img>
         </div>
     </div>
     </>

@@ -1,80 +1,54 @@
-import React from "react";
+import React, { useState } from 'react'
 
+export const ProfilePage = () => {
+    const [Email,setEmail] = useState('')
 
+    const handleSubmit = (e) => {
 
+    }
+return(
+    <div className='bg-black'>
+    <div>
+      <h1 class="text-5xl flex justify-center text-white p-5">Profile Info</h1>
+    <div class="flex flex-col items-center border border-black border-solid shadow-lg container w-500 bg-pink min-w-[437] rounded-lg">
+    <h1 class=" text-black container object-right-bottom">*Required Fields</h1>
+    <form className="flex justify-around  gap-x-44 flex-wrap " onSubmit={handleSubmit}>
 
-export const ProfilePage = (props) => {
-    
-    return (
-        <div className="box-border bg-black h-auto">
-        <div className="flex items-center justify-center w-auto" id="profilename">
-        <header>
-          <h1>Profile Info</h1>
-        </header>
-      </div>
-<div className="flex justify-center gap-40 items-center content-around w-auto" id="mainContainer">
+      <label className="text-white">Change Email*:
+        <br />
+        <input className="min-w-[250] p-3 rounded-md opacity-50"type="text" name="email" placeholder='Enter Email' value={Email} onChange={(e) => setEmail(e.target.value)}/>
+      </label>
+      <form>
+      <label className="text-white">Confirm Change*:
+        <br />
+        <input  className="min-w-[250] p-3 rounded-md opacity-50" type="text" name="email" placeholder='Enter Email'/>
+      </label>
 
-      <div className="flex flex-col w-auto text-white overflow-x-auto overflow-y-auto" id="left">
+      </form>
+    </form>
 
-<h1 className="pb-5"id="rfield">*REQUIRED FIELDS</h1>
-<label className="text-white" for="fname">First Name </label>
-<input type="text" id="fname" fname="fname" />
-      <div className="flex flex-col bg-black w-auto pt-20" id="leftbottom">
-      <label for="username">Username* </label>
-<input type="text" id="username" username="username" />
-      </div>
-      </div>
-      
-<div className="flex flex-col w-auto text-white overflow-x-auto overflow-y-auto mt-[85]" id="left">
+    <button className='bg-black text-white border-r-5 p-3 m-5 rounded-xl'>Save Changes</button>
+    <form className="flex justify-around gap-x-44 flex-wrap">
+      <label className="text-white">Change Username:
+        <br />
+        <input className="min-w-[250] p-3 rounded-md opacity-50"type="text" name="email" placeholder='Current Username'/>
+      </label>
+      <form>
+      <label className="text-white">Confirm*:
+        <br />
+        <input  className="min-w-[250] p-3 rounded-md opacity-50" type="text" name="email" placeholder='New Username'/>
+      </label>
 
-<label className="text-white" for="fname">First Name </label>
-<input className="mb-1" type="text" id="fname" fname="fname" />
-      <div className="flex flex-col bg-black w-auto pt-20" id="leftbottom">
-      <label for="username">Username* </label>
-<input type="text" id="username" username="username" />
-      </div>
-</div>
+      </form>
+    </form>
 
+    <button className='bg-black text-white border-r-5 p-3 m-5 rounded-xl'>Save Changes</button>
+    <a href='#' className='text-white'>Change Password</a>
     </div>
-    <div className="flex justify-center items-center" id="button">
-    <button className="bg-red-500 p-2 rounded-lg text-white w-auto mt-5">Save Changes</button>
     </div>
-    <div className="flex items-center justify-center w-auto" id="profilename">
-        <header>
-          <h1>Profile Name</h1>
-        </header>
-      </div>
-    <div className = " flex justify-center gap-40 items-center content-around w-auto" id="mainContainer">
-      <div className="flex flex-col w-auto text-white overflow-x-auto overflow-y-auto" id="left">
-<label for="name">Name: </label>
-<input type="text" id="name" name="name" />
-      <div className="flex flex-col bg-black w-auto pt-20" id="leftbottom">
-      <label for="name">Name: </label>
-<input type="text" id="name" name="name" />
-      </div>
-      </div>
-      <div className="flex flex-col w-auto text-white overflow-x-auto overflow-y-auto" id="left">
-    <label for="name">New Password: </label>
-    
-    <input type="text" id="name" name="name" />
-    
-    <div className="flex flex-col bg-black w-auto pt-20" id="leftbottom">
-    
-    <label for="name">New Password: </label>
-    
-    <input type="text" id="name" name="name" />
-      </div>
-      </div>
+    </div>
+)
 
-    </div>
-    
-    <div className="flex justify-center items-center" id="button">
-    <button className="bg-red-500 p-2 rounded-lg text-white w-auto mt-5" >Save Changes</button>
-    </div>
-  
-    </div>
-    );
+}
 
-};
-
-export default ProfilePage;
+export default ProfilePage

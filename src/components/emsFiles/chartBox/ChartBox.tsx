@@ -40,9 +40,9 @@ const ChartBox = (props:Props) => {
           <span>{props.title}</span>
         </div>
         <h1>
-        {setUsers.map(dashboard => (
+        {/*setUsers.map(dashboard => (
           <li key={dashboard.id}>{dashboard.todo}</li>
-        ))}
+        ))*/}
 
         </h1>
         <Link to="/" style={{ color: props.color }}>

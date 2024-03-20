@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
 
 export const Register = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(''); // State for error messages
+  const navigate = useNavigate();
+
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -15,7 +19,7 @@ export const Register = () => {
       setError('Passwords do not match.');
       return; // Stop the registration process
     }
-
+  
     try {
       const response = await fetch('http://localhost:8080/post_register', {
         method: 'POST',
@@ -23,18 +27,25 @@ export const Register = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          username,
           email,
           password, 
         }),
       });
-      const data = await response.json();
-      if (response.ok) {
-        console.log('Registration successful:', data);
-        // Redirect to login page or dashboard after registration
+      if (response.headers.get('Content-Type')?.includes('application/json')) {
+        const data = await response.json();
+        if (response.ok) {
+          console.log('Registration successful:', data);
+          navigate('/login'); // Redirects to login page
+        } else {
+          setError(data.message || 'Registration failed. Please try again.');
+        }
       } else {
-        setError(data.message || 'Registration failed. Please try again.');
+        console.error('Non-JSON response received');
+        setError('An error occurred. Please try again later.');
       }
     } catch (error) {
+      console.error('Registration error:', error);
       setError('An error occurred during registration. Please try again later.');
     }
   };
@@ -55,6 +66,19 @@ export const Register = () => {
         <div className="max-w-fit w-full">
           <h2 className="text-3xl font-bold mb-2">Create your Account</h2>
           <form className="mt-8 space-y-6" onSubmit={handleRegister}>
+          <div>
+              <label htmlFor="username" className="sr-only">Username</label>
+              <input 
+                id="username" 
+                name="username" 
+                type="text" 
+                required 
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-t-md"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
             <div>
               <label htmlFor="email" className="sr-only">Email address</label>
               <input 
@@ -94,11 +118,22 @@ export const Register = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
+            {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+              <strong className="font-bold">Error: </strong>
+              <span className="block sm:inline">{error}</span>
+            </div>
+          )}
             <div>
               <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Register
               </button>
             </div>
+            <div className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
+                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                <Link to="/login" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Already Have an Account? Log In</Link>
+                </a>
+              </div>
           </form>
         </div>
       </div>
