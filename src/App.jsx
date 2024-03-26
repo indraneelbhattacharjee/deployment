@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import { About } from "./components/About";
 //import { About } from "./components/AppDevServicePage.js";
 import { Contact } from "./components/Contact.js";
 import { Landing } from "./components/landing";
+import { EmployeeLogin } from "./components/employee_login";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
+import { EmployeeRegister } from "./components/employee_register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import { ProfilePage } from "./components/ProfilePage"
@@ -47,7 +48,9 @@ const App = () => {
         <Route path="/appDev-services" element ={<AppDevServicePage />} />
       
         <Route path="/login" element={<Login />} />
+        <Route path="/employee_login" element={<EmployeeLogin />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/employee_register" element={<EmployeeRegister />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path ="/paymentPage" element={<CreditCardForm/>}/>
