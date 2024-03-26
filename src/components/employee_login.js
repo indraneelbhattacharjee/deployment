@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-export const Login = () => {
+export const EmployeeLogin = () => {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +14,7 @@ export const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/post_login', {
+      const response = await axios.post('http://localhost:8080/employee_login', {
         email,
         password,
       }, {
@@ -41,8 +41,7 @@ export const Login = () => {
       <div className="flex w-1/2 bg-gray-100 justify-center items-center">
         <div className="text-center">
           <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
-          <h1 className="m-0 relative font-bold mt-4 justify-end">Network Infrastructure Solutions</h1>
-          <p className="text-white mt-4">Everything you need in an one dashboard.</p>
+          <h1 className="m-0 text-white relative font-bold mt-4 justify-end">Employee</h1>
         </div>
       </div>
 
@@ -96,13 +95,10 @@ export const Login = () => {
               </button>
             </div>
           </form>
-          <Link to="/register" className="mt-4 inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
-          New user? Register here
-        </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default EmployeeLogin;
