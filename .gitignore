@@ -49,3 +49,6 @@ Generated\ Files/
 TestResult.xml
 nunit-*.xml
 node_modules/*
+Backend/node_modules/*
+
+.env

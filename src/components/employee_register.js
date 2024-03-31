@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 
-export const Register = () => {
+export const EmployeeRegister = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +21,7 @@ export const Register = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:8080/post_register', {
+      const response = await fetch('http://localhost:8080/employee_register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export const Register = () => {
         const data = await response.json();
         if (response.ok) {
           console.log('Registration successful:', data);
-          navigate('/login'); // Redirects to login page
+          navigate('/employee_login'); // Redirects to login page
         } else {
           setError(data.message || 'Registration failed. Please try again.');
         }
@@ -56,29 +56,15 @@ export const Register = () => {
       <div className="flex w-1/2 bg-gray-100 justify-center items-center">
         <div className="text-center">
           <img src="./img/baydevelopslogo.svg" alt="Company Logo" className="mx-auto"/>
-          <h1 className="m-0 relative font-bold mt-4 justify-end">Network Infrastructure Solutions</h1>
-          <p className="text-white mt-4">Everything you need in an one dashboard.</p>
+          <h1 className="m-0 text-white relative font-bold mt-4 justify-end">Employee</h1>
         </div>
       </div>
 
       {/* Registration Form Section */}
       <div className="flex w-1/2 justify-center items-center bg-white p-12">
         <div className="max-w-fit w-full">
-          <h2 className="text-3xl font-bold mb-2">Create your Account</h2>
+          <h2 className="text-3xl font-bold mb-2">Create Employee Account</h2>
           <form className="mt-8 space-y-6" onSubmit={handleRegister}>
-          <div>
-              <label htmlFor="username" className="sr-only">Username</label>
-              <input 
-                id="username" 
-                name="username" 
-                type="text" 
-                required 
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-t-md"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
             <div>
               <label htmlFor="email" className="sr-only">Email address</label>
               <input 
@@ -131,7 +117,7 @@ export const Register = () => {
             </div>
             <div className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                <Link to="/login" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Already Have an Account? Log In</Link>
+                <Link to="/employee_login" className="[text-decoration:none] relative leading-[24px] text-[inherit]">Already Have an Account? Log In</Link>
                 </a>
               </div>
           </form>
@@ -141,4 +127,4 @@ export const Register = () => {
   );
 };
 
-export default Register;
+export default EmployeeRegister;

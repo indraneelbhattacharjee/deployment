@@ -1,7 +1,8 @@
-import img4 from "./img/uiKeysDev.jpg";
-import img5 from "./img/uiLapDev.jpg";
-import logo from "./img/bayDevelopsLogo(black).png";
+import './UIUXDevServicePage.css';
 import { Button } from "@mui/material";
+import { Link } from 'react-router-dom';
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
+
 
 export const UIUXDevServicePage = () => {
     return (
@@ -9,7 +10,7 @@ export const UIUXDevServicePage = () => {
         <div class="servicepage">
             <div class="text">
                 <div class="servicepageLogo">
-                    <img src={logo} alt="logoImg" width="400" height="auto" />
+                    <img class="logo_image" src="./img/bayDevelopsLogo(black).png" alt="logoImg" width="auto" height="100"></img>
                 </div>
 
                     <b>About Our UI/UX Design Services</b>
@@ -41,6 +42,8 @@ export const UIUXDevServicePage = () => {
             
                     <b>We also offer a variety of additional services, such as:</b> 
 
+                    <p></p>
+
                     <ul>
                         <li>Brand indentity design</li>
                         <li>Content design</li>
@@ -60,6 +63,8 @@ export const UIUXDevServicePage = () => {
 
                     <div>Here are just a few reasons why you should choose Bay Develops for your UI/UX design needs:</div>
 
+                    <p></p>
+
                     <ul>
                         <li>We have a team of experienced and skilled developers who are passionate about creating user-friendly and visually appealing digital products.</li>
                         <li>We take a user-centered approach to our design process, ensuring that every decision we make is based on the needs and wants of your target 
@@ -75,21 +80,22 @@ export const UIUXDevServicePage = () => {
                     <div>If you are looking for a reliable and experienced UI/UX design company, contact us today.</div>
 
                     <Button
+                        sx={{ width: 300, height: 25, mt: 2, ml: 9, mb: 2, fontSize: 10 }}
                         className="self-stretch"
                         color="error"
                         name="Purchase Service"
                         size="large"
                         variant="contained"
+                        component={Link}
+                        to="/paymentPage"
                     >
                         Purchase Service
                     </Button>
 
             </div>
             <div>
-                <img src={img4} alt="uiuxKeyboardImg" />
-            </div>
-            <div>
-                <img src={img5} alt="uiuxLaptopImg" />
+                <img class="ui_keyboard" src="./img/uiKeysDev.jpg" alt="uiKeys"></img>
+                <img class="ui_laptop" src="./img/uiLapDev.jpg" alt="uiLaptop"></img>
             </div>
         </div>
         </>

@@ -11,7 +11,22 @@ import {
   Spacer,
 } from '@chakra-ui/react';
 
-function App() {
+
+import BigChartBox from "./emsFiles/bigChartBox/BigChartBox.tsx";
+import ChartBox from "./emsFiles/chartBox/ChartBox.tsx";
+import TopBox from "./emsFiles/topBox/TopBox.tsx";
+import SideNavDark from "./sideNavDark.js"
+import {
+  barChartBoxRevenue,
+  barChartBoxVisit,
+  chartBoxConversion,
+  chartBoxProduct,
+  chartBoxRevenue,
+  chartBoxUser,
+} from "./emsFiles/data.ts";
+import "./emsFiles/ems.scss";
+
+export const UserDash = () => {
   return (
     <ChakraProvider>
         <div class="row">
@@ -23,26 +38,26 @@ function App() {
                     <Card mr={50} p={5} position={'relative'} bottom={20} w='300px' h='180px'>
                         <Heading fontSize='30px'>Custom App</Heading>
                         <Text p={2}>
-                        Status: 
+                        Status: In Progress
                         </Text>
                         <Text p={2}>
-                        Notes:
+                        Notes: Finished Initial Setup
                         </Text>
                         <Text p={2}>
-                        Manager: 
+                        Manager: John, D.
                         </Text>
                     </Card>
 
                     <Card mr={50} p={5} position={'relative'} bottom={20} w='300px' h='180px'>
                         <Heading fontSize='30px'>Custom App</Heading>
                         <Text p={2}>
-                        Status: 
+                        Status: Secure
                         </Text>
                         <Text p={2}>
-                        Notes:
+                        Notes: Network Secured
                         </Text>
                         <Text p={2}>
-                        Manager: 
+                        Manager: Employee A, Employee 
                         </Text>
                     </Card>
                     </Flex>
@@ -54,9 +69,7 @@ function App() {
                     <Box bg={'lightgray'}  h={350} w={1190} boxShadow='md'>
                     <Heading bg='black' color={'white'} w={160} mb={10} mr={10000} position="relative"  right='0' bottom='0'>Analytics</Heading>
                     <Flex align="center" justify="center">
-                    <Card>
-                        <Heading >Testing</Heading>
-                    </Card>
+                    <ChartBox {...chartBoxUser} />
                     </Flex>
                     </Box>
                 </Container>
@@ -67,11 +80,11 @@ function App() {
                 <Heading bg='black' color={'white'} w={220} mb={10} mr={10000} position="relative"  right='0' bottom='0' fontSize={'lg'}>Projects recommendation  </Heading>
                 <Flex align="center" justify="center">
                 <Card>
-                    <Heading>Testing</Heading>
+                    <Heading>UI/UX Development</Heading>
                 </Card>
                 <Spacer />
                 <Card>
-                    <Heading w='400px' m={6} p={1}>Testing2</Heading>
+                    <Heading w='400px' m={6} p={1}>Web Development</Heading>
                 </Card>
                 </Flex>
                 </Box>
@@ -85,9 +98,6 @@ function App() {
                 <Box bg={'lightgray'}  h={503} w={300}boxShadow='md'>
                 <Heading bg='black' color={'white'} w={115} mb={10} mr={10000} position="relative"  right='0' bottom='0' fontSize={'lg'}>To-DO</Heading>
                 <Flex align="center" justify="center">
-                <Card>
-                    <Heading>To-DO</Heading>
-                </Card>
                 <Spacer />
                 </Flex>
                 </Box>
@@ -99,4 +109,4 @@ function App() {
   );
 }
 
-export default App;
+export default UserDash;
