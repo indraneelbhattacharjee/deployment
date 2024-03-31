@@ -15,18 +15,28 @@ import {EMS} from "./components/ems.tsx";
 import {App} from "./components/UserDashboard.js";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-import { Chat } from "./components/Chat";
-
+import ChatBot from 'react-simple-chatbot';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
 });
 
+
+
 //page routes:
 
 const App = () => {
+  const [chatTrigger, setChatTrigger] = useState(null);
+  const handleChatTrigger = (trigger) => {
+    setChatTrigger(trigger);
+    
+    setTimeout(() => {
+      setChatTrigger(null);
+    }, 1000);
+  }
   return (
+    <>
     <Router>
       <TopNav />
     
@@ -53,7 +63,36 @@ const App = () => {
         <Route path="/ems" element={<EMS />} />
         {/* Add other routes as needed */}
       </Routes>
-    </Router>
+      </Router>
+      <ChatBot
+    steps={[
+      {
+        id: '1',
+        message: 'Welcome to Bay Develops, what can we help you with today?',
+        trigger: '2',
+      },
+      {
+        id: '2',
+        options: [
+          { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
+          { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
+          { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
+          { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
+        ],
+        
+      },
+      {
+        id: '3',
+        message: 'Redirecting...',
+        trigger: () => chatTrigger,
+        waitAction: true,
+      },
+
+    ]}
+  />
+    </>
+
+    
   );
 };
 
