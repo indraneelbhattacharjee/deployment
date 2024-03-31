@@ -1,6 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+
 import { About } from "./components/About";
-import { ContactUs } from "./components/ContactUs";
+//import { About } from "./components/AppDevServicePage.js";
+
+import { Contact } from "./components/Contact";
 import { Landing } from "./components/landing";
 import { EmployeeLogin } from "./components/employee_login";
 import { Login } from "./components/Login";
@@ -8,13 +12,21 @@ import { Register } from "./components/Register";
 import { EmployeeRegister } from "./components/employee_register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
+import { ProfilePage } from "./components/ProfilePage";
 import {ServicesPage} from "./components/ServicesPage";
-import { Resetpassword } from "./components/resetpassword";
+import { VerifyEmailPage } from "./components/VerifyEmailPage";
+import { CreditCardForm } from "./components/paymentPage";
+import { ResetPassword } from "./components/resetpassword";
 import {EMS} from "./components/ems.tsx";
-import {App} from "./components/UserDashboard.js";
+import {UserDash} from "./components/UserDashboard.js";
+import { UIUXDevServicePage } from "./components/UIUXDevServicePage";
+import { WebDevServicePage } from "./components/WebDevServicePage";
+import { AppDevServicePage } from "./components/AppDevServicePage";
+import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-import { Chat } from "./components/Chat";
+//import { Chat } from "./components/Chat";
+
 
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -25,9 +37,41 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 //page routes:
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+function NavBarLogic() {
+    const location = useLocation();
+
+    const loggedInPaths = ['/services', '/ems'];
+    const loggedOutPath = ['/login'];
+
+    const loggedIn = loggedInPaths.includes(location.pathname);
+    const loggedOut = loggedOutPath.includes(location.pathname);
+
+    if(loggedIn){
+        setIsLoggedIn(true);
+    }   
+
+    if(loggedOut){
+        setIsLoggedIn(false);
+    }
+};
+
+
   return (
     <Router>
-      <TopNav />
+        <NavBarLogic />
+      {isLoggedIn ? (
+                // If logged in, display side navigation bar
+                <>
+                    <SideNavDark />
+                </>
+            ) : (
+                // If logged out, display top navigation bar
+                <>
+                    <TopNav />
+                </>
+            )}
     
       <Routes>
       <Route path="/" element={<Landing />} />
