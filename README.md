@@ -22,7 +22,7 @@ To rebuild the project, run the following commands in order:
 * Make sure `node` is in your path.
 * `git clone https://github.com/RUKRAZ/Technogaze.git` - latest version on github
 * `npm install --global yarn` - installing the package manager
-* `npm install --save react react-dom @types/react @types/react-dom` -install dependencies
+* `yarn add --save react react-dom @types/react @types/react-dom` -install dependencies
 * `npm update react-icons` - install icons for socil media platforms
 
 ## Configuration

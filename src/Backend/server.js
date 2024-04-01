@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors')
-
 const app = express();
 const PORT = 8080;
 
@@ -51,5 +50,5 @@ app.post('/post_login', async (req, res) => {
     return res.status(400).send({ success: false, message: 'Invalid email or password' });
   }
 });
-
+app. listen (7000, ()=> console. log("server start"))
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -341,3 +341,67 @@ app.delete('/api/dashboard/:todo', async (req, res) => {
     }
 });
   
+
+// Route handler for updating the username
+// Route handler for updating the username
+app.post('/update-username', async (req, res) => {
+    try {
+        // Extract current and new usernames from the request body
+        const { currentUsername, newUsername } = req.body;
+
+        // Check if the new username is already taken
+        const usernameExists = await pool.query('SELECT * FROM users WHERE username = $1', [newUsername]);
+        if (usernameExists.rows.length > 0) {
+            return res.status(400).json({ message: 'Username already exists. Please choose a different username.' });
+        }
+
+        // Update the username in the database
+        const updateResult = await pool.query(
+            'UPDATE users SET username = $1 WHERE username = $2',
+            [newUsername, currentUsername]
+        );
+
+        // Check if the update was successful
+        if (updateResult.rowCount === 1) {
+            // Return success message
+            res.status(200).json({ message: 'Username updated successfully' });
+        } else {
+            // If the update affected 0 rows, it means the current username was not found
+            res.status(404).json({ message: 'Current username not found' });
+        }
+    } catch (error) {
+        console.error('Error updating username:', error);
+        res.status(500).json({ message: 'Error updating username' });
+    }
+});
+
+app.post('/update-email', async (req, res) => {
+    try {
+        // Extract current and new emails from the request body
+        const { currentEmail, newEmail } = req.body;
+
+        // Check if the new email is already taken
+        const emailExists = await pool.query('SELECT * FROM users WHERE email = $1', [newEmail]);
+        if (emailExists.rows.length > 0) {
+            return res.status(400).json({ message: 'Email already exists. Please choose a different email.' });
+        }
+
+        // Update the email in the database
+        const updateResult = await pool.query(
+            'UPDATE users SET email = $1 WHERE email = $2',
+            [newEmail, currentEmail]
+        );
+
+        // Check if the update was successful
+        if (updateResult.rowCount === 1) {
+            // Return success message
+            res.status(200).json({ message: 'Email updated successfully' });
+        } else {
+            // If the update affected 0 rows, it means the current email was not found
+            res.status(404).json({ message: 'Current email not found' });
+        }
+    } catch (error) {
+        console.error('Error updating email:', error);
+        res.status(500).json({ message: 'Error updating email' });
+    }
+});
