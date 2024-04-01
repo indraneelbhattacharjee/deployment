@@ -90,6 +90,7 @@ import mastercardLogo from '../paymentpage/Mastercard_logo.jpg';
 import visaLogo from '../paymentpage/visa.webp';
 import americanLogo from '../paymentpage/american.webp';
 import discoverLogo from '../paymentpage/Discover-logo.png';
+import {loadStripe} from '@stripe/stripe-js';
 
 export const CreditCardForm = () => {
   const [formData, setFormData] = useState({
@@ -120,6 +121,31 @@ export const CreditCardForm = () => {
     e.preventDefault();
     // Handle form submission here
   };
+
+  const makePayment = async ()=> {
+    const stripe = await loadStripe ("pk_test_51OzLF8020fOUxg40TACR890Wmv5XOSnfOWsoRJhW9fYZdxvhFw6B0sk4SIRNUD0MD7KF1mJRbTey18KcA2NH3XSg005S9xe7lM");
+  
+    const body = {
+      // purchase path here
+    }
+    const headers = {
+        "Content-Type": "application/json"
+    }
+      const response = await fetch ("http://localhost:7000/api/create-checkout-session",{
+      method:"POST",
+      headers:headers,
+      body:json.stringify(body)
+    })
+
+    const session = await response.json();
+    const result = stripe.redirectToCheckout({
+      sessionId: session.id
+    })
+
+    if(result.error){
+      console.log(result.error);
+    }
+}
 
   return (
     <div className="main-content" style={{ padding: '60px 0', background: '#f7f7f7', minHeight: '100vh' }}> {/* Adjust the top padding to push the content below your navbar */}
