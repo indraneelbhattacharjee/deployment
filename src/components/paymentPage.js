@@ -92,6 +92,7 @@ import americanLogo from '../paymentpage/american.webp';
 import discoverLogo from '../paymentpage/Discover-logo.png';
 import {loadStripe} from '@stripe/stripe-js';
 
+
 export const CreditCardForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -134,7 +135,7 @@ export const CreditCardForm = () => {
       const response = await fetch ("http://localhost:7000/api/create-checkout-session",{
       method:"POST",
       headers:headers,
-      body:json.stringify(body)
+      
     })
 
     const session = await response.json();
