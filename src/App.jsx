@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 
 import { About } from "./components/About";
 //import { About } from "./components/AppDevServicePage.js";
+<<<<<<< HEAD
+import { ContactUs } from "./components/ContactUs.jsx";
+=======
 
 import { Contact } from "./components/Contact";
+>>>>>>> b39555fd9c6cfafa42b7b4a2ca170e0b30b466f8
 import { Landing } from "./components/landing";
 import { EmployeeLogin } from "./components/employee_login";
 import { Login } from "./components/Login";
@@ -12,6 +16,18 @@ import { Register } from "./components/Register";
 import { EmployeeRegister } from "./components/employee_register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
+<<<<<<< HEAD
+import { ProfilePage } from "./components/ProfilePage"
+import { UserDash } from "./components/UserDashboard"
+import { ServicesPage } from "./components/ServicesPage";
+import { VerifyEmailPage } from "./components/VerifyEmailPage";
+import { ResetPassword } from "./components/resetpassword";
+import { EMS } from "./components/ems.tsx";
+import { CreditCardForm } from "./components/paymentPage"; 
+//import {App} from "./components/UserDashboard.js";
+import SmoothScroll from "smooth-scroll";
+import "./index.css";
+=======
 import { ProfilePage } from "./components/ProfilePage";
 import {ServicesPage} from "./components/ServicesPage";
 import { VerifyEmailPage } from "./components/VerifyEmailPage";
@@ -25,41 +41,36 @@ import { AppDevServicePage } from "./components/AppDevServicePage";
 import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-//import { Chat } from "./components/Chat";
+import ChatBot from 'react-simple-chatbot';
 
-
-
+import { UIUXDevServicePage } from "./components/UIUXDevServicePage"
+import { WebDevServicePage } from "./components/WebDevServicePage";
+import { AppDevServicePage } from "./components/AppDevServicePage"
+import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
 });
 
+
+
 //page routes:
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-function NavBarLogic() {
-    const location = useLocation();
-
-    const loggedInPaths = ['/services', '/ems'];
-    const loggedOutPath = ['/login'];
-
-    const loggedIn = loggedInPaths.includes(location.pathname);
-    const loggedOut = loggedOutPath.includes(location.pathname);
-
-    if(loggedIn){
-        setIsLoggedIn(true);
-    }   
-
-    if(loggedOut){
-        setIsLoggedIn(false);
-    }
-};
-
-
+  const [chatTrigger, setChatTrigger] = useState(null);
+  const handleChatTrigger = (trigger) => {
+    setChatTrigger(trigger);
+    
+    setTimeout(() => {
+      setChatTrigger(null);
+    }, 1000);
+  }
   return (
+    <>
     <Router>
+<<<<<<< HEAD
+      <SideNavDark />
+=======
         <NavBarLogic />
       {isLoggedIn ? (
                 // If logged in, display side navigation bar
@@ -72,6 +83,7 @@ function NavBarLogic() {
                     <TopNav />
                 </>
             )}
+>>>>>>> b39555fd9c6cfafa42b7b4a2ca170e0b30b466f8
     
       <Routes>
       <Route path="/" element={<Landing />} />
@@ -83,22 +95,56 @@ function NavBarLogic() {
         <Route path="/software-services" element={<SoftwareDevServicePage />} />  
         
         
-        <Route path="/appDev-services" element ={<AppDevServicePage />} />
+        <Route path="/appDev-services" element ={<UIUXDevServicePage />} />
       
         <Route path="/login" element={<Login />} />
         <Route path="/employee_login" element={<EmployeeLogin />} />
         <Route path="/register" element={<Register />} />
+<<<<<<< HEAD
+        <Route path="/contact" element={<ContactUs />} />
+=======
         <Route path="/employee_register" element={<EmployeeRegister />} />
         <Route path="/contact" element={<Contact />} />
+>>>>>>> b39555fd9c6cfafa42b7b4a2ca170e0b30b466f8
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path ="/paymentPage" element={<CreditCardForm/>}/>
         <Route path="/verify-email" element={<VerifyEmailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/user-dashboard" element={<UserDash />} />
         <Route path="/ems" element={<EMS />} />
+        <Route path="/sidenav" element={<SideNavDark />} />
         {/* Add other routes as needed */}
       </Routes>
-    </Router>
+      </Router>
+      <ChatBot
+    steps={[
+      {
+        id: '1',
+        message: 'Welcome to Bay Develops, what can we help you with today?',
+        trigger: '2',
+      },
+      {
+        id: '2',
+        options: [
+          { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
+          { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
+          { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
+          { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
+        ],
+        
+      },
+      {
+        id: '3',
+        message: 'Redirecting...',
+        trigger: () => chatTrigger,
+        waitAction: true,
+      },
+
+    ]}
+  />
+    </>
+
+    
   );
 };
 
