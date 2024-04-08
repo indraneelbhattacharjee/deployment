@@ -67,7 +67,7 @@ Logo:
 
 ## ERD 
 
-![ERD](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/erd.JPG)
+![ERD](https://github.com/RUKRAZ/Technogaze/blob/main/src/Database/erd.png)
 
 ## Flow Diagram
 
