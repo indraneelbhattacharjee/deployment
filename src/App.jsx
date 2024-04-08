@@ -25,28 +25,40 @@ import { AppDevServicePage } from "./components/AppDevServicePage";
 import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-import ChatBot from 'react-simple-chatbot';
+//import { Chat } from "./components/Chat";
+
+
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
 });
 
-
-
 //page routes:
 
 const App = () => {
-  const [chatTrigger, setChatTrigger] = useState(null);
-  const handleChatTrigger = (trigger) => {
-    setChatTrigger(trigger);
-    
-    setTimeout(() => {
-      setChatTrigger(null);
-    }, 1000);
-  }
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+function NavBarLogic() {
+    const location = useLocation();
+
+    const loggedInPaths = ['/services', '/ems'];
+    const loggedOutPath = ['/login'];
+
+    const loggedIn = loggedInPaths.includes(location.pathname);
+    const loggedOut = loggedOutPath.includes(location.pathname);
+
+    if(loggedIn){
+        setIsLoggedIn(true);
+    }   
+
+    if(loggedOut){
+        setIsLoggedIn(false);
+    }
+};
+
+
   return (
-    <>
     <Router>
         <NavBarLogic />
       {isLoggedIn ? (
@@ -86,36 +98,7 @@ const App = () => {
         <Route path="/ems" element={<EMS />} />
         {/* Add other routes as needed */}
       </Routes>
-      </Router>
-      <ChatBot
-    steps={[
-      {
-        id: '1',
-        message: 'Welcome to Bay Develops, what can we help you with today?',
-        trigger: '2',
-      },
-      {
-        id: '2',
-        options: [
-          { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
-          { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
-          { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
-          { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
-        ],
-        
-      },
-      {
-        id: '3',
-        message: 'Redirecting...',
-        trigger: () => chatTrigger,
-        waitAction: true,
-      },
-
-    ]}
-  />
-    </>
-
-    
+    </Router>
   );
 };
 

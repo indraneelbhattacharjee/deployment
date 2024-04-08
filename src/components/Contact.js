@@ -5,8 +5,14 @@ import React from "react";
 
 export const Contact = (props) =>  {
   return (
-    <>
-    <div className='headerTextContact'>
+  
+    <div className='min-h-screen flex items-center justify-center' 
+        style={{ 
+           backgroundImage: `url(${img1})`,
+           backgroundPosition: 'center',
+           backgroundSize: 'cover',
+           backgroundRepeat: 'no-repeat'
+         }}>
       <div class='textOnImageContact'>
       <u>Contact Us</u>
         <p id="descriptionContact">
@@ -36,8 +42,7 @@ export const Contact = (props) =>  {
         </p>
       </div>
     </div>
-    <img src={img1} alt="backgroundimg" />
-    </>
+
   );
 }
 
