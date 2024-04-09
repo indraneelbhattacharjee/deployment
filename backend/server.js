@@ -29,7 +29,7 @@ const pool = new Pool({
     port: 5432, // Default PostgreSQL port
     ssl: {
         rejectUnauthorized: false // For SSL connections, if enabled
-    }
+    },
     ssl: {
         rejectUnauthorized: false // For SSL connections, if enabled
     }
