@@ -1,23 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 
-import { About } from "./components/About";
-//import { About } from "./components/AppDevServicePage.js";
-import { ContactUs } from "./components/ContactUs.jsx";
+//import { About } from "./components/About";
+import { About } from "./components/AppDevServicePage.js";
+
+import { ContactUs } from "./components/ContactUs";
 import { Landing } from "./components/landing";
+import { EmployeeLogin } from "./components/employee_login";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
+import { EmployeeRegister } from "./components/employee_register";
 import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
-import { ProfilePage } from "./components/ProfilePage"
-import { UserDash } from "./components/UserDashboard"
-import { ServicesPage } from "./components/ServicesPage";
-import { VerifyEmailPage } from "./components/VerifyEmailPage";
-import { ResetPassword } from "./components/resetpassword";
-import { EMS } from "./components/ems.tsx";
-import { CreditCardForm } from "./components/paymentPage"; 
-//import {App} from "./components/UserDashboard.js";
+import {ServicesPage} from "./components/ServicesPage";
+import { Resetpassword } from "./components/resetpassword";
+import {EMS} from "./components/ems.tsx";
+import {App} from "./components/UserDashboard.js";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
+import { Chat } from "./components/Chat";
 
 import { UIUXDevServicePage } from "./components/UIUXDevServicePage"
 import { WebDevServicePage } from "./components/WebDevServicePage";
@@ -31,9 +32,30 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 //page routes:
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+function NavBarLogic() {
+    const location = useLocation();
+
+    const loggedInPaths = ['/services', '/ems'];
+    const loggedOutPath = ['/login'];
+
+    const loggedIn = loggedInPaths.includes(location.pathname);
+    const loggedOut = loggedOutPath.includes(location.pathname);
+
+    if(loggedIn){
+        setIsLoggedIn(true);
+    }   
+
+    if(loggedOut){
+        setIsLoggedIn(false);
+    }
+};
+
+
   return (
     <Router>
-      <SideNavDark />
+      <TopNav />
     
       <Routes>
       <Route path="/" element={<Landing />} />
@@ -48,8 +70,9 @@ const App = () => {
         <Route path="/appDev-services" element ={<UIUXDevServicePage />} />
       
         <Route path="/login" element={<Login />} />
+        <Route path="/employee_login" element={<EmployeeLogin />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path ="/paymentPage" element={<CreditCardForm/>}/>
         <Route path="/verify-email" element={<VerifyEmailPage />} />
