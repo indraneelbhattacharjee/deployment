@@ -71,4 +71,21 @@ Logo:
 
 ## Flow Diagram
 
+![Flow Diagram](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Bay%20Develops%20Flow.jpg)
+
 ## Database
+
+The database was developed using Postgre SQL and was connected to the server via node.js endpoints that can be found in the “server.js” file in the “backend” folder. 
+
+Tables:
+1. User
+2. Employee
+3. Dashboard
+4. Project
+5. Transaction
+
+Interactions:
+1. When the employee makes an update to the “To-Do List” or the “Project” section of the employee dashboard the employee dashboard and user dashboard are updated. Which requires the Dashboard table to be updated with this new information.
+2. When the employee creates a project it gets saved to the Project table.
+3. When a user purchases a product the “Recommended Products” section of the user dashboard and the “Clients” section of the employee dashboard must be updated. The transaction information gets saved in the Transaction table. The corresponding product icon will be removed from the “Recommended Products” tab and the client information along with what product they bought will be displayed in the “Clients” tab.
+
