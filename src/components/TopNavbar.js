@@ -93,7 +93,7 @@ export function TopNav() {
                                     <ListItem button component={Link} to="/contact"> 
                                         <ListItemText primary="Contact" />
                                     </ListItem>
-                                    <ListItem button component={Link} to="/about">
+                                    <ListItem button component={Link} to="/login">
                                         <ListItemText primary="Sign In" />
                                     </ListItem>
                                 </List>

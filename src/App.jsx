@@ -64,7 +64,7 @@ function NavBarLogic() {
       {isLoggedIn ? (
                 // If logged in, display side navigation bar
                 <>
-                    <SideNavDark />
+                    <TopNav />
                 </>
             ) : (
                 // If logged out, display top navigation bar

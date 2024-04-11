@@ -19,15 +19,15 @@ export const Contact = (props) =>  {
             <form action="/action_page.php"> 
                 <label for="name">Enter Name </label>
                 <br></br>
-                <input type="text" id="name" name="name" size="120"></input>
+                <input type="text" id="name" name="name" size="60"></input>
                 <br></br>
                 <label for="email">Enter Email </label>
                 <br></br>
-                <input type="text" id="email" name="email" size="120"></input>
+                <input type="text" id="email" name="email" size="60"></input>
                 <br></br>
                 <fieldset>
                     <legend>Message</legend>
-                    <textarea id="textArea" rows="10" cols="122"></textarea>
+                    <textarea id="textArea" rows="4" cols="62"></textarea>
                 </fieldset>
             <Button
               className="self-stretch"
