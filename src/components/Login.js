@@ -25,7 +25,7 @@ export const Login = () => {
         console.log('Login successful:', response.data);
         // Store the token in sessionStorage
         //sessionStorage.setItem('token', response.data.token);
-        navigate('/services'); 
+        navigate('/user-dashboard'); 
       } else {
           // Handle the case where login is successful but no token is received
           setErrorMessage('Login was successful, but no token was received.');
@@ -97,8 +97,13 @@ export const Login = () => {
             </div>
           </form>
           <Link to="/register" className="mt-4 inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
-          New user? Register here
-        </Link>
+            New user? Register here
+          </Link>
+          <div>
+          <Link to="/employee_login" className="mt-4 inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+            Employee? Login Here
+          </Link>
+          </div>
         </div>
       </div>
     </div>
