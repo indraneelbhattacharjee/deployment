@@ -16,7 +16,13 @@ import { ProfilePage } from "./components/ProfilePage";
 import {ServicesPage} from "./components/ServicesPage";
 import { Resetpassword } from "./components/resetpassword";
 import {EMS} from "./components/ems.tsx";
-import {App} from "./components/UserDashboard.js";
+import {UserDash} from "./components/UserDashboard.js";
+import { UIUXDevServicePage } from "./components/UIUXDevServicePage";
+import { WebDevServicePage } from "./components/WebDevServicePage";
+import { AppDevServicePage } from "./components/AppDevServicePage";
+import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
+import { PricingPage } from "./components/PricingPage";
+//import { SideNav } from "./components/sidenavbar_1/src/App.js";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 //import { Chat } from "./components/Chat";
@@ -58,7 +64,7 @@ function NavBarLogic() {
       {isLoggedIn ? (
                 // If logged in, display side navigation bar
                 <>
-                    <TopNav />
+                    <SideNavDark />
                 </>
             ) : (
                 // If logged out, display top navigation bar
@@ -84,12 +90,13 @@ function NavBarLogic() {
         <Route path="/register" element={<Register />} />
         <Route path="/employee_register" element={<EmployeeRegister />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/reset-password" element={<Resetpassword />} />
         <Route path ="/paymentPage" element={<CreditCardForm/>}/>
         <Route path="/verify-email" element={<VerifyEmailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/user-dashboard" element={<UserDash />} />
         <Route path="/ems" element={<EMS />} />
+        <Route path="/pricing" element={<PricingPage />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>

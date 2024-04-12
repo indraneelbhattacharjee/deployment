@@ -33,6 +33,6 @@ export function SideNavDark() {
       />
     </div>
   );
-}
+};
 
 export default SideNavDark;
