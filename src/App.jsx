@@ -15,6 +15,7 @@ import { SideNavDark } from "./components/sideNavDark";
 import { ProfilePage } from "./components/ProfilePage";
 import {ServicesPage} from "./components/ServicesPage";
 import { Resetpassword } from "./components/resetpassword";
+import { VerifyEmailPage } from "./components/VerifyEmailPage";
 import {EMS} from "./components/ems.tsx";
 import {UserDash} from "./components/UserDashboard.js";
 import { UIUXDevServicePage } from "./components/UIUXDevServicePage";
@@ -22,7 +23,7 @@ import { WebDevServicePage } from "./components/WebDevServicePage";
 import { AppDevServicePage } from "./components/AppDevServicePage";
 import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import { PricingPage } from "./components/PricingPage";
-//import { SideNav } from "./components/sidenavbar_1/src/App.js";
+import { CreditCardForm } from "./components/paymentPage";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 //import { Chat } from "./components/Chat";
@@ -42,8 +43,8 @@ const App = () => {
 function NavBarLogic() {
     const location = useLocation();
 
-    const loggedInPaths = ['/services', '/ems'];
-    const loggedOutPath = ['/login'];
+    const loggedInPaths = ['/user-dashboard', '/ems'];
+    const loggedOutPath = ['/login', '/employee_login'];
 
     const loggedIn = loggedInPaths.includes(location.pathname);
     const loggedOut = loggedOutPath.includes(location.pathname);

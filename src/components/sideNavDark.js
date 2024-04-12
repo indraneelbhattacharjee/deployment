@@ -1,10 +1,40 @@
 import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import axios from 'axios';
 import '../sidenav.css';//need to be connected properly
 
 import { faHome, faChartBar, faEnvelope, faBoxOpen, faInfoCircle, faCog, faBeer, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export function SideNavDark() {
   const logoSrc = `${process.env.PUBLIC_URL}/img/sideNav/logo.png`;
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post('http://localhost:8080/logout');
+      if (response.status === 200) {
+        console.log('Logout successful');
+        // Perform any client-side cleanup
+        navigate('/login'); // Redirect to the home page or login page
+      }
+    } catch (error) {
+      console.error('Logout failed:', error.response || error);
+    }
+  };
+
+  const handleEmployeeLogout = async () => {
+    try {
+      const response = await axios.post('http://localhost:8080/logout');
+      if (response.status === 200) {
+        console.log('Logout successful');
+        // Perform any client-side cleanup
+        navigate('/employee_login'); // Redirect to the home page or login page
+      }
+    } catch (error) {
+      console.error('Logout failed:', error.response || error);
+    }
+  };
+
   return (
   <div className='flex_container' >
     <div className='sideb'>
@@ -15,23 +45,27 @@ export function SideNavDark() {
             <img className='logo_image' src={logoSrc} alt="logo" />
             <hr />
           </div>
-          <a href="#"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></a>
+          <Link to="/user-dashboard"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></Link>
 
-          <a href="#"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></a>
-          <a href="#"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></a>
-          <a href="#"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></a>
-          <a href="#"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></a>
-      </nav>
+          <Link to="/user-dashboard"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></Link>
+          <Link to="/contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
+          <Link to="/services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
+          <Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
+        </nav>
       <div className="navbara">
-        <a href="#" className='logou'><FontAwesomeIcon icon={faCog} /> <font> Settings </font></a>
-        <a href="#" className='logou'><FontAwesomeIcon icon={faSignOutAlt} /> <font> logout </font></a>
-      </div>
+        <Link to="/profile" className='logou'><FontAwesomeIcon icon={faCog} /> <font> Settings </font></Link>
+        <button onClick={handleLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Log Out
+        </button>
       <img
         className="absolute top-[0px] left-[0px] w-[238px] h-[88px] object-cover"
         alt=""
         src="/img/baydevelopslogo-1-1@2x.png"
       />
     </div>
+  </div>
+  </div>
+</div>
   );
 };
 
