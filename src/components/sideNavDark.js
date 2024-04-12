@@ -35,10 +35,30 @@ export function SideNavDark() {
     }
   };
 
+  const location = useLocation();
+  let userLoggedIn = false;
+
+  //paths for user and employee
+  const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile'];
+  const employeePaths = ['/ems', '/contact', '/services', '/about'];
+
+  // Check if the current path is included in userPaths or employeePaths
+  const isUserPage = userPaths.includes(location.pathname);
+  const isEmployeePage = employeePaths.includes(location.pathname);
+  if(isUserPage){
+    userLoggedIn = true;
+  }
+
+  if(isEmployeePage){
+    userLoggedIn = false;
+  }
+
   return (
   <div className='flex_container' >
     <div className='sideb'>
       <div className='main_div' >
+        {userLoggedIn ? (
+          <>
         <nav className="navbar">
           <div className="logo">
 
@@ -57,13 +77,38 @@ export function SideNavDark() {
         <button onClick={handleLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Log Out
         </button>
+
+      </div>
+      </>
+        ) : (
+          <>
+        <nav className="navbar">
+          <div className="logo">
+
+            <img className='logo_image' src={logoSrc} alt="logo" />
+            <hr />
+          </div>
+          <Link to="/ems"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></Link>
+
+          <Link to="/ems"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></Link>
+          <Link to="/contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
+          <Link to="/services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
+          <Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
+        </nav>
+      <div className="navbara">
+        <button onClick={handleEmployeeLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Log Out
+        </button>
+
+      </div>
+      </>
+      )}
       <img
         className="absolute top-[0px] left-[0px] w-[238px] h-[88px] object-cover"
         alt=""
         src="/img/baydevelopslogo-1-1@2x.png"
       />
     </div>
-  </div>
   </div>
 </div>
   );
