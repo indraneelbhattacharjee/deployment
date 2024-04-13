@@ -3,10 +3,8 @@ import BigChartBox from "./emsFiles/bigChartBox/BigChartBox.tsx";
 import ChartBox from "./emsFiles/chartBox/ChartBox.tsx";
 //import PieChartBox from "./emsFiles/pieCartBox/PieChartBox.tsx";
 import TopBox from "./emsFiles/topBox/TopBox.tsx";
-import SideNavDark from "./sideNavDark.js"
+import DashDefault from "./emsFiles/projects/project.tsx";
 import {
-  barChartBoxRevenue,
-  barChartBoxVisit,
   chartBoxConversion,
   chartBoxProduct,
   chartBoxRevenue,
@@ -18,7 +16,6 @@ export const EMS = (props) => {
   return (
     <div className="home">
       <div className="box1">
-        <SideNavDark/>
       </div>
       <div className="box box2">
         <ChartBox {...chartBoxUser} />

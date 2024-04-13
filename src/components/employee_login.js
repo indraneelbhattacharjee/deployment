@@ -25,7 +25,7 @@ export const EmployeeLogin = () => {
         console.log('Login successful:', response.data);
         // Store the token in sessionStorage
         //sessionStorage.setItem('token', response.data.token);
-        navigate('/services'); 
+        navigate('/ems'); 
       } else {
           // Handle the case where login is successful but no token is received
           setErrorMessage('Login was successful, but no token was received.');
@@ -91,8 +91,16 @@ export const EmployeeLogin = () => {
             </div>
             <div>
              <button type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Sign in
+                Sign In
               </button>
+              <a href="/employee_register" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Sign Up
+              </a>
+              <div>
+              <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Not an Employee? Return to Login
+              </a>
+              </div>
             </div>
           </form>
         </div>

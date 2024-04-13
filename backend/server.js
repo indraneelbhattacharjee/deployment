@@ -60,8 +60,47 @@ pool.query(`
         }
     });
 
-app.get('/protected', auth, (req, res) => {
-    res.json({ message: "Welcome to the protected route!", user: req.user });
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// Route handler to insert a new task into the database (dashboard)
+app.post('/api/dashboard', async (req, res) => {
+    const { todo } = req.body;
+    try {
+        await pool.query('INSERT INTO dashboard (todo) VALUES ($1)', [todo]);
+        console.log('Todo inserted successfully');
+        res.status(201).send('Todo inserted successfully');
+        await pool.query('INSERT INTO dashboard (todo) VALUES ($1)', [todo]);
+        console.log('Todo inserted successfully');
+        res.status(201).send('Todo inserted successfully');
+    } catch (err) {
+        console.error('Error inserting todo:', err);
+        res.status(500).send('Error inserting todo');
+        console.error('Error inserting todo:', err);
+        res.status(500).send('Error inserting todo');
+    }
+});
+
+// Route handler to remove a todo item by text
+app.delete('/api/dashboard/:todo', async (req, res) => {
+});
+
+// Route handler to remove a todo item by text
+app.delete('/api/dashboard/:todo', async (req, res) => {
+    const { todo } = req.params;
+    try {
+        await pool.query('DELETE FROM dashboard WHERE todo = $1', [todo]);
+        console.log('Todo removed successfully');
+        res.send('Todo removed successfully');
+        await pool.query('DELETE FROM dashboard WHERE todo = $1', [todo]);
+        console.log('Todo removed successfully');
+        res.send('Todo removed successfully');
+    } catch (err) {
+        console.error('Error removing todo:', err);
+        res.status(500).send('Error removing todo');
+        console.error('Error removing todo:', err);
+        res.status(500).send('Error removing todo');
+    }
 });
 
 // Start the server
@@ -338,6 +377,8 @@ app.delete('/api/dashboard/:todo', async (req, res) => {
     } catch (err) {
         console.error('Error removing todo:', err);
         res.status(500).send('Error removing todo');
+        console.error('Error removing todo:', err);
+        res.status(500).send('Error removing todo');
     }
 });
   
@@ -405,3 +446,53 @@ app.post('/update-email', async (req, res) => {
         res.status(500).json({ message: 'Error updating email' });
     }
 });
+
+// Route handler to retrieve current projects for a user
+app.get('/api/projects', auth, async (req, res) => {
+    try {
+        // Extract user ID from the authenticated request
+        const userId = req.user.id;
+
+        // Query the database to fetch projects associated with the user
+        const projects = await pool.query('SELECT * FROM projects WHERE user_id = $1', [userId]);
+
+        // If projects are found, return them in the response
+        if (projects.rows.length > 0) {
+            res.status(200).json(projects.rows);
+        } else {
+            // If no projects are found, return a message indicating that
+            res.status(404).json({ message: 'No projects found for the user' });
+        }
+    } catch (error) {
+        console.error('Error retrieving projects:', error);
+        res.status(500).json({ message: 'Error retrieving projects' });
+    }
+});
+
+// Route handler to update projects for a user
+app.put('/api/projects/:projectId', auth, async (req, res) => {
+    try {
+        // Extract user ID and project ID from the request parameters
+        const userId = req.user.id;
+        const projectId = req.params.projectId;
+
+        // Extract updated project data from the request body
+        const { projectName, projectDescription } = req.body;
+
+        // Check if the project exists and belongs to the user
+        const project = await pool.query('SELECT * FROM projects WHERE id = $1 AND user_id = $2', [projectId, userId]);
+        if (project.rows.length === 0) {
+            return res.status(404).json({ message: 'Project not found or does not belong to the user' });
+        }
+
+        // Update the project in the database
+        await pool.query('UPDATE projects SET name = $1, description = $2 WHERE id = $3', [projectName, projectDescription, projectId]);
+
+        // Return success message
+        res.status(200).json({ message: 'Project updated successfully' });
+    } catch (error) {
+        console.error('Error updating project:', error);
+        res.status(500).json({ message: 'Error updating project' });
+    }
+});
+
