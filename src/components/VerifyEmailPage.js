@@ -69,6 +69,8 @@ export const VerifyEmailPage = () => {
             type = "submit"
             disableElevation={true}
             variant="contained"
+            component={Link}
+            to="/reset-password"
             sx={{
               textTransform: "none",
               color: "#fff",
