@@ -48,6 +48,15 @@ OpenAI: For custom chatbot.
 
 ## Developer Instructions
 
+Here is a tutorial on how to get the repo onto your local machine as well as pushing and pulling.
+
+Step 1: Go to our main repo on github here is the link. https://github.com/RUKRAZ/Technogaze
+Step 2: Click on code and drop down menu will apear. Leave it on the HTTPS tab and copy that url.
+Step 3: Now that you have the link open up your command prompt and change the directiory to where you would like the project to be.
+Step 4: type in this command git clone https://github.com/RUKRAZ/Technogaze.git
+Step 5: Now you have the project on your local machine.
+Step 6: Download and Install GitHub Desktop this will allow for updating your branch and push to the main without having to use the command prompt
+Step 7: Sign into GituHub Desktop and then open your repo. Choose the branch you would like to work on and then open it in your IDE make changes come back to the Github Desktop and it will say would you like to push. You click that then you will make a pull request to the main branch now you are all done
 ## Key Milestones
 
 ## UI/UX
