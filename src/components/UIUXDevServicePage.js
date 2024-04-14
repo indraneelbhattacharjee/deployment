@@ -1,10 +1,29 @@
 import './UIUXDevServicePage.css';
 import { Button } from "@mui/material";
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
 
 export const UIUXDevServicePage = () => {
+    const navigate = useNavigate();
+
+    // Define your service object
+    const uiuxDevService = {
+      id: "uiuxDev001",
+      name: "UI/UX Development",
+      description: "Professional UI/UX development service for your business.",
+      price: 99.99,
+    };
+  
+    const saveToSessionStorage = (service) => {
+      sessionStorage.setItem('service', JSON.stringify(service));
+    };
+    
+    const goToPayment = () => {
+      navigate(`/paymentPage?name=${encodeURIComponent(uiuxDevService.name)}&price=${uiuxDevService.price}`);
+    };
+
     return (
         <>
         <div class="servicepage">
@@ -86,8 +105,7 @@ export const UIUXDevServicePage = () => {
                         name="Purchase Service"
                         size="large"
                         variant="contained"
-                        component={Link}
-                        to="/paymentPage"
+                        onClick={goToPayment}
                     >
                         Purchase Service
                     </Button>

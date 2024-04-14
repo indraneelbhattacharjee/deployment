@@ -1,9 +1,29 @@
 import './WebDevServicePage.css';
 import {Button} from "@mui/material";
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
 export const WebDevServicePage = () => {
+  const navigate = useNavigate();
+
+  // Define your service object
+  const webDevService = {
+    id: "webdev001",
+    name: "Web Development",
+    description: "Professional web development service for your business.",
+    price: 99.99,
+  };
+
+  const saveToSessionStorage = (service) => {
+    sessionStorage.setItem('service', JSON.stringify(service));
+  };
+  
+  const goToPayment = () => {
+    navigate(`/paymentPage?name=${encodeURIComponent(webDevService.name)}&price=${webDevService.price}`);
+  };
+  
+  
   return (
     <>
     <div class="servicepage">
@@ -88,8 +108,7 @@ export const WebDevServicePage = () => {
                 name="Purchse Service"
                 size="large"
                 variant="contained"
-                component={Link}
-                to="/paymentPage"
+                onClick={goToPayment}
               >
                 Purchase Service
               </Button>
