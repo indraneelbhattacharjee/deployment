@@ -134,7 +134,7 @@ export const CreditCardForm = () => {
       const response = await fetch ("http://localhost:7000/api/create-checkout-session",{
       method:"POST",
       headers:headers,
-      body:json.stringify(body)
+      body:JSON.stringify(body)
     })
 
     const session = await response.json();

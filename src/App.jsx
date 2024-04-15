@@ -14,7 +14,7 @@ import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import { ProfilePage } from "./components/ProfilePage";
 import {ServicesPage} from "./components/ServicesPage";
-import { Resetpassword } from "./components/resetpassword";
+import { ResetPassword } from "./components/resetpassword";
 import { VerifyEmailPage } from "./components/VerifyEmailPage";
 import {EMS} from "./components/ems.tsx";
 import {UserDash} from "./components/UserDashboard.js";
@@ -91,7 +91,7 @@ function NavBarLogic() {
         <Route path="/register" element={<Register />} />
         <Route path="/employee_register" element={<EmployeeRegister />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/reset-password" element={<Resetpassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path ="/paymentPage" element={<CreditCardForm/>}/>
         <Route path="/verify-email" element={<VerifyEmailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
