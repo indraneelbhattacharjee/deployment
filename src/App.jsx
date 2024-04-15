@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { About } from "./components/About";
 //import { About } from "./components/AppDevServicePage.js";
 
 import { Contact } from "./components/Contact";
 import { Landing } from "./components/landing";
+import { useNavigate } from 'react-router-dom';
+
 import { EmployeeLogin } from "./components/employee_login";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
@@ -30,11 +32,12 @@ import "./index.css";
 
 
 
+
+
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
 });
-
 //page routes:
 
 const App = () => {
@@ -43,8 +46,8 @@ const App = () => {
 function NavBarLogic() {
     const location = useLocation();
 
-    const loggedInPaths = ['/user-dashboard', '/ems'];
-    const loggedOutPath = ['/login', '/employee_login'];
+    const loggedInPaths = ['/services', '/ems'];
+    const loggedOutPath = ['/login'];
 
     const loggedIn = loggedInPaths.includes(location.pathname);
     const loggedOut = loggedOutPath.includes(location.pathname);
@@ -59,20 +62,19 @@ function NavBarLogic() {
 };
 
 
+const navigate = useNavigate();
+
+  const handleChatTrigger = (path) => {
+    return () => {
+      navigate(path);
+    };
+  };
+
+
+
   return (
     <Router>
-        <NavBarLogic />
-      {isLoggedIn ? (
-                // If logged in, display side navigation bar
-                <>
-                    <SideNavDark />
-                </>
-            ) : (
-                // If logged out, display top navigation bar
-                <>
-                    <TopNav />
-                </>
-            )}
+        <Navigation />
     
       <Routes>
       <Route path="/" element={<Landing />} />
@@ -100,8 +102,91 @@ function NavBarLogic() {
         <Route path="/pricing" element={<PricingPage />} />
         {/* Add other routes as needed */}
       </Routes>
+      <ChatBot
+        steps={[
+          {
+            id: '1',
+            message: 'Welcome to Bay Develops, what can we help you with today?',
+            trigger: '2',
+          },
+          {
+            id: '2',
+            options: [
+              { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
+              { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
+              { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
+              { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
+            ],
+        
+          },
+          {
+            id: '3',
+            message: 'Redirecting...',
+            trigger: () => handleChatTrigger,
+            waitAction: true,
+          },
+
+        ]}
+      />
+
+      
+
     </Router>
+
+  );
+};
+
+
+const Navigation = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedInPaths = ['/services', '/ems'];
+    const loggedOutPath = ['/login'];
+
+    setIsLoggedIn(loggedInPaths.includes(location.pathname));
+  }, [location.pathname]);
+
+  const handleChatTrigger = (path) => {
+    navigate(path);
+  };
+
+  return (
+    <>
+      {isLoggedIn ? <SideNavDark /> : <TopNav />}
+    </>
   );
 };
 
 export default App;
+
+
+
+/*<ChatBot
+    steps={[
+      {
+        id: '1',
+        message: 'Welcome to Bay Develops, what can we help you with today?',
+        trigger: '2',
+      },
+      {
+        id: '2',
+        options: [
+          { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
+          { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
+          { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
+          { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
+        ],
+        
+      },
+      {
+        id: '3',
+        message: 'Redirecting...',
+        trigger: () => chatTrigger,
+        waitAction: true,
+      },
+
+    ]}
+  />*/ 

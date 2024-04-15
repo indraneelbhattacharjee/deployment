@@ -36,3 +36,11 @@ a {
   padding: 5px 20px;
   width: 100%;
 }
+
+.chatbot-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
