@@ -14,9 +14,15 @@ import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import { ProfilePage } from "./components/ProfilePage";
 import {ServicesPage} from "./components/ServicesPage";
-import { Resetpassword } from "./components/resetpassword";
+import { VerifyEmailPage } from "./components/VerifyEmailPage";
+import { CreditCardForm } from "./components/paymentPage";
+import { ResetPassword } from "./components/resetpassword";
 import {EMS} from "./components/ems.tsx";
-import {App} from "./components/UserDashboard.js";
+import {UserDash} from "./components/UserDashboard.js";
+import { UIUXDevServicePage } from "./components/UIUXDevServicePage";
+import { WebDevServicePage } from "./components/WebDevServicePage";
+import { AppDevServicePage } from "./components/AppDevServicePage";
+import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 //import { Chat } from "./components/Chat";
@@ -58,7 +64,7 @@ function NavBarLogic() {
       {isLoggedIn ? (
                 // If logged in, display side navigation bar
                 <>
-                    <TopNav />
+                    <SideNavDark />
                 </>
             ) : (
                 // If logged out, display top navigation bar

@@ -26,12 +26,11 @@ export function SideNavDark() {
         <a href="#" className='logou'><FontAwesomeIcon icon={faCog} /> <font> Settings </font></a>
         <a href="#" className='logou'><FontAwesomeIcon icon={faSignOutAlt} /> <font> logout </font></a>
       </div>
-      <img
-        className="absolute top-[0px] left-[0px] w-[238px] h-[88px] object-cover"
-        alt=""
-        src="/img/baydevelopslogo-1-1@2x.png"
-      />
+      
     </div>
+  </div>
+</div>
+
   );
 }
 
