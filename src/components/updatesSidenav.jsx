@@ -1,10 +1,10 @@
-import './App.css';
+import './sidenav.css';
 import { Link } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { faHome, faChartBar, faEnvelope, faBoxOpen, faInfoCircle, faCog, faBeer, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-function App() {
+export const SideNav = () => {
   const logoSrc = `${process.env.PUBLIC_URL}/logoo.png`;
   const navigate = useNavigate();
 
@@ -79,30 +79,30 @@ function App() {
    
         </div>
         <div className='center_div'>
-<div className='projects_analytics'>
-<div className='projanaly'>
-<div className='projec'>
-      <font className='projects_text'>Projects </font>
-</div>
-<div className='analytics'>
-<font className='projects_text'>Analytics </font>
-</div>
-</div>
-<div className='idnames'>
-      <div>
-    {/* <h4>John D.</h4> */}
-    <img className='person_image' src={logoSrc} alt="logo" />
-   <font className='john_text'>Title </font> <br />
-    <font className='project_text'>Name </font>
-      </div>
-      <div className='to_do'>
-      <font className='projects_text'>To-Do </font>
-      </div>
-</div>
-</div>
-<div className='project_recommendation'>
-<font className='projects_text'>Project Recommendations  </font>
-</div>
+          <div className='projects_analytics'>
+          <div className='projanaly'>
+          <div className='projec'>
+                <font className='projects_text'>Projects </font>
+          </div>
+          <div className='analytics'>
+          <font className='projects_text'>Analytics </font>
+          </div>
+          </div>
+          <div className='idnames'>
+                <div>
+              {/* <h4>John D.</h4> */}
+              <img className='person_image' src={logoSrc} alt="logo" />
+            <font className='john_text'>Title </font> <br />
+              <font className='project_text'>Name </font>
+                </div>
+                <div className='to_do'>
+                <font className='projects_text'>To-Do </font>
+                </div>
+          </div>
+          </div>
+          <div className='project_recommendation'>
+          <font className='projects_text'>Project Recommendations  </font>
+          </div>
         </div>
         
  </div>
@@ -110,4 +110,4 @@ function App() {
   );
 }
 
-export default App;
+export default SideNav;

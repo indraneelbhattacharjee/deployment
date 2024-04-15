@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link component from react-router-dom
 import './UserDashboard.css';
 import {
   ChakraProvider,
@@ -9,6 +10,7 @@ import {
   Heading,
   Card,
   Spacer,
+  Button,
 } from '@chakra-ui/react';
 
 
@@ -101,6 +103,13 @@ export const UserDash = () => {
                 <Spacer />
                 </Flex>
                 </Box>
+                </Container>
+
+                {/* Add Link to Services Page */}
+                <Container mt={5} position='relative' right='500'>
+                  <Link to="/services">
+                    <Button colorScheme="blue" variant="solid">View Products</Button>
+                  </Link>
                 </Container>
             </div>
         </div>

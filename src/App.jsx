@@ -26,13 +26,10 @@ import { AppDevServicePage } from "./components/AppDevServicePage";
 import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import { PricingPage } from "./components/PricingPage";
 import { CreditCardForm } from "./components/paymentPage";
+import { SideNav } from './components/updatesSidenav.jsx';
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-//import { Chat } from "./components/Chat";
-
-
-
-
+import ChatBot from 'react-simple-chatbot';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
