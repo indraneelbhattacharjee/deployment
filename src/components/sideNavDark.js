@@ -40,7 +40,7 @@ export function SideNavDark() {
 
   //paths for user and employee
   const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile'];
-  const employeePaths = ['/ems', '/contact', '/services', '/about'];
+  const employeePaths = ['/ems', '/employee_contact', '/employee_services', '/employee_about'];
 
   // Check if the current path is included in userPaths or employeePaths
   const isUserPage = userPaths.includes(location.pathname);
@@ -48,11 +48,9 @@ export function SideNavDark() {
   if(isUserPage){
     userLoggedIn = true;
   }
-
   if(isEmployeePage){
     userLoggedIn = false;
   }
-
   return (
   <div className='flex_container' >
     <div className='sideb'>
@@ -74,7 +72,7 @@ export function SideNavDark() {
         </nav>
       <div className="navbara">
         <Link to="/profile" className='logou'><FontAwesomeIcon icon={faCog} /> <font> Settings </font></Link>
-        <button onClick={handleLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button onClick={handleLogout} type="sub" className="group relative w-100px flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Log Out
         </button>
 
@@ -91,12 +89,12 @@ export function SideNavDark() {
           <Link to="/ems"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></Link>
 
           <Link to="/ems"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></Link>
-          <Link to="/contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
-          <Link to="/services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
-          <Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
+          <Link to="/employee_contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
+          <Link to="/employee_services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
+          <Link to="/employee_about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
         </nav>
       <div className="navbara">
-        <button onClick={handleEmployeeLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button onClick={handleEmployeeLogout} type="sub" className="group relative w-100px flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Log Out
         </button>
 

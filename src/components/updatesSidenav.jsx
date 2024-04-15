@@ -21,23 +21,44 @@ export const SideNav = () => {
     }
   };
 
+  const handleEmployeeLogout = async () => {
+    try {
+      const response = await axios.post('http://localhost:8080/logout');
+      if (response.status === 200) {
+        console.log('Logout successful');
+        // Perform any client-side cleanup
+        navigate('/employee_login'); // Redirect to the home page or login page
+      }
+    } catch (error) {
+      console.error('Logout failed:', error.response || error);
+    }
+  };
+
   const location = useLocation();
+  let userLoggedIn = false;
 
   //paths for user and employee
-  const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile', '/login'];
-  const employeePaths = ['/ems', '/contact', '/services', '/about', '/profile', '/login'];
+  const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile'];
+  const employeePaths = ['/ems', '/employee_contact', '/employee_services', '/employee_about'];
 
   // Check if the current path is included in userPaths or employeePaths
   const isUserPage = userPaths.includes(location.pathname);
   const isEmployeePage = employeePaths.includes(location.pathname);
+  if(isUserPage){
+    userLoggedIn = true;
+  }
+
+  if(isEmployeePage){
+    userLoggedIn = false;
+  }
   return (
 
     <div className='flex_container' >
         <div className='sideb'>
         <div className='main_div' >
+        {userLoggedIn ? (
+          <>
         <nav className="navbar">
-        {isUserPage && (
-            <>
           <div className="logo">
 
             <img className='logo_image' src={logoSrc} alt="logo" />
@@ -49,23 +70,6 @@ export const SideNav = () => {
           <Link to="/contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
           <Link to="/services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
           <Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
-          </>
-        )}
-        {isEmployeePage && (
-            <>
-            <div className="logo">
-
-            <img className='logo_image' src={logoSrc} alt="logo" />
-            <hr />
-          </div>
-          <Link to="/ems"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></Link>
-
-          <Link to="/ems"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></Link>
-          <Link to="/contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
-          <Link to="/services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
-          <Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
-          </>
-        )}
         </nav>
         <div className="navbara">
           <Link to="/profile"><FontAwesomeIcon icon={faCog} /> <font> Settings </font></Link>
@@ -75,6 +79,30 @@ export const SideNav = () => {
 
 
         </div>
+        </>
+        ) : (
+          <>
+        <nav className="navbar">
+          <div className="logo">
+
+            <img className='logo_image' src={logoSrc} alt="logo" />
+            <hr />
+          </div>
+          <Link to="/ems"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></Link>
+
+          <Link to="/ems"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></Link>
+          <Link to="/employee_contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
+          <Link to="/employee_services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
+          <Link to="/employee_about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
+        </nav>
+      <div className="navbara">
+        <button onClick={handleEmployeeLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Log Out
+        </button>
+
+      </div>
+      </>
+      )}
         </div>
    
         </div>

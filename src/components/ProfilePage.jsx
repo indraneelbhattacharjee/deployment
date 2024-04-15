@@ -75,7 +75,7 @@ export const ProfilePage = () => {
                         </label>
                         <button type='submit' className='bg-black text-white border-r-5 p-6 m-5 rounded-xl'>Save Changes</button>
                     </form>
-                    <a onClick={() => navigate('/reset-password')} className='text-white p-20 text-4xl-2'>Change Password</a>
+                    <a onClick={() => navigate('/verify-email')} className='text-white p-20 text-4xl-2'>Change Password</a>
                 </div>
             </div>
         </div>

@@ -27,6 +27,9 @@ import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import { PricingPage } from "./components/PricingPage";
 import { CreditCardForm } from "./components/paymentPage";
 import { SideNav } from './components/updatesSidenav.jsx';
+import { EmployeeContact } from './components/employee_contact';
+import { EmployeeServicesPage } from './components/employee_services';
+import { EmployeeAbout } from './components/employee_about';
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 import ChatBot from 'react-simple-chatbot';
@@ -43,8 +46,8 @@ const App = () => {
 function NavBarLogic() {
     const location = useLocation();
 
-    const loggedInPaths = ['/services', '/ems'];
-    const loggedOutPath = ['/login'];
+    const loggedInPaths = ['/user-dashboard', '/ems'];
+    const loggedOutPath = ['/login', '/employee_login'];
 
     const loggedIn = loggedInPaths.includes(location.pathname);
     const loggedOut = loggedOutPath.includes(location.pathname);
@@ -58,7 +61,7 @@ function NavBarLogic() {
     }
 };
 
-
+/*
 const navigate = useNavigate();
 
   const handleChatTrigger = (path) => {
@@ -66,12 +69,24 @@ const navigate = useNavigate();
       navigate(path);
     };
   };
+  */
 
 
 
   return (
     <Router>
-        <Navigation />
+        <NavBarLogic />
+      {isLoggedIn ? (
+                // If logged in, display side navigation bar
+                <>
+                    <SideNavDark />
+                </>
+            ) : (
+                // If logged out, display top navigation bar
+                <>
+                    <TopNav />
+                </>
+            )}
     
       <Routes>
       <Route path="/" element={<Landing />} />
@@ -97,63 +112,17 @@ const navigate = useNavigate();
         <Route path="/user-dashboard" element={<UserDash />} />
         <Route path="/ems" element={<EMS />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/employee_contact" element={<EmployeeContact />} />
+        <Route path="/employee_services" element={<EmployeeServicesPage />} />
+        <Route path="/employee_about" element={<EmployeeAbout />} />
         {/* Add other routes as needed */}
       </Routes>
-      <ChatBot
-        steps={[
-          {
-            id: '1',
-            message: 'Welcome to Bay Develops, what can we help you with today?',
-            trigger: '2',
-          },
-          {
-            id: '2',
-            options: [
-              { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
-              { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
-              { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
-              { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
-            ],
-        
-          },
-          {
-            id: '3',
-            message: 'Redirecting...',
-            trigger: () => handleChatTrigger,
-            waitAction: true,
-          },
-
-        ]}
-      />
+      
 
       
 
     </Router>
 
-  );
-};
-
-
-const Navigation = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const loggedInPaths = ['/services', '/ems'];
-    const loggedOutPath = ['/login'];
-
-    setIsLoggedIn(loggedInPaths.includes(location.pathname));
-  }, [location.pathname]);
-
-  const handleChatTrigger = (path) => {
-    navigate(path);
-  };
-
-  return (
-    <>
-      {isLoggedIn ? <SideNavDark /> : <TopNav />}
-    </>
   );
 };
 
@@ -186,4 +155,34 @@ export default App;
       },
 
     ]}
+
+
+
+
+    <ChatBot
+        steps={[
+          {
+            id: '1',
+            message: 'Welcome to Bay Develops, what can we help you with today?',
+            trigger: '2',
+          },
+          {
+            id: '2',
+            options: [
+              { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
+              { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
+              { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
+              { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
+            ],
+        
+          },
+          {
+            id: '3',
+            message: 'Redirecting...',
+            trigger: () => handleChatTrigger,
+            waitAction: true,
+          },
+
+        ]}
+      />
   />*/ 
