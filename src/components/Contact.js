@@ -16,18 +16,18 @@ export const Contact = (props) =>  {
       <div class='textOnImageContact'>
       <u>Contact Us</u>
         <p id="descriptionContact">
-            <form action="/action_page.php"> 
+            <form action="mailto:baydevelops@gmail.com" method="post" enctype="text/plain"> 
                 <label for="name">Enter Name </label>
                 <br></br>
-                <input type="text" id="name" name="name" size="60"></input>
+                <input type="text" id="name" name="name" size="60" required></input>
                 <br></br>
                 <label for="email">Enter Email </label>
                 <br></br>
-                <input type="text" id="email" name="email" size="60"></input>
+                <input type="text" id="email" name="email" size="60" required></input>
                 <br></br>
                 <fieldset>
                     <legend>Message</legend>
-                    <textarea id="textArea" rows="4" cols="62"></textarea>
+                    <textarea id="textArea" rows="4" cols="62" required></textarea>
                 </fieldset>
             <Button
               className="self-stretch"
