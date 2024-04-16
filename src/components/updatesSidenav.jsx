@@ -38,8 +38,8 @@ export const SideNav = () => {
   let userLoggedIn = false;
 
   //paths for user and employee
-  const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile'];
-  const employeePaths = ['/ems', '/employee_contact', '/employee_services', '/employee_about'];
+  const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile', '/uiux-services', '/webDev-services', '/software-services', '/appDev-services', '/paymentPage'];
+  const employeePaths = ['/ems', '/employee_contact', '/employee_services', '/employee_about', '/employee_uiux', '/employee_webDev', '/employee_software', '/employee_appDev', '/employee_payment'];
 
   // Check if the current path is included in userPaths or employeePaths
   const isUserPage = userPaths.includes(location.pathname);

@@ -30,6 +30,11 @@ import { SideNav } from './components/updatesSidenav.jsx';
 import { EmployeeContact } from './components/employee_contact';
 import { EmployeeServicesPage } from './components/employee_services';
 import { EmployeeAbout } from './components/employee_about';
+import { EmployeeAppDevServicePage } from './components/employee_appDev';
+import { EmployeeSoftwareDevServicePage } from './components/employee_software';
+import { EmployeeUIUXDevServicePage } from './components/employee_uiux';
+import { EmployeeWebDevServicePage } from './components/employee_webDev';
+import { EmployeeCreditCardForm } from './components/employee_payment';
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 import ChatBot from 'react-simple-chatbot';
@@ -115,6 +120,11 @@ const navigate = useNavigate();
         <Route path="/employee_contact" element={<EmployeeContact />} />
         <Route path="/employee_services" element={<EmployeeServicesPage />} />
         <Route path="/employee_about" element={<EmployeeAbout />} />
+        <Route path="/employee_appDev" element={<EmployeeAppDevServicePage />} />
+        <Route path="/employee_software" element={<EmployeeSoftwareDevServicePage />} />
+        <Route path="/employee_uiux" element={<EmployeeUIUXDevServicePage />} />
+        <Route path="/employee_webDev" element={<EmployeeWebDevServicePage />} />
+        <Route path="/employee_payment" element={<EmployeeCreditCardForm />} />
         {/* Add other routes as needed */}
       </Routes>
       

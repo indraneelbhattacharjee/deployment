@@ -35,6 +35,7 @@ export const Contact = (props) =>  {
               color="error"
               name="Purchse Service"
               size="large"
+              type="submit"
               variant="contained">
               Send
             </Button>
