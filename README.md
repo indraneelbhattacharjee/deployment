@@ -62,12 +62,16 @@ Step 7: Sign into GituHub Desktop and then open your repo. Choose the branch you
 ## UI/UX
 Logo: 
 
+<img width="304" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/471480cb-e549-48bf-bc63-19b808e70125">
+Logo with transparent background (what we use):
+
 ![Bay Develops Logo](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/baydevelopslogo-1-1%402x.png)
 
 ### Web Pages
-<img width="505" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/27d13998-66ee-4c1f-82de-ceac54434fc0">
 
-![Main Pages](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/Technogaze%20Mock-Up.jpg)
+<img width="505" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/49dd99a4-730c-422c-84bd-6c747e6aa908">
+
+<img width="544" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/117cbc56-f6fa-4166-83a5-a5f88c2fa070">
 
 ![Dashboard](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/User%20Dashboard.jpg)
 
