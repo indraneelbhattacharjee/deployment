@@ -60,6 +60,9 @@ Step 7: Sign into GituHub Desktop and then open your repo. Choose the branch you
 ## Key Milestones
 
 ## UI/UX
+
+The user interface (UI) adopts a sleek, minimalistic design with a modern aesthetic, characterized by its intuitive navigation and thoughtful placement of elements. Each component is strategically positioned, enhancing the user experience through logical arrangement and generous whitespace that provides clarity and breathing room. The choice of a black and muted red color scheme not only exudes sophistication but also creates striking contrast, drawing attention to key features. Additionally, the carefully selected font size ensures optimal readability, catering to users of all preferences and ensuring a seamless interaction with the interface.
+
 Logo: 
 
 <img width="304" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/471480cb-e549-48bf-bc63-19b808e70125">
