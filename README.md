@@ -65,6 +65,7 @@ Logo:
 ![Bay Develops Logo](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/baydevelopslogo-1-1%402x.png)
 
 ### Web Pages
+<img width="505" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/27d13998-66ee-4c1f-82de-ceac54434fc0">
 
 ![Main Pages](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/Technogaze%20Mock-Up.jpg)
 
