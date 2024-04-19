@@ -29,3 +29,15 @@
     margin: 0 auto;
 
   }
+
+  #name{
+    color: black;
+  }
+  
+  #email{
+    color: black;
+  }
+  
+  #textArea{
+    color: black;
+  }
