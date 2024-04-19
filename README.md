@@ -60,13 +60,24 @@ Step 7: Sign into GituHub Desktop and then open your repo. Choose the branch you
 ## Key Milestones
 
 ## UI/UX
+
+The user interface (UI) adopts a sleek, minimalistic design with a modern aesthetic, characterized by its intuitive navigation and thoughtful placement of elements. Each component is strategically positioned, enhancing the user experience through logical arrangement and generous whitespace that provides clarity and breathing room. The choice of a black and muted red color scheme not only exudes sophistication but also creates striking contrast, drawing attention to key features. Additionally, the carefully selected font size ensures optimal readability, catering to users of all preferences and ensuring a seamless interaction with the interface.
+
 Logo: 
+
+<img width="304" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/471480cb-e549-48bf-bc63-19b808e70125">
+
+Logo with transparent background (what we use):
 
 ![Bay Develops Logo](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/baydevelopslogo-1-1%402x.png)
 
 ### Web Pages
 
-![Main Pages](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/Technogaze%20Mock-Up.jpg)
+<img width="505" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/49dd99a4-730c-422c-84bd-6c747e6aa908">
+
+<img width="544" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/117cbc56-f6fa-4166-83a5-a5f88c2fa070">
+
+<img width="718" alt="image" src="https://github.com/RUKRAZ/Technogaze/assets/113735951/37579608-e491-48b3-91da-159ffc34f7d5">
 
 ![Dashboard](https://github.com/RUKRAZ/Technogaze/blob/main/public/img/Mockups/User%20Dashboard.jpg)
 

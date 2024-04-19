@@ -3,7 +3,7 @@ import img1 from './about-us.jpg';
 import {Button} from "@mui/material";
 import React from "react";
 
-export const Contact = (props) =>  {
+export const EmployeeContact = (props) =>  {
   return (
   
     <div className='min-h-screen flex items-center justify-center' 
@@ -35,7 +35,6 @@ export const Contact = (props) =>  {
               color="error"
               name="Purchse Service"
               size="large"
-              type="submit"
               variant="contained">
               Send
             </Button>
@@ -47,4 +46,4 @@ export const Contact = (props) =>  {
   );
 }
 
-export default Contact;
+export default EmployeeContact;

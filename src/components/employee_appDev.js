@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
-export const AppDevServicePage = () => {
+export const EmployeeAppDevServicePage = () => {
     const navigate = useNavigate();
 
     // Define your service object
@@ -20,7 +20,7 @@ export const AppDevServicePage = () => {
     };
     
     const goToPayment = () => {
-      navigate(`/paymentPage?name=${encodeURIComponent(appDevService.name)}&price=${appDevService.price}`);
+      navigate(`/employee_payment?name=${encodeURIComponent(appDevService.name)}&price=${appDevService.price}`);
     };
     return (
         <>
@@ -148,7 +148,4 @@ export const AppDevServicePage = () => {
     );
 };
 
-export default AppDevServicePage;
-
-
-
+export default EmployeeAppDevServicePage;

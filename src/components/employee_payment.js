@@ -96,7 +96,7 @@ import { useLocation } from 'react-router-dom';
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
-export const CreditCardForm = () => {
+export const EmployeeCreditCardForm = () => {
   const query = useQuery();
   const service = {
     name: query.get('name'),
@@ -280,4 +280,4 @@ return (
 );
 };
 
-export default CreditCardForm;
+export default EmployeeCreditCardForm;

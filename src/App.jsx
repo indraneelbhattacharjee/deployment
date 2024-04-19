@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { About } from "./components/About";
 //import { About } from "./components/AppDevServicePage.js";
 
 import { Contact } from "./components/Contact";
 import { Landing } from "./components/landing";
+import { useNavigate } from 'react-router-dom';
+
 import { EmployeeLogin } from "./components/employee_login";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
@@ -14,7 +16,7 @@ import { TopNav } from "./components/TopNavbar";
 import { SideNavDark } from "./components/sideNavDark";
 import { ProfilePage } from "./components/ProfilePage";
 import {ServicesPage} from "./components/ServicesPage";
-import { Resetpassword } from "./components/resetpassword";
+import { ResetPassword } from "./components/resetpassword";
 import { VerifyEmailPage } from "./components/VerifyEmailPage";
 import {EMS} from "./components/ems.tsx";
 import {UserDash} from "./components/UserDashboard.js";
@@ -24,17 +26,23 @@ import { AppDevServicePage } from "./components/AppDevServicePage";
 import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import { PricingPage } from "./components/PricingPage";
 import { CreditCardForm } from "./components/paymentPage";
+import { SideNav } from './components/updatesSidenav.jsx';
+import { EmployeeContact } from './components/employee_contact';
+import { EmployeeServicesPage } from './components/employee_services';
+import { EmployeeAbout } from './components/employee_about';
+import { EmployeeAppDevServicePage } from './components/employee_appDev';
+import { EmployeeSoftwareDevServicePage } from './components/employee_software';
+import { EmployeeUIUXDevServicePage } from './components/employee_uiux';
+import { EmployeeWebDevServicePage } from './components/employee_webDev';
+import { EmployeeCreditCardForm } from './components/employee_payment';
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-//import { Chat } from "./components/Chat";
-
-
+import ChatBot from 'react-simple-chatbot';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
 });
-
 //page routes:
 
 const App = () => {
@@ -57,6 +65,17 @@ function NavBarLogic() {
         setIsLoggedIn(false);
     }
 };
+
+/*
+const navigate = useNavigate();
+
+  const handleChatTrigger = (path) => {
+    return () => {
+      navigate(path);
+    };
+  };
+  */
+
 
 
   return (
@@ -91,17 +110,89 @@ function NavBarLogic() {
         <Route path="/register" element={<Register />} />
         <Route path="/employee_register" element={<EmployeeRegister />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/reset-password" element={<Resetpassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path ="/paymentPage" element={<CreditCardForm/>}/>
         <Route path="/verify-email" element={<VerifyEmailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/user-dashboard" element={<UserDash />} />
         <Route path="/ems" element={<EMS />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/employee_contact" element={<EmployeeContact />} />
+        <Route path="/employee_services" element={<EmployeeServicesPage />} />
+        <Route path="/employee_about" element={<EmployeeAbout />} />
+        <Route path="/employee_appDev" element={<EmployeeAppDevServicePage />} />
+        <Route path="/employee_software" element={<EmployeeSoftwareDevServicePage />} />
+        <Route path="/employee_uiux" element={<EmployeeUIUXDevServicePage />} />
+        <Route path="/employee_webDev" element={<EmployeeWebDevServicePage />} />
+        <Route path="/employee_payment" element={<EmployeeCreditCardForm />} />
         {/* Add other routes as needed */}
       </Routes>
+      
+
+      
+
     </Router>
+
   );
 };
 
 export default App;
+
+
+
+/*<ChatBot
+    steps={[
+      {
+        id: '1',
+        message: 'Welcome to Bay Develops, what can we help you with today?',
+        trigger: '2',
+      },
+      {
+        id: '2',
+        options: [
+          { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
+          { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
+          { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
+          { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
+        ],
+        
+      },
+      {
+        id: '3',
+        message: 'Redirecting...',
+        trigger: () => chatTrigger,
+        waitAction: true,
+      },
+
+    ]}
+
+
+
+
+    <ChatBot
+        steps={[
+          {
+            id: '1',
+            message: 'Welcome to Bay Develops, what can we help you with today?',
+            trigger: '2',
+          },
+          {
+            id: '2',
+            options: [
+              { value: 1, label: 'Products', trigger: handleChatTrigger('/services') },
+              { value: 2, label: 'Sign up!', trigger: handleChatTrigger('/register') },
+              { value: 3, label: 'Learn about us', trigger: handleChatTrigger('/about') },
+              { value: 4, label: 'Contact us', trigger: handleChatTrigger('/contact') }
+            ],
+        
+          },
+          {
+            id: '3',
+            message: 'Redirecting...',
+            trigger: () => handleChatTrigger,
+            waitAction: true,
+          },
+
+        ]}
+      />
+  />*/ 

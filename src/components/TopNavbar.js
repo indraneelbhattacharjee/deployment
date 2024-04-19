@@ -93,9 +93,9 @@ export function TopNav() {
                                     <ListItem button component={Link} to="/contact"> 
                                         <ListItemText primary="Contact" />
                                     </ListItem>
-                                    
-
-
+                                    <ListItem button component={Link} to="/pricing"> 
+                                        <ListItemText primary="Pricing" />
+                                    </ListItem>
                                     <ListItem button component={Link} to="/about">
                                         <ListItemText primary="Sign In" />
                                     </ListItem>
@@ -126,10 +126,9 @@ export function TopNav() {
                             <Button color="inherit" component={Link} to="/contact">
                                 Contact
                             </Button>
-                            
-
-
-                            
+                            <Button color="inherit" component={Link} to="/pricing">
+                                Pricing
+                            </Button>
                             <Button color="inherit" className={classes.signInButton} component={Link} to="/login" >
                                 Sign In
                             </Button>
