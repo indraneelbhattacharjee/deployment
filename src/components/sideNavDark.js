@@ -39,7 +39,7 @@ export function SideNavDark() {
   let userLoggedIn = false;
 
   //paths for user and employee
-  const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile', '/uiux-services', '/webDev-services', '/software-services', '/appDev-services', '/paymentPage'];
+  const userPaths = ['/user-dashboard', '/contact-signedin', '/services', '/about-signedin', '/profile', '/uiux-services', '/webDev-services', '/software-services', '/appDev-services', '/paymentPage'];
   const employeePaths = ['/ems', '/employee_contact', '/employee_services', '/employee_about', '/employee_uiux', '/employee_webDev', '/employee_software', '/employee_appDev', '/employee_payment'];
 
   // Check if the current path is included in userPaths or employeePaths
@@ -66,9 +66,9 @@ export function SideNavDark() {
           <Link to="/user-dashboard"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></Link>
 
           <Link to="/user-dashboard"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></Link>
-          <Link to="/contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
+          <Link to="/contact-signedin"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
           <Link to="/services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
-          <Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
+          <Link to="/about-signedin"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
         </nav>
       <div className="navbara">
         <Link to="/profile" className='logou'><FontAwesomeIcon icon={faCog} /> <font> Settings </font></Link>
@@ -101,11 +101,6 @@ export function SideNavDark() {
       </div>
       </>
       )}
-      <img
-        className="absolute top-[0px] left-[0px] w-[238px] h-[88px] object-cover"
-        alt=""
-        src="/img/baydevelopslogo-1-1@2x.png"
-      />
     </div>
   </div>
 </div>

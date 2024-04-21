@@ -2,7 +2,7 @@ import React from 'react';
 import backgroundImage from './about-us.jpg'; // This is the path to the background image you've provided
 import { SideNavDark } from "./sideNavDark";
 
-export const EmployeeAbout = () => {
+export const AboutSignedIn = () => {
   return (
     <div className="min-h-screen flex items-center justify-left" 
          style={{ 
@@ -27,4 +27,4 @@ export const EmployeeAbout = () => {
   );
 };
 
-export default EmployeeAbout;
+export default AboutSignedIn;

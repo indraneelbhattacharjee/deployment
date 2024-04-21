@@ -92,6 +92,7 @@ import americanLogo from '../paymentpage/american.webp';
 import discoverLogo from '../paymentpage/Discover-logo.png';
 import {loadStripe} from '@stripe/stripe-js';
 import { useLocation } from 'react-router-dom';
+import { SideNavDark } from "./sideNavDark";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -220,7 +221,10 @@ export const EmployeeCreditCardForm = () => {
 }
 
 return (
-  <div className="bg-gray-100 min-h-screen py-12">
+  <div className="bg-gray-100 min-h-screen py-12 flex items-center justify-left">
+    <div className="sideNavBar">
+        <SideNavDark />
+    </div>
     <div className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow">
     {service.name && service.price && (
           <div className="mb-6 p-4 border-b border-gray-200">

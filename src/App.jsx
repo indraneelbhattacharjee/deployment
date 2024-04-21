@@ -35,6 +35,8 @@ import { EmployeeSoftwareDevServicePage } from './components/employee_software';
 import { EmployeeUIUXDevServicePage } from './components/employee_uiux';
 import { EmployeeWebDevServicePage } from './components/employee_webDev';
 import { EmployeeCreditCardForm } from './components/employee_payment';
+import { ContactSignedIn } from './components/ConctactSignedIn';
+import { AboutSignedIn } from './components/AboutSignedIn';
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
 import ChatBot from 'react-simple-chatbot';
@@ -51,7 +53,7 @@ const App = () => {
 function NavBarLogic() {
     const location = useLocation();
 
-    const loggedInPaths = ['/user-dashboard', '/ems'];
+    const loggedInPaths = ['/user-dashboard', '/ems','/webDev-services','/uiux-services','/software-services','/appDev-services','/paymentPage','/profile','/employee_contact','/employee_services','/employee_about','/employee_appDev','/employee_software','/employee_uiux','/employee_webDev','/employee_payment','/contact-signedin','/about-signedin','/services'];
     const loggedOutPath = ['/login', '/employee_login'];
 
     const loggedIn = loggedInPaths.includes(location.pathname);
@@ -84,7 +86,6 @@ const navigate = useNavigate();
       {isLoggedIn ? (
                 // If logged in, display side navigation bar
                 <>
-                    <SideNavDark />
                 </>
             ) : (
                 // If logged out, display top navigation bar
@@ -125,6 +126,8 @@ const navigate = useNavigate();
         <Route path="/employee_uiux" element={<EmployeeUIUXDevServicePage />} />
         <Route path="/employee_webDev" element={<EmployeeWebDevServicePage />} />
         <Route path="/employee_payment" element={<EmployeeCreditCardForm />} />
+        <Route path="/contact-signedin" element={<ContactSignedIn />} />
+        <Route path="/about-signedin" element={<AboutSignedIn />} />
         {/* Add other routes as needed */}
       </Routes>
       

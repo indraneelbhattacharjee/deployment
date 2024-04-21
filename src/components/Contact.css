@@ -30,14 +30,18 @@
 
   }
 
-  #name{
+  .fullName{
     color: black;
   }
-  
-  #email{
+
+  .email{
     color: black;
   }
-  
-  #textArea{
+
+  .message{
     color: black;
+  }
+
+  .messageHeader{
+    color: white;
   }

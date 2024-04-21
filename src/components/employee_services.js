@@ -78,10 +78,14 @@ export default ServicesPage;
 import { Button } from "@mui/material";
 import React from "react";
 import { Link } from 'react-router-dom';
+import { SideNavDark } from "./sideNavDark";
 
 export const EmployeeServicesPage = () => {
   return (
     <div className="flex flex-row">
+      <div className="sideNavBar" style={{paddingRight: '200px'}}>
+        <SideNavDark />
+      </div>
       
         
 

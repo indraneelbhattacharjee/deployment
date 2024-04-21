@@ -2,6 +2,7 @@ import './SoftwareDevServicePage.css';
 import {Button} from "@mui/material";
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SideNavDark } from "./sideNavDark";
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
 export const EmployeeSoftwareDevServicePage = () => {
@@ -32,17 +33,17 @@ export const EmployeeSoftwareDevServicePage = () => {
   
   return (
     <>
+    <div className="sideNavBar">
+      <SideNavDark />
+    </div>
     <div class="servicepage">
         <div class="text">
-          <div class="servicepageLogo">
-            <img class="logo_image" src="./img/bayDevelopsLogo(black).png" alt="logoImg" width="auto" height="100"></img>
-          </div>
 
-            <b>About Our Software Development Services</b>
+            <b style={{paddingLeft: '150px'}}>About Our Software Development Services</b>
 
             <p></p>
 
-            <div>At Bay Develops, we offer a comprehensive range of software development services to 
+            <div style={{paddingLeft: '150px'}}>At Bay Develops, we offer a comprehensive range of software development services to 
               help businesses of all sizes create and maintain high-quality, reliable software solutions. 
               Our team of experienced and skilled developers can help you with everything from defining your 
               requirements and designing your software architecture to developing, testing, and deploying your 
@@ -50,18 +51,18 @@ export const EmployeeSoftwareDevServicePage = () => {
 
             <p></p>
 
-            <div>We understand that every business is different, so we take a personalized approach to every 
+            <div style={{paddingLeft: '150px'}}>We understand that every business is different, so we take a personalized approach to every 
               software development project. We start by working with you to understand your unique needs and 
               goals. Then, we develop a custom plan to create a software solution that will help you achieve 
               your business objectives.</div>
 
             <p></p>
 
-            <b>We offer a wide range of software development services, including:</b>
+            <b style={{paddingLeft: '150px'}}>We offer a wide range of software development services, including:</b>
 
             <p></p>
 
-            <ul>
+            <ul style={{paddingLeft: '150px'}}>
               <li>Custom software development</li>
               <li>Web application development</li>
               <li>Mobile application development</li>
@@ -73,33 +74,33 @@ export const EmployeeSoftwareDevServicePage = () => {
             </ul>
             
 
-            <b>We also offer a variety of additional services, such as:</b> 
+            <b style={{paddingLeft: '150px'}}>We also offer a variety of additional services, such as:</b> 
 
             <p></p>
 
-            <ul>
+            <ul style={{paddingLeft: '150px'}}>
               <li>Software maintenance and support</li>
               <li>Software integration</li>
               <li>Software migration</li>
               <li>Software training</li>
             </ul>
 
-            <div>We are committed to providing our clients with the highest quality software development 
+            <div style={{paddingLeft: '150px'}}>We are committed to providing our clients with the highest quality software development 
               services. We use the latest technologies and best practices to develop software solutions 
               that are secure, reliable, and easy to use. We also offer a variety of support and maintenance 
               services to ensure that your software is always running smoothly.</div>
 
             <p></p>
 
-            <b>Why Choose Us for Your Software Development Needs?</b>
+            <b style={{paddingLeft: '150px'}}>Why Choose Us for Your Software Development Needs?</b>
 
             <p></p>
 
-            <div>Here are just a few reasons why you should choose Bay Develops for your software development needs:</div>
+            <div style={{paddingLeft: '150px'}}>Here are just a few reasons why you should choose Bay Develops for your software development needs:</div>
 
             <p></p>
 
-            <ul>
+            <ul style={{paddingLeft: '150px'}}>
               <li>We have a team of experienced and skilled developers who are passionate about their work.</li>
               <li>We offer a wide range of software development services to meet the needs of businesses of all sizes.</li>
               <li>We take a personalized approach to every project and work closely with our clients to understand their unique needs and goals.</li>
@@ -107,12 +108,12 @@ export const EmployeeSoftwareDevServicePage = () => {
               <li>We offer a variety of support and maintenance services to ensure that your software is always running smoothly.</li>
             </ul>
 
-            <div>If you are looking for a reliable and experienced software development company, contact us today. 
+            <div style={{paddingLeft: '150px'}}>If you are looking for a reliable and experienced software development company, contact us today. 
               We will be happy to discuss your needs and help you create a software solution that will help you 
               achieve your business objectives.</div>
 
             <Button
-              sx={{ width: 300, height: 25, mt: 2, ml: 9, mb: 2, fontSize: 10 }}
+              sx={{ width: 300, height: 25, mt: 2, ml: 35, mb: 2, fontSize: 10 }}
               className="self-stretch"
               color="error"
               name="Purchse Service"
@@ -124,7 +125,7 @@ export const EmployeeSoftwareDevServicePage = () => {
             </Button>
         </div>
         <div>
-          <img class="soft_dev" src="./img/softwareDev.jpg" alt="softDev"></img>
+          <img class="soft_dev" src="./img/softwareDev.jpg" width="500px" alt="softDev"></img>
         </div>
     </div>
     </>

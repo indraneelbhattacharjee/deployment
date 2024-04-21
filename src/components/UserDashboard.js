@@ -17,7 +17,7 @@ import {
 import BigChartBox from "./emsFiles/bigChartBox/BigChartBox.tsx";
 import ChartBox from "./emsFiles/chartBox/ChartBox.tsx";
 import TopBox from "./emsFiles/topBox/TopBox.tsx";
-import SideNavDark from "./sideNavDark.js"
+import SideNavDark from "./sideNavDark.js";
 import {
   barChartBoxRevenue,
   barChartBoxVisit,
@@ -31,6 +31,7 @@ import "./emsFiles/ems.scss";
 export const UserDash = () => {
   return (
     <ChakraProvider>
+      <SideNavDark />
         <div class="row">
             <div class="column">
                     <Container mt={3} position='relative' right='500' >
