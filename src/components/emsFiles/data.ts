@@ -4,7 +4,7 @@ export const chartBoxUser = {
   title: "Network Infrastructure", //client project
   number: "Bob, W.",
   dataKey: "Secure",
-  percentage: "100",
+  percentage: 100,
   note: "Insert Note Here"
 
 };
@@ -15,7 +15,7 @@ export const chartBoxProduct = {
   title: "Custom App",
   number: "Sam, K.",
   dataKey: "In Progress",
-  percentage: "60",
+  percentage: 60,
   note: "Insert Note Here"
 
 };
@@ -26,7 +26,7 @@ export const chartBoxConversion = {
   title: "Proj. Name",
   number: "Jhon, D.",
   dataKey: "Not Started",
-  percentage: "20",
+  percentage: 20,
   note: "Insert Note Here"
 };
 

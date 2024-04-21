@@ -16,7 +16,6 @@ interface Props {
   number: number | string;
   percentage: number;
   note:string;
-  chartData: object[];
 }
 
 const ChartBox: React.FC<Props> = (props) => {

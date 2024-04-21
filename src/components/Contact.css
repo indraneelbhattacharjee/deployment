@@ -29,3 +29,19 @@
     margin: 0 auto;
 
   }
+
+  .fullName{
+    color: black;
+  }
+
+  .email{
+    color: black;
+  }
+
+  .message{
+    color: black;
+  }
+
+  .messageHeader{
+    color: white;
+  }

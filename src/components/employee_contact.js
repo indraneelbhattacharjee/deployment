@@ -2,17 +2,21 @@ import './Contact.css';
 import img1 from './about-us.jpg';
 import {Button} from "@mui/material";
 import React from "react";
+import { SideNavDark } from "./sideNavDark";
 
-export const Contact = (props) =>  {
+export const EmployeeContact = (props) =>  {
   return (
   
-    <div className='min-h-screen flex items-center justify-center' 
+    <div className='min-h-screen flex items-center justify-left' 
         style={{ 
            backgroundImage: `url(${img1})`,
            backgroundPosition: 'center',
            backgroundSize: 'cover',
            backgroundRepeat: 'no-repeat'
          }}>
+      <div className="sideNavBar" style={{paddingRight: '200px'}}>
+        <SideNavDark />
+      </div>
       <div class='textOnImageContact'>
       <u>Contact Us</u>
         <p id="descriptionContact">
@@ -30,7 +34,7 @@ export const Contact = (props) =>  {
                     <textarea class="message" rows="4" cols="62" name="message" required></textarea>
                 </fieldset>
                 <input type="hidden" name="_captcha" value="false"></input>
-                <input type="hidden" name="_next" value="http://localhost:3000/contact"></input>
+                <input type="hidden" name="_next" value="http://localhost:3000/employee_contact"></input>
             <Button
               className="self-stretch"
               id="sendContact"
@@ -48,4 +52,4 @@ export const Contact = (props) =>  {
   );
 }
 
-export default Contact;
+export default EmployeeContact;

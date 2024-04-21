@@ -6,7 +6,7 @@ import { SideNavDark } from "./sideNavDark";
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
 
 
-export const UIUXDevServicePage = () => {
+export const EmployeeUIUXDevServicePage = () => {
     const navigate = useNavigate();
 
     // Define your service object
@@ -22,7 +22,7 @@ export const UIUXDevServicePage = () => {
     };
     
     const goToPayment = () => {
-      navigate(`/paymentPage?name=${encodeURIComponent(uiuxDevService.name)}&price=${uiuxDevService.price}`);
+      navigate(`/employee_payment?name=${encodeURIComponent(uiuxDevService.name)}&price=${uiuxDevService.price}`);
     };
 
     return (
@@ -121,4 +121,4 @@ export const UIUXDevServicePage = () => {
     );
 };
 
-export default UIUXDevServicePage;
+export default EmployeeUIUXDevServicePage;

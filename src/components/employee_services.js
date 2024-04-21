@@ -80,12 +80,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { SideNavDark } from "./sideNavDark";
 
-export const ServicesPage = () => {
+export const EmployeeServicesPage = () => {
   return (
     <div className="flex flex-row">
       <div className="sideNavBar" style={{paddingRight: '200px'}}>
         <SideNavDark />
       </div>
+      
         
 
 
@@ -110,7 +111,7 @@ export const ServicesPage = () => {
             <p className="m-0">Web</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/webDev-services">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/employee_webDev">View Service</Button>
           <b>$99.99</b>
         </div>
 
@@ -120,7 +121,7 @@ export const ServicesPage = () => {
             <p className="m-0">Software</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/software-services">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/employee_software">View Service</Button>
           <b>$99.99</b>
         </div>
 
@@ -130,7 +131,7 @@ export const ServicesPage = () => {
             <p className="m-0">Application</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/appDev-services">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/employee_appDev">View Service</Button>
           <b>$99.99</b>
         </div>
 
@@ -140,7 +141,7 @@ export const ServicesPage = () => {
             <p className="m-0">UI/UX</p>
             <p className="m-0">Development</p>
           </div>
-          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/uiux-services">View Service</Button>
+          <Button sx={{ width: '100%', mb:3 }} color="error" variant="contained" component={Link} to="/employee_uiux">View Service</Button>
           <b>$99.99</b>
         </div>
       </div>
@@ -148,4 +149,4 @@ export const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export default EmployeeServicesPage;

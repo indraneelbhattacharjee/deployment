@@ -1,12 +1,11 @@
+import './sidenav.css';
 import { Link } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import '../sidenav.css';//need to be connected properly
-
 import { faHome, faChartBar, faEnvelope, faBoxOpen, faInfoCircle, faCog, faBeer, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-export function SideNavDark() {
-  const logoSrc = `${process.env.PUBLIC_URL}/img/sideNav/logo.png`;
+export const SideNav = () => {
+  const logoSrc = `${process.env.PUBLIC_URL}/logoo.png`;
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -39,7 +38,7 @@ export function SideNavDark() {
   let userLoggedIn = false;
 
   //paths for user and employee
-  const userPaths = ['/user-dashboard', '/contact-signedin', '/services', '/about-signedin', '/profile', '/uiux-services', '/webDev-services', '/software-services', '/appDev-services', '/paymentPage'];
+  const userPaths = ['/user-dashboard', '/contact', '/services', '/about', '/profile', '/uiux-services', '/webDev-services', '/software-services', '/appDev-services', '/paymentPage'];
   const employeePaths = ['/ems', '/employee_contact', '/employee_services', '/employee_about', '/employee_uiux', '/employee_webDev', '/employee_software', '/employee_appDev', '/employee_payment'];
 
   // Check if the current path is included in userPaths or employeePaths
@@ -48,13 +47,15 @@ export function SideNavDark() {
   if(isUserPage){
     userLoggedIn = true;
   }
+
   if(isEmployeePage){
     userLoggedIn = false;
   }
   return (
-  <div className='flex_container' >
-    <div className='sideb'>
-      <div className='main_div' >
+
+    <div className='flex_container' >
+        <div className='sideb'>
+        <div className='main_div' >
         {userLoggedIn ? (
           <>
         <nav className="navbar">
@@ -66,18 +67,19 @@ export function SideNavDark() {
           <Link to="/user-dashboard"><FontAwesomeIcon icon={faBeer} /> <font> Overview </font></Link>
 
           <Link to="/user-dashboard"><FontAwesomeIcon icon={faChartBar} /> <font> Analytics</font></Link>
-          <Link to="/contact-signedin"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
+          <Link to="/contact"><FontAwesomeIcon icon={faEnvelope} /> <font> Contact us </font></Link>
           <Link to="/services"><FontAwesomeIcon icon={faBoxOpen} /> <font> Products </font></Link>
-          <Link to="/about-signedin"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
+          <Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
         </nav>
-      <div className="navbara">
-        <Link to="/profile" className='logou'><FontAwesomeIcon icon={faCog} /> <font> Settings </font></Link>
-        <button onClick={handleLogout} type="sub" className="group relative w-100px flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <div className="navbara">
+          <Link to="/profile"><FontAwesomeIcon icon={faCog} /> <font> Settings </font></Link>
+          <button onClick={handleLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Log Out
-        </button>
+          </button>
 
-      </div>
-      </>
+
+        </div>
+        </>
         ) : (
           <>
         <nav className="navbar">
@@ -94,17 +96,46 @@ export function SideNavDark() {
           <Link to="/employee_about"><FontAwesomeIcon icon={faInfoCircle} /> <font> About us</font></Link>
         </nav>
       <div className="navbara">
-        <button onClick={handleEmployeeLogout} type="sub" className="group relative w-100px flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button onClick={handleEmployeeLogout} type="sub" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Log Out
         </button>
 
       </div>
       </>
       )}
-    </div>
-  </div>
-</div>
-  );
-};
+        </div>
+   
+        </div>
+        <div className='center_div'>
+          <div className='projects_analytics'>
+          <div className='projanaly'>
+          <div className='projec'>
+                <font className='projects_text'>Projects </font>
+          </div>
+          <div className='analytics'>
+          <font className='projects_text'>Analytics </font>
+          </div>
+          </div>
+          <div className='idnames'>
+                <div>
+              {/* <h4>John D.</h4> */}
+              <img className='person_image' src={logoSrc} alt="logo" />
+            <font className='john_text'>Title </font> <br />
+              <font className='project_text'>Name </font>
+                </div>
+                <div className='to_do'>
+                <font className='projects_text'>To-Do </font>
+                </div>
+          </div>
+          </div>
+          <div className='project_recommendation'>
+          <font className='projects_text'>Project Recommendations  </font>
+          </div>
+        </div>
+        
+ </div>
 
-export default SideNavDark;
+  );
+}
+
+export default SideNav;
