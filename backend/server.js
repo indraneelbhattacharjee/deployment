@@ -323,31 +323,33 @@ const generateCode = () => {
     return crypto.randomBytes(3).toString('hex'); // Generates a 6-character hex string
   };
   
-  // Example usage in an endpoint
-  app.post('/api/send-verification-code', async (req, res) => {
-    const { email } = req.body;
-    const client = await pool.connect();
-    try {
-      const userResult = await client.query('SELECT * FROM users WHERE email = $1', [email]);
-      if (userResult.rows.length === 0) {
-        return res.status(404).send('User not found.');
-      }
-  
-      const code = generateCode();
-      // Here, add the code to a verification_codes table, for example
-      // Make sure to add expiration logic as per your requirements
-  
-      // Assuming sendVerificationEmail sends the email with the code
-      await sendVerificationEmail(email, code); // Implement this function based on your email service
-  
-      res.send('Verification code sent.');
-    } catch (err) {
-      console.error('Error sending verification code:', err);
-      res.status(500).send('An error occurred.');
-    } finally {
-      client.release();
-    }
-  });
+// Email transport configuration
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // Example with Gmail; you need to setup your Gmail for allowing less secure apps or use OAuth2
+  auth: {
+    user: 'your-email@gmail.com',
+    pass: 'your-password'
+  }
+});
+//end point to send verification code.  
+app.post('/api/send-verification-code', async (req, res) => {
+const { email } = req.body;
+const verificationCode = Math.floor(100000 + Math.random() * 900000); // Generates a 6-digit code
+
+try {
+    await transporter.sendMail({
+    from: '"Your Company Name" <your-email@gmail.com>',
+    to: email,
+    subject: 'Your Verification Code',
+    text: `Your verification code is: ${verificationCode}`
+    });
+
+    res.status(200).send('Verification code sent successfully.');
+} catch (error) {
+    console.error('Failed to send email:', error);
+    res.status(500).send('Failed to send verification code.');
+}
+});
 
   app.get('/userdashboard', auth, (req, res) => {
     console.log(req.userId);

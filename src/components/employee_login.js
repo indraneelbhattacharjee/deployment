@@ -13,6 +13,7 @@ export const EmployeeLogin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setErrorMessage(''); // Clear previous error messages
     try {
       const response = await axios.post('http://localhost:8080/employee_login', {
         email,
@@ -31,6 +32,14 @@ export const EmployeeLogin = () => {
           setErrorMessage('Login was successful, but no token was received.');
         } 
     } catch (error) {
+      const errorResponse = error.response;
+      if (errorResponse && errorResponse.status === 400) {
+        setErrorMessage('Login failed. Please check your email or password'); 
+      } else if (errorResponse && errorResponse.status === 500) {
+        setErrorMessage('Server error, please try again later.');
+      } else {
+        setErrorMessage('Login failed. Please check your email or password');
+      }
       console.error('Login failed:', error.response || error);
     }
   };
@@ -49,6 +58,11 @@ export const EmployeeLogin = () => {
       <div className="flex w-1/2 justify-center items-center bg-white p-12">
         <div className="max-w-fit w-full">
           <h2 className="text-3xl font-bold mb-2">Sign In to your Account</h2>
+          {errorMessage && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+              {errorMessage}
+            </div>
+          )}
           <form className="mt-8 space-y-6" onSubmit={handleLogin}>
             <div>
               <label htmlFor="email" className="sr-only">Email address</label>
