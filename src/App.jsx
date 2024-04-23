@@ -26,6 +26,7 @@ import { AppDevServicePage } from "./components/AppDevServicePage";
 import { SoftwareDevServicePage } from "./components/SoftwareDevServicePage";
 import { PricingPage } from "./components/PricingPage";
 import { CreditCardForm } from "./components/paymentPage";
+import ChatBot from 'react-simple-chatbot';
 import { SideNav } from './components/updatesSidenav.jsx';
 import { EmployeeContact } from './components/employee_contact';
 import { EmployeeServicesPage } from './components/employee_services';
@@ -39,8 +40,6 @@ import { ContactSignedIn } from './components/ConctactSignedIn';
 import { AboutSignedIn } from './components/AboutSignedIn';
 import SmoothScroll from "smooth-scroll";
 import "./index.css";
-import ChatBot from 'react-simple-chatbot';
-
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
