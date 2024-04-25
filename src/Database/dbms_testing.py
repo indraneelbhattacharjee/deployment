@@ -1,7 +1,6 @@
 import pytest
 import psycopg2
 import psycopg2.extras
-
 # Database connection parameters
 params = {
     'dbname': 'technogaze',
