@@ -5,7 +5,6 @@ import React from "react";
 
 export const Contact = (props) =>  {
   return (
-  
     <div className='min-h-screen flex items-center justify-center' 
         style={{ 
            backgroundImage: `url(${img1})`,
