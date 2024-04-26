@@ -37,7 +37,7 @@ export const VerifyEmailPage = () => {
   };
   return (
     <div className="flex items-center justify-center min-h-screen bg-additional-white">
-      <div className="w-full max-w-3xl p-4 bg-white shadow-md rounded-md">
+      <div className="w-full max-w-lg p-4 bg-white shadow-md rounded-md">
         <form onSubmit={handleSendCode} className="flex flex-col items-center p-10 gap-6">
           <img
             className="w-40 h-32"
