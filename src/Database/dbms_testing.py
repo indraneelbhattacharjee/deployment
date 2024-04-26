@@ -88,3 +88,21 @@ def test_delete_dashboard_entry(db_conn):
         cur.execute("SELECT todo FROM dashboard WHERE todo = %s;", (todo_text,))
         deleted_todo = cur.fetchone()
         assert deleted_todo is None
+
+def test_log_transaction_data(db_conn):
+    with db_conn.cursor() as cur:
+        # Ensure that the user exists by inserting it before the transaction.
+        # Handle possible duplicate insertion error by catching an exception if the user already exists.
+        try:
+            cur.execute("INSERT INTO \"User\" (user_id, username, email, password) VALUES (1, 'testuser', 'user@example.com', 'password123');")
+        except psycopg2.IntegrityError:
+            db_conn.rollback()  # Roll back the transaction if the user insertion fails.
+
+        # Now attempt to insert the transaction assuming the user exists
+        cur.execute("INSERT INTO \"transaction\" (user_id, product_id, product_name) VALUES (1, 101, 'ProductX');")
+        db_conn.commit()  # Commit the transaction to save the changes
+        
+        # Verify the transaction was inserted correctly
+        cur.execute("SELECT * FROM \"transaction\" WHERE user_id = 1 AND product_id = 101;")
+        transaction = cur.fetchone()
+        assert transaction is not None
