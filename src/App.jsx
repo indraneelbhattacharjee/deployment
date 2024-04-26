@@ -71,6 +71,7 @@ function NavBarLogic() {
 const navigate = useNavigate();
 
   const handleChatTrigger = (path) => {
+    const navigate = useNavigate();
     return () => {
       navigate(path);
     };

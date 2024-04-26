@@ -324,13 +324,13 @@ const generateCode = () => {
   };
   
 // Email transport configuration
-const transporter = nodemailer.createTransport({
-  service: 'gmail', // Example with Gmail; you need to setup your Gmail for allowing less secure apps or use OAuth2
-  auth: {
-    user: 'your-email@gmail.com',
-    pass: 'your-password'
-  }
-});
+//const transporter = nodemailer.createTransport({
+  //service: 'gmail', // Example with Gmail; you need to setup your Gmail for allowing less secure apps or use OAuth2
+//  auth: {
+ //   user: 'your-email@gmail.com',
+ //   pass: 'your-password'
+//  }
+//});
 //end point to send verification code.  
 app.post('/api/send-verification-code', async (req, res) => {
 const { email } = req.body;

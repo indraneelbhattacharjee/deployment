@@ -27,9 +27,8 @@ export const WebDevServicePage = () => {
   
   return (
     <>
-    <div className="sideNavBar">
+    <div className="flex">
       <SideNavDark />
-    </div>
     <div class="servicepage">
         <div class="text">
 
@@ -117,6 +116,7 @@ export const WebDevServicePage = () => {
         <div>
           <img class="web_dev" src="./img/webDev.jpg" width="500px" alt="webDev"></img>
         </div>
+    </div>
     </div>
     </>
   );
