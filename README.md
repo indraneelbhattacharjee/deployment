@@ -6,14 +6,14 @@ Team Technogaze was formed by the students of California State University - Sacr
 
 ## Team information
 
-1. Indraneel Bhattacharjee
-2. Dip Patel
-3. Sanjot Chandi
-4. Saniya Patel
-5. Cathy Khong
-6. Tanner Colbert
-7. Kevinpreet Singh
-8. Julian Martinez
+1. Indraneel Bhattacharjee : indraneelbhattachar@csus.edu
+2. Dip Patel : dippatel@csus.edu
+3. Sanjot Chandi : schandi@csus.edu
+4. Saniya Patel : spatel7@csus.edu
+5. Cathy Khong : cathyduyenkhong@csus.edu
+6. Tanner Colbert : tannerjcolbert@csus.edu 
+7. Kevinpreet Singh : ksdeol@csus.edu
+8. Julian Martinez : julianmartinez2@csus.edu
 
 Repository for CSC 191 - Infrastructure Development for Bay Develops
 
