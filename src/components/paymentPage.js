@@ -134,11 +134,10 @@ export const CreditCardForm = () => {
 }
 
 return (
-  <div className="bg-gray-100 min-h-screen py-12 flex items-center justify-left">
-    <div className="sideNavBar">
+  <div className="bg-gray-100 min-h-screen">
+    <div className="flex">
         <SideNavDark />
-    </div>
-    <div className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow">
+    <div className="max-w-lg mx-auto bg-white p-8 my-12 rounded-lg shadow ">
     {service.name && service.price && (
           <div className="mb-6 p-4 border-b border-gray-200">
             <h3 className="text-lg font-semibold text-gray-800">Service Details</h3>
@@ -194,6 +193,7 @@ return (
       </form>
     </div>
   </div>
+</div>
 );
 };
 
