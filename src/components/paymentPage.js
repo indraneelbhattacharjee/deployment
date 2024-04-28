@@ -134,64 +134,64 @@ export const CreditCardForm = () => {
 }
 
 return (
-  <div className="bg-gray-100 min-h-screen py-12 flex items-center justify-left">
-    <div className="sideNavBar">
-        <SideNavDark />
-    </div>
-    <div className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow">
-    {service.name && service.price && (
-          <div className="mb-6 p-4 border-b border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-800">Service Details</h3>
-            <p className="text-gray-600">Name: {service.name}</p>
-            <p className="text-gray-600">Price: ${service.price}</p>
+  <div className="bg-gray-100 min-h-screen">
+    <div className="flex">
+      <SideNavDark />
+      <div className="max-w-lg mx-auto bg-white p-8 my-12 rounded-lg shadow ">
+      {service.name && service.price && (
+            <div className="mb-6 p-4 border-b border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-800">Service Details</h3>
+              <p className="text-gray-600">Name: {service.name}</p>
+              <p className="text-gray-600">Price: ${service.price}</p>
+            </div>
+          )}
+        <div className="flex justify-between mb-4">
+          <img src={mastercardLogo} alt="Mastercard" className="h-8" />
+          <img src={visaLogo} alt="Visa" className="h-8" />
+          <img src={americanLogo} alt="American Express" className="h-8" />
+          <img src={discoverLogo} alt="Discover" className="h-8" />
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name on Card</label>
+            <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
-        )}
-      <div className="flex justify-between mb-4">
-        <img src={mastercardLogo} alt="Mastercard" className="h-8" />
-        <img src={visaLogo} alt="Visa" className="h-8" />
-        <img src={americanLogo} alt="American Express" className="h-8" />
-        <img src={discoverLogo} alt="Discover" className="h-8" />
+          <div>
+            <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" value={formData.cardNumber} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" maxLength="19" />
+          </div>
+          <div className="flex space-x-4">
+            <div className="w-1/2">
+              <label htmlFor="month" className="block text-sm font-medium text-gray-700">Card Expiration Month</label>
+              <select id="month" name="month" value={formData.month} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                {Array.from(new Array(12), (x, i) => {
+                  const month = (i + 1).toString().padStart(2, '0');
+                  return <option key={month} value={month}>{month}</option>;
+                })}
+              </select>
+            </div>
+            <div className="w-1/2">
+              <label htmlFor="year" className="block text-sm font-medium text-gray-700">Card Expiration Year</label>
+              <select id="year" name="year" value={formData.year} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                {(formData.years || []).map(year => (
+                  <option key={year} value={year}>{year}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div>
+            <label htmlFor="code" className="block text-sm font-medium text-gray-700">Card Security Code</label>
+            <input type="password" id="code" name="code" value={formData.code} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" maxLength="4"/>
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+          </div>
+          <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Pay
+          </button>
+        </form>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name on Card</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
-        </div>
-        <div>
-          <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700">Card Number</label>
-          <input type="text" id="cardNumber" name="cardNumber" value={formData.cardNumber} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" maxLength="19" />
-        </div>
-        <div className="flex space-x-4">
-          <div className="w-1/2">
-            <label htmlFor="month" className="block text-sm font-medium text-gray-700">Card Expiration Month</label>
-            <select id="month" name="month" value={formData.month} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-              {Array.from(new Array(12), (x, i) => {
-                const month = (i + 1).toString().padStart(2, '0');
-                return <option key={month} value={month}>{month}</option>;
-              })}
-            </select>
-          </div>
-          <div className="w-1/2">
-            <label htmlFor="year" className="block text-sm font-medium text-gray-700">Card Expiration Year</label>
-            <select id="year" name="year" value={formData.year} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-              {(formData.years || []).map(year => (
-                <option key={year} value={year}>{year}</option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div>
-          <label htmlFor="code" className="block text-sm font-medium text-gray-700">Card Security Code</label>
-          <input type="password" id="code" name="code" value={formData.code} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" maxLength="4"/>
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
-        </div>
-        <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          Pay
-        </button>
-      </form>
     </div>
   </div>
 );

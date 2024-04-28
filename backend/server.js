@@ -322,7 +322,7 @@ app.post('/logout', (req, res) => {
 const generateCode = () => {
     return crypto.randomBytes(3).toString('hex'); // Generates a 6-character hex string
   };
-  
+ 
 // Email transport configuration
 //const transporter = nodemailer.createTransport({
   //service: 'gmail', // Example with Gmail; you need to setup your Gmail for allowing less secure apps or use OAuth2
