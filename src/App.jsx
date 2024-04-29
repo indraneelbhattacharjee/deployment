@@ -84,7 +84,17 @@ function NavBarLogic() {
 
   return (
     <Router>
-    
+      <NavBarLogic />
+      {isLoggedIn ? (
+                // If logged in, display side navigation bar
+                <>
+                </>
+            ) : (
+                // If logged out, display top navigation bar
+                <>
+                    <TopNav />
+                </>
+            )}
       <Routes>
       <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
