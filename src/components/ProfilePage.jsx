@@ -121,7 +121,7 @@ export const ProfilePage = () => {
                     </div>
                     <button
                         onClick={() => navigate('/verify-email')}
-                        className='mt-10 text-white text-lg underline'
+                        className='mt-10 text-black text-lg underline'
                     >
                         Change Password
                     </button>
