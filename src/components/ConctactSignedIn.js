@@ -32,7 +32,7 @@ export const ContactSignedIn = (props) =>  {
                     <legend class="messageHeader">Message</legend>
                     <textarea class="message" rows="4" cols="62" name="message" required></textarea>
                     <input type="hidden" name="_captcha" value="false"></input>
-                    <input type="hidden" name="_next" value="http://localhost:3000/contact-signedin"></input>
+                    <input type="hidden" name="_next" value="https://www.baydevelops.tech/contact-signedin"></input>
                 <Button
                   className="self-stretch"
                   id="sendContact"
