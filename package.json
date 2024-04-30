@@ -47,11 +47,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "vercel-build": "npm install && next build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "next start"
   },
+
+  "engines": {
+    "node": "14.x || 16.x || 18.x"
+  },  
+  
   "eslintConfig": {
     "extends": "react-app"
   },
