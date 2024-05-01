@@ -9,11 +9,13 @@ const auth = require('./middleware/auth');
 const app = express();
 const PORT = 8080;
 
+
 // CORS configuration: Allow requests from the frontend running on localhost:3000
 // You can customize the cors options as per your requirements
 app.use(cors({
     origin: 'http://localhost:3000',
-    credentials: true
+    credentials: true,
+    methods: ['POST', 'GET']
   }));
   // Middleware to parse JSON bodies
 app.use(express.json());
@@ -220,10 +222,10 @@ app.post('/post_login', async (req, res) => {
             console.error("JWT_SECRET is not defined.");
             return res.status(400).json({ message: 'JWT_SECRET is not defined' });
         }
-        token = jwt.sign(userPayload, process.env.JWT_SECRET), {expiresIn: 60*60}
+        token = jwt.sign(userPayload, process.env.JWT_SECRET), {expiresIn: '1h'}
         res.cookie('jwt', token, { 
             httponly: true,
-            maxAge: 60 * 60 * 1000,
+            maxAge: 3600000, //1 hour
             sameSite: 'None', // Important for cross-origin cookies
             secure: true // Important for cookies over HTTPS});
         });
@@ -385,7 +387,6 @@ app.delete('/api/dashboard/:todo', async (req, res) => {
 });
   
 
-// Route handler for updating the username
 // Route handler for updating the username
 app.post('/update-username', async (req, res) => {
     try {
