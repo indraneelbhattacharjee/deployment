@@ -8,12 +8,12 @@ export function SideNavDark() {
   const logoSrc = `${process.env.PUBLIC_URL}/img/sideNav/logo.png`;
   const navigate = useNavigate();
 
-  axios.defaults.baseURL = 'http://localhost:8080';
+  axios.defaults.baseURL = 'https://localhost:8080';
   axios.defaults.withCredentials = true;
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/logout', {}, { withCredentials: true });
+      const response = await axios.post('https://localhost:8080/logout', {}, { withCredentials: true });
       if (response.status === 200) {
         console.log('Logout successful');
         navigate('/login'); // Redirect to the home page or login page

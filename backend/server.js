@@ -1,5 +1,6 @@
 require('dotenv').config();
-
+const fs = require('fs');
+const https = require('https');
 const express = require('express');
 const cookieParser = require('cookie-parser')
 const { Pool } = require('pg');
@@ -10,17 +11,39 @@ const app = express();
 const PORT = 8080;
 
 
+// SSL Certificate
+const privateKey = fs.readFileSync('./localhost-key.pem', 'utf8');
+const certificate = fs.readFileSync('./localhost.pem', 'utf8');
+
+const credentials = { key: privateKey, cert: certificate };
 // CORS configuration: Allow requests from the frontend running on localhost:3000
 // You can customize the cors options as per your requirements
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: function (origin, callback) {
+        const allowedOrigins = ['http://localhost:3000', 'https://localhost:3000'];
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('CORS not allowed from this origin'));
+        }
+    },
     credentials: true,
     methods: ['POST', 'GET']
-  }));
+}));
   // Middleware to parse JSON bodies
 app.use(express.json());
 
 app.use(cookieParser());
+
+// Start the server
+//app.listen(PORT, () => {
+  //  console.log(`Server is running on http://localhost:${PORT}`);
+//});
+
+//Creating HTTPS server
+https.createServer(credentials, app).listen(PORT, () => {
+    console.log(`HTTPS Server running on https://localhost:${PORT}`);
+});
 
 // PostgreSQL database connection configuration
 const pool = new Pool({
@@ -62,8 +85,6 @@ pool.query(`
         }
     });
 
-// Middleware to parse JSON bodies
-app.use(express.json());
 
 // Route handler to insert a new task into the database (dashboard)
 app.post('/api/dashboard', async (req, res) => {
@@ -105,11 +126,6 @@ app.delete('/api/dashboard/:todo', async (req, res) => {
     }
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
-
 //Users
 pool.query(`
     CREATE TABLE IF NOT EXISTS users (
@@ -143,7 +159,7 @@ pool.query(`
 
 const bcrypt = require('bcrypt');
 
-/*
+
 // Route to get all users
 app.get('/api/users', async (req, res) => {
     try {
@@ -154,7 +170,7 @@ app.get('/api/users', async (req, res) => {
       res.status(500).send('Internal Server Error');
     }
   });
-*/
+
 
 // Route handler for user registration
 app.post('/post_register', async (req, res) => {

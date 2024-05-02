@@ -19,7 +19,7 @@ export const Login = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:8080/post_login', {
+      const response = await axios.post('https://localhost:8080/post_login', {
         email,
         password,
       }, {

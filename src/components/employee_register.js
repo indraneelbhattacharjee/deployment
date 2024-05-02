@@ -21,7 +21,7 @@ export const EmployeeRegister = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:8080/employee_register', {
+      const response = await fetch('https://localhost:8080/employee_register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

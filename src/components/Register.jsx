@@ -21,7 +21,7 @@ export const Register = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:8080/post_register', {
+      const response = await fetch('https://localhost:8080/post_register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
