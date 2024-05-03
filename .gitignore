@@ -51,7 +51,6 @@ nunit-*.xml
 node_modules/*
 Backend/node_modules/*
 
-.env
 yarn.lock
 
 package-lock.json
