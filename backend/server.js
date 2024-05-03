@@ -8,6 +8,7 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const auth = require('./middleware/auth');
 const app = express();
+const nodemailer = require('nodemailer');
 const PORT = 8080;
 
 
@@ -337,18 +338,66 @@ app.post('/logout', (req, res) => {
     res.status(200).json({ message: 'Logged out successfully' });
   });
 
+app.post('/api/verify-email', (req, res) => {
+    const { email } = req.body;
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+    // Set the token in a secure, httpOnly cookie
+    res.cookie('auth_token', token, {
+        httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
+        secure: process.env.NODE_ENV === 'production', // Use secure in production (requires HTTPS)
+        maxAge: 3600000 // 1 hour in milliseconds
+    });
+
+    res.send({ message: 'Email verified, token stored in cookie' });
+});
+  
+  
+app.post('/api/reset-password', async (req, res) => {
+    const { code, newPassword } = req.body;
+
+    if (code !== '123456') {
+      return res.status(400).json({ message: 'Invalid verification code.' });
+    }
+    const token = req.cookies.auth_token; // Retrieve the token from cookies
+  
+    if (!token) {
+      return res.status(401).json({ message: 'Authentication token is required' });
+    }
+  
+    try {
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const email = decoded.email;
+  
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(newPassword, salt);
+        
+    // Update the password in the database
+        const updateResult = await pool.query(
+            'UPDATE users SET password = $1 WHERE email = $2',
+            [newPassword, email]
+        );
+      res.clearCookie('auth_token'); // Clear the auth token cookie
+      res.json({ message: 'Password reset successfully' });
+    } catch (error) {
+      res.status(401).json({ message: 'Invalid or expired token' });
+      res.clearCookie('auth_token'); // Ensure to clear the cookie even if token is invalid
+    }
+  });
+
 const generateCode = () => {
     return crypto.randomBytes(3).toString('hex'); // Generates a 6-character hex string
   };
  
-// Email transport configuration
-//const transporter = nodemailer.createTransport({
-  //service: 'gmail', // Example with Gmail; you need to setup your Gmail for allowing less secure apps or use OAuth2
-//  auth: {
- //   user: 'your-email@gmail.com',
- //   pass: 'your-password'
-//  }
-//});
+//Email transport configuration
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // Example with Gmail; you need to setup your Gmail for allowing less secure apps or use OAuth2
+  auth: {
+    user: 'your-email@gmail.com',
+    pass: 'your-password'
+  }
+});
+
 //end point to send verification code.  
 app.post('/api/send-verification-code', async (req, res) => {
 const { email } = req.body;
@@ -369,11 +418,25 @@ try {
 }
 });
 
-  app.get('/userdashboard', auth, (req, res) => {
+app.post('/api/check-email', async (req, res) => {
+const { email } = req.body;
+try {
+    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+    if (result.rows.length > 0) {
+    res.status(200).json({ exists: true });
+    } else {
+    res.status(500).json({ exists: false });
+    }
+} catch (error) {
+    console.error('Error querying database:', error);
+    res.status(500).send('Error checking email');
+}
+});
+  
+app.get('/userdashboard', auth, (req, res) => {
     console.log(req.userId);
     res.status(201).json({message: "user dashboard"})
   });
-
   // Route handler to insert a new task into the database (dashboard)
 app.post('/api/dashboard', async (req, res) => {
     const { todo } = req.body;
