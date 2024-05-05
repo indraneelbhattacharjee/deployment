@@ -6,7 +6,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Set up the WebDriver
+# Set up the WebDriverpython test_credit_card_form.py
+
 driver = webdriver.Chrome()  # or use Firefox(), Edge(), etc.
 
 # Define the URL of the page to test
