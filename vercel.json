@@ -25,12 +25,12 @@
     }
   ],
   "env": {
-    "DB_USER": "@db_user",
-    "DB_PASSWORD": "@db_password",
-    "DB_HOST": "@db_host",
-    "DB_PORT": "@db_port",
-    "DB_DATABASE": "@db_database",
-    "JWT_SECRET": "@jwt_secret",
-    "CORS_ORIGIN": "@cors_origin"
+    "DB_USER": "default",
+    "DB_HOST": "ep-calm-dream-a4ukxego.us-east-1.aws.neon.tech",
+    "DB_DATABASE": "verceldb",
+    "DB_PASSWORD": "PIxAdb16hWis",
+    "DB_PORT": "5432",
+    "JWT_SECRET": "technogaze_secretKey",
+    "CORS_ORIGIN": "*"
   }
 }
