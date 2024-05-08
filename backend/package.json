@@ -22,10 +22,11 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.5",
+    "serverless-http": "^3.2.0",
     "stripe": "^14.23.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15",
-    "eslint": "^8.22.0"
+    "eslint": "^8.22.0",
+    "nodemon": "^2.0.15"
   }
 }

@@ -9,6 +9,14 @@ const auth = require('./middleware/auth');
 const app = express();
 const PORT = 8080;
 
+const serverless = require('serverless-http');
+
+
+app.get('/', (req, res) => {
+  res.send('Hello World from server.js!');
+});
+module.exports = serverless(app);
+
 // CORS configuration: Allow requests from the frontend running on localhost:3000
 // You can customize the cors options as per your requirements
 app.use(cors({
