@@ -20,17 +20,18 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-// PostgreSQL database connection configuration
+
 const pool = new Pool({
-    user: 'postgres_user',
-    host: 'technogaze.c722y6y2on6l.us-east-2.rds.amazonaws.com',
-    database: 'technogaze',
-    password: 'admin123',
+    user: 'default',
+    host: 'ep-calm-dream-a4ukxego.us-east-1.aws.neon.tech',
+    database: 'verceldb',
+    password: 'PIxAdb16hWis',
     port: 5432, // Default PostgreSQL port
     ssl: {
-        rejectUnauthorized: false // For SSL connections, if enabled
+        rejectUnauthorized: false // Assuming SSL is required but self-signed/unauthorized certificates should be accepted
     }
 });
+
 
 // Test the database connection
 pool.connect()
