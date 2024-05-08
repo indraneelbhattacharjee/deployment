@@ -32,6 +32,5 @@
     "DB_DATABASE": "@db_database",
     "JWT_SECRET": "@jwt_secret",
     "CORS_ORIGIN": "@cors_origin"
-  },
-  "regions": ["all"]
+  }
 }
