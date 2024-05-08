@@ -204,11 +204,6 @@ app.use((err, req, res, next) => {
 // Serverless handler export
 module.exports = serverless(app);
 
-
-
-
-
-
 /*const express = require('express');
 const app = express();
 
