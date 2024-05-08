@@ -38,7 +38,7 @@
     "styled-components": "^6.1.8"
 
     }, "scripts": {
-      "start": "npm run start:backend && npm run start:frontend",
+      "start": "npm run start:frontend && npm run start:backend",
       "start:backend": "node backend/server.js", 
       "start:frontend": "react-scripts start"
     },
