@@ -38,6 +38,7 @@
     "styled-components": "^6.1.8"
 
     }, "scripts": {
+      "vercel-build": "npm run build && cd backend && npm install && npm run build",
       "start": "npm run start:frontend && npm run start:backend",
       "start:backend": "node backend/server.js", 
       "start:frontend": "react-scripts start"
