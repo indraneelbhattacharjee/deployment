@@ -1,4 +1,4 @@
-/*require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -201,7 +201,7 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: "Internal server error" });
 });
 
-/*app.listen(process.env.PORT || 3000, () => {
+pp.listen(process.env.PORT || 3000, () => {
     console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
 
@@ -223,14 +223,4 @@ app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });*/
 
-const express = require('express');
-const app = express();
 
-app.get('/test', (req, res) => {
-  res.send('Hello World');
-});
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
