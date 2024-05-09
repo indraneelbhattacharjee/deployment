@@ -48,15 +48,6 @@
   "engines": {
     "node": "14.x || 16.x || 18.x"
   },
-  "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "no-unused-vars": "warn",
-      "jsx-a11y/anchor-is-valid": "warn", 
-      "react-hooks/rules-of-hooks": "warn", 
-      "react-hooks/exhaustive-deps": "warn" 
-    }
-  },
   
   "browserslist": {
     "production": [
