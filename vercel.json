@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "your-project-name",
   "builds": [
     {
       "src": "package.json",
@@ -15,25 +14,29 @@
       "use": "@vercel/react"
     }
   ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000,immutable" },
-      "dest": "/public/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/public/index.html"
-    }
-  ],
   "rewrites": [
     {
+      "source": "/static/(.*)",
+      "destination": "/public/static/$1"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/src/index.html"
+      "destination": "/public/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/public/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=31536000, immutable"
+        }
+      ]
     }
   ],
   "env": {
