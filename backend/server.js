@@ -23,6 +23,26 @@ const pool = new Pool({
     }
 });
 
+pool.connect()
+    .then(client => {
+        console.log('Database connection successful');
+        // Query to fetch table names from the public schema
+        return client.query("SELECT table_name FROM information_schema.tables WHERE table_schema='public'")
+            .then(res => {
+                console.log('Fetched tables:', res.rows.map(row => row.table_name));
+                client.release(); // release the client back to the pool
+            })
+            .catch(err => {
+                console.error('Error fetching tables:', err);
+                client.release(); // make sure to release the client back to the pool
+            });
+    })
+    .catch(err => {
+        console.error('Database connection failed:', err);
+        process.exit(1);
+    });
+
+
 // Middleware
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
@@ -201,9 +221,10 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: "Internal server error" });
 });
 
-pp.listen(process.env.PORT || 3000, () => {
-    console.log(`Server is running on port ${process.env.PORT || 3000}`);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server running on port ${process.env.PORT || 3000}`);
 });
+
 
 
 // Serverless handler export
