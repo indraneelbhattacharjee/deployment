@@ -1,38 +1,42 @@
 {
   "version": 2,
-  "public": false,
+  "name": "your-project-name",
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/node",
-      "config": { "distDir": "build" }
+      "use": "@vercel/node"
     },
     {
-      "src": "public/index.html",
-      "use": "@vercel/static"
+      "src": "src/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/**/*.jsx",
+      "use": "@vercel/react"
     }
   ],
   "routes": [
     {
-      "src": "/(css|js|img|fonts|html)/(.*)",
-      "dest": "/public/$1/$2",
-      "headers": {
-        "cache-control": "max-age=31536000, immutable"
-      }
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/public/static/$1"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/(.*)",
+      "dest": "/public/$1"
     },
     {
-      "src": "/.*",
+      "src": "/",
       "dest": "/public/index.html"
     }
   ],
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/public/index.html"
+      "source": "/(.*)",
+      "destination": "/src/index.html"
     }
-  ]
+  ],
+  "env": {
+    "API_KEY": "@api_key"
+  }
 }
