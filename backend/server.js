@@ -5,7 +5,6 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { Pool } = require('pg');
-const serverless = require('serverless-http');
 const auth = require('./middleware/auth');
 
 
@@ -214,6 +213,16 @@ app.post('/api/users/change-password', auth, async (req, res) => {
         res.status(500).json({ message: 'Error changing password' });
     }
 });
+
+const cors = require('cors');
+
+const corsOptions = {
+    origin: 'https://baydevelopstech-indraneelbhattacharjees-projects.vercel.app',
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 
 // Error handling middleware for unexpected errors
 app.use((err, req, res, next) => {

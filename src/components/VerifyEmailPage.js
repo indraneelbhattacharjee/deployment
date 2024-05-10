@@ -19,7 +19,7 @@ export const VerifyEmailPage = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:8080/api/send-verification-code', { email });
+      const response = await axios.post('https://backendserverdeploy-28e06bc01821.herokuapp.com/api/send-verification-code', { email });
       setMessage("If your email is in our database, you will receive a code to reset your password.");
       setOpenSnackbar(true);
       navigate("/reset-password"); // Navigate only after successful post

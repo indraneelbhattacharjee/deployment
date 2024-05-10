@@ -21,7 +21,7 @@ export const Register = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:8080/post_register', {
+      const response = await fetch('https://backendserverdeploy-28e06bc01821.herokuapp.com/post_register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

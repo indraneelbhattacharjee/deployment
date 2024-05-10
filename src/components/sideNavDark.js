@@ -11,7 +11,7 @@ export function SideNavDark() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/logout');
+      const response = await axios.post('https://backendserverdeploy-28e06bc01821.herokuapp.com/logout');
       if (response.status === 200) {
         console.log('Logout successful');
         // Perform any client-side cleanup

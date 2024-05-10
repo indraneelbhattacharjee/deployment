@@ -15,7 +15,7 @@ export const EmployeeLogin = () => {
     e.preventDefault();
     setErrorMessage(''); // Clear previous error messages
     try {
-      const response = await axios.post('http://localhost:8080/employee_login', {
+      const response = await axios.post('https://backendserverdeploy-28e06bc01821.herokuapp.com/employee_login', {
         email,
         password,
       }, {

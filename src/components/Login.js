@@ -19,7 +19,7 @@ export const Login = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:8080/post_login', {
+      const response = await axios.post('https://backendserverdeploy-28e06bc01821.herokuapp.com/post_login', {
         email,
         password,
       }, {
