@@ -39,9 +39,7 @@
 
    }, "scripts": {
       "build": "react-scripts build",
-      "start": "react-scripts start",
-      "build:backend": "cd backend && npm install",
-      "start:backend": "node backend/server.js"
+      "start": "react-scripts start"
     },
   
   "engines": {
